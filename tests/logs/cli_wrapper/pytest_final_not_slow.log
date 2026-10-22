@@ -175,16 +175,16 @@ __________________ test_missing_required_argument_is_an_error __________________
                              ('sirna_fasta_path',), 'msg':                      
                              'Missing required argument',                       
                              'input': {'mrna_fasta_path':                       
-                             '/Users/james/Local/paper2agent/pape               
+                             '<HOME>/Local/paper2agent/pape               
                              r2agent_test/OligoFormer/mcp-work/te               
                              sts/data/cli_wrapper/example.fa',                  
                              'output_dir':                                      
-                             '/Users/james/Local/paper2agent/pape               
+                             '<HOME>/Local/paper2agent/pape               
                              r2agent_test/OligoFormer/mcp-work/tm               
                              p/outputs/verify/test_missing_requir               
                              ed_argument_is_an_error'}}]                        
 ------------------------------ Captured log call -------------------------------
-WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'predict_specific_sirna_efficacy': [{'type': 'missing_argument', 'loc': ('sirna_fasta_path',), 'msg': 'Missing required argument', 'input': {'mrna_fasta_path': '/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa', 'output_dir': '/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/verify/test_missing_required_argument_is_an_error'}}]
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'predict_specific_sirna_efficacy': [{'type': 'missing_argument', 'loc': ('sirna_fasta_path',), 'msg': 'Missing required argument', 'input': {'mrna_fasta_path': 'tests/data/cli_wrapper/example.fa', 'output_dir': 'tmp/outputs/verify/test_missing_required_argument_is_an_error'}}]
 ____________________ test_unsupported_depth_is_rejected[1] _____________________
 ----------------------------- Captured stderr call -----------------------------
 [10/22/26 08:38:00] WARNING  Invalid arguments for tool           server.py:1505

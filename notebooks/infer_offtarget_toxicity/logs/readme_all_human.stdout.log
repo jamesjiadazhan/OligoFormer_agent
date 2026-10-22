@@ -1,4 +1,4 @@
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:54:47,295 prediction INFO: Using CPU
 2026-10-21 23:54:47,295 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:54:47,295 prediction INFO: Model File:none
@@ -86,7 +86,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:54:50,174 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:54:51,869 prediction INFO: Using CPU
 2026-10-21 23:54:51,869 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:54:51,869 prediction INFO: Model File:none
@@ -175,7 +175,7 @@ Iteration[39/39]
 saved embedding shape: (19, 640)
 2026-10-21 23:54:54,351 prediction.inference INFO: Finish Prediction
 RNAplfold 2.7.2
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:54:58,862 prediction INFO: Using CPU
 2026-10-21 23:54:58,862 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:54:58,862 prediction INFO: Model File:none
@@ -263,7 +263,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:55:01,860 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:55:03,568 prediction INFO: Using CPU
 2026-10-21 23:55:03,568 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:55:03,568 prediction INFO: Model File:none

@@ -1,8 +1,8 @@
 Traceback (most recent call last):
-  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 84, in <module>
+  File "notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 84, in <module>
     main()
-  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 75, in main
+  File "notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 75, in main
     mismatch(Args)
-  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 95, in mismatch
+  File "notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 95, in mismatch
     raise Exception("The length of base RNA is not 19 nt!")
 Exception: The length of base RNA is not 19 nt!

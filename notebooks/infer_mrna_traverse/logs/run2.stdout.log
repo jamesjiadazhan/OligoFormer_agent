@@ -1,4 +1,4 @@
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:27:42,036 prediction INFO: Using CPU
 2026-10-21 23:27:42,037 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:27:42,037 prediction INFO: Model File:none
@@ -86,7 +86,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:27:50,977 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:27:52,924 prediction INFO: Using CPU
 2026-10-21 23:27:52,924 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:27:52,924 prediction INFO: Model File:none
@@ -174,7 +174,7 @@ saved embedding shape: (19, 640)
 Iteration[39/39]
 saved embedding shape: (19, 640)
 2026-10-21 23:27:57,763 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:28:00,216 prediction INFO: Using CPU
 2026-10-21 23:28:00,216 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:28:00,216 prediction INFO: Model File:none
@@ -262,7 +262,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:28:06,902 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:28:08,878 prediction INFO: Using CPU
 2026-10-21 23:28:08,878 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:28:08,878 prediction INFO: Model File:none

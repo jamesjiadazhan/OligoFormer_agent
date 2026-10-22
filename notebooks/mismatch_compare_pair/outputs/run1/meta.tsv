@@ -1,4 +1,4 @@
-stdin	/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/data/reference.stdin.txt
+stdin	notebooks/mismatch_compare_pair/data/reference.stdin.txt
 exit	0
 wall_s	2.279
 changed_paths	./result ./scripts ./scripts/__pycache__ ./scripts/__pycache__/loader.cpython-311.pyc ./scripts/__pycache__/logger.cpython-311.pyc ./scripts/__pycache__/test.cpython-311.pyc ./scripts/__pycache__/model.cpython-311.pyc ./scripts/__pycache__/infer.cpython-311.pyc ./scripts/__pycache__/mismatch.cpython-311.pyc ./scripts/__pycache__/train.cpython-311.pyc ./scripts/__pycache__/train_single.cpython-311.pyc ./scripts/__pycache__/test_single.cpython-311.pyc ./scripts/__pycache__/metrics.cpython-311.pyc 

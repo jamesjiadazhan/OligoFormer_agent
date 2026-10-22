@@ -1,8 +1,8 @@
 # Stage 2 executor brief (OligoFormer, CLI route, python backend)
 
 Bound values
-- PROJECT_ROOT = /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work
-- SKILL_ROOT = /Users/james/.claude/skills/paper2agent/paper2mcp
+- PROJECT_ROOT = .
+- SKILL_ROOT = <SKILL_ROOT>/paper2mcp
 - PROJECT_PYTHON = $PROJECT_ROOT/OligoFormer-env/bin/python (Python 3.11.12, torch 2.2.1 CPU)
 - Pinned source: $PROJECT_ROOT/repo/OligoFormer (lulab/OligoFormer @ e2f53ad63387bbe166bf123949151e2bc9bf6ec3). READ-ONLY: never run commands that write inside it.
 - Scanner inventory: $PROJECT_ROOT/reports/tutorial-scanner.json (your assignment entry + tool_review + wrapping_hazards).

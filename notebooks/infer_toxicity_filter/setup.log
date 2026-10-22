@@ -1,8 +1,8 @@
-[setup-runtime] cloning OligoFormer from /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/repo/OligoFormer
-[setup-runtime] cloning RNA-FM from /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/downloads/rnafm_git/RNA-FM
+[setup-runtime] cloning OligoFormer from repo/OligoFormer
+[setup-runtime] cloning RNA-FM from deps/downloads/rnafm_git/RNA-FM
 [setup-runtime] RNA-FM @ 348951516e0963d22bbb33b3c9fc18c89081d38e with rnafm_cpu_default.patch applied
 [setup-runtime] weights verified (5b5d7d87b37c291ef42c140ef9edf7aea29f255fa2a4fd435f776c52e93d5e99)
 [setup-runtime] staged macOS PITA binaries
-[setup-runtime] PITA make install done (EXE_BASE_DIR -> /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/off-target/pita)
-[setup-runtime] wrote /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer.env.sh
-[setup-runtime] done: /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer
+[setup-runtime] PITA make install done (EXE_BASE_DIR -> notebooks/infer_toxicity_filter/runtime/OligoFormer/off-target/pita)
+[setup-runtime] wrote notebooks/infer_toxicity_filter/runtime/OligoFormer.env.sh
+[setup-runtime] done: notebooks/infer_toxicity_filter/runtime/OligoFormer

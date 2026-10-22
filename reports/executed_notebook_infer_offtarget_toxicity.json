@@ -10,30 +10,30 @@
   "status": "success",
   "status_note": "Primary command (README command without -a, default 100-gene UTR/ORF refs) executed 3x + replay + changed params, all exit 0 with populated pita/targetscan tables. Literal README '-a' variant exits 0 but is a SILENT FAILURE (see hazards) and must be excluded/deferred.",
   "execution_mode": "native_command",
-  "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/run.sh",
-  "analysis_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/compare.py",
-  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+  "execution_path": "notebooks/infer_offtarget_toxicity/run.sh",
+  "analysis_script": "notebooks/infer_offtarget_toxicity/compare.py",
+  "cwd": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
   "runtime_copy": {
-   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+   "path": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
    "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
    "git_status_short_count_after_setup": 699,
    "git_status_note": "after setup: 698 off-target/pita mode/content changes from make install + '?? RNA-FM/'; after runs 704 (adds ?? data/infer/, ?? off-target/pita/RNA1_pita_results.tab, and modified tracked RNA0_pita_results.tab/tmp_seqfile*)",
-   "setup_command": "OLIGOFORMER_SRC=$PROJECT_ROOT/repo/OligoFormer RNAFM_SRC=$PROJECT_ROOT/deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=$PROJECT_ROOT/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash $PROJECT_ROOT/deps/setup_oligoformer_runtime.sh /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+   "setup_command": "OLIGOFORMER_SRC=$PROJECT_ROOT/repo/OligoFormer RNAFM_SRC=$PROJECT_ROOT/deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=$PROJECT_ROOT/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash $PROJECT_ROOT/deps/setup_oligoformer_runtime.sh notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
    "setup_exit": 0,
-   "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/runtime_setup.log"
+   "setup_log": "notebooks/infer_offtarget_toxicity/logs/runtime_setup.log"
   },
   "pristine_repo_unchanged": "git -C repo/OligoFormer status --short -> '?? RNA-FM/' only (pre-existing)",
   "env_vars": {
-   "source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer.env.sh",
+   "source": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer.env.sh",
    "PATH_prefix": [
-    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+    "OligoFormer-env/bin",
+    "deps/offtarget-env/bin"
    ],
-   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/torch_home",
+   "TORCH_HOME": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/torch_home",
    "PERL5LIB": "unset"
   },
   "executables": {
-   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python (3.11.12, torch 2.2.1 CPU)",
+   "python": "OligoFormer-env/bin/python (3.11.12, torch 2.2.1 CPU)",
    "perl": "deps/offtarget-env/bin/perl v5.32.1 (x86_64, Rosetta 2)",
    "RNAplfold": "2.7.2",
    "grep": "GNU grep 3.12 (conda; verified via /bin/sh child)",
@@ -43,76 +43,76 @@
   "commands": [
    {
     "label": "run1",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run1/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run1/",
     "exit_status": 0,
     "wall_seconds": 466.02,
     "start_utc": "2026-10-22T03:25:41Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run1.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run1.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/run1.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/run1.stderr.log"
    },
    {
     "label": "run2",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run2/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run2/",
     "exit_status": 0,
     "wall_seconds": 423.7,
     "start_utc": "2026-10-22T03:33:27Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run2.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run2.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/run2.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/run2.stderr.log"
    },
    {
     "label": "run3",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run3/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run3/",
     "exit_status": 0,
     "wall_seconds": 425.7,
     "start_utc": "2026-10-22T03:40:31Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run3.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run3.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/run3.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/run3.stderr.log"
    },
    {
     "label": "changed_params",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --pita_threshold -5 --targetscan_threshold 0.2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --pita_threshold -5 --targetscan_threshold 0.2 --output_dir notebooks/infer_offtarget_toxicity/outputs/changed_params/",
     "exit_status": 0,
     "wall_seconds": 427.33,
     "start_utc": "2026-10-22T03:47:36Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/changed_params.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/changed_params.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/changed_params.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/changed_params.stderr.log"
    },
    {
     "label": "readme_all_human",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -a --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/readme_all_human/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -a --output_dir notebooks/infer_offtarget_toxicity/outputs/readme_all_human/",
     "exit_status": 0,
     "wall_seconds": 25.09,
     "start_utc": "2026-10-22T03:54:44Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/readme_all_human.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/readme_all_human.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/readme_all_human.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/readme_all_human.stderr.log"
    },
    {
     "label": "replay",
-    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/example.fa --utr /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt --orf /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/replay/",
+    "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_offtarget_toxicity/data/example.fa --utr notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt --orf notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/replay/",
     "exit_status": 0,
     "wall_seconds": 424.51,
     "start_utc": "2026-10-22T03:55:09Z",
-    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/replay.stdout.log",
-    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/replay.stderr.log"
+    "stdout": "notebooks/infer_offtarget_toxicity/logs/replay.stdout.log",
+    "stderr": "notebooks/infer_offtarget_toxicity/logs/replay.stderr.log"
    }
   ],
   "runtime_note": "Each off-target run took ~7 min (424-466 s) here vs ~1 min in env-manager smoke test; PITA perl runs under Rosetta and other executors ran concurrently. readme_all_human took 25 s because PITA/TargetScan had no reference to scan.",
   "inputs": {
    "files": {
     "example.fa": {
-     "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/example.fa",
+     "path": "notebooks/infer_offtarget_toxicity/data/example.fa",
      "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851"
     },
     "100_human_UTR.txt": {
-     "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt",
+     "path": "notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt",
      "sha256": "e602627469c577bae8c5706fe2950df0b1884c630885ad85edf8eb0f8fba2e1e"
     },
     "100_human_ORF.txt": {
-     "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt",
+     "path": "notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt",
      "sha256": "31e4bc2978853a4670c42c1c02c8c9868e381a0d48ee94f4fb15872ff2531f39"
     },
     "cell_viability.txt": {
-     "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/cell_viability.txt",
+     "path": "notebooks/infer_offtarget_toxicity/data/cell_viability.txt",
      "sha256": "7139bca70a15925dab1199fd6cee259223fa1ac78b54a32a58791dddbc8a6ab0"
     }
    },
@@ -120,15 +120,15 @@
   },
   "outputs": {
    "dirs": {
-    "run1": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run1",
-    "run2": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run2",
-    "run3": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run3",
-    "replay": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/replay",
-    "changed_params": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params",
-    "readme_all_human": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/readme_all_human"
+    "run1": "notebooks/infer_offtarget_toxicity/outputs/run1",
+    "run2": "notebooks/infer_offtarget_toxicity/outputs/run2",
+    "run3": "notebooks/infer_offtarget_toxicity/outputs/run3",
+    "replay": "notebooks/infer_offtarget_toxicity/outputs/replay",
+    "changed_params": "notebooks/infer_offtarget_toxicity/outputs/changed_params",
+    "readme_all_human": "notebooks/infer_offtarget_toxicity/outputs/readme_all_human"
    },
-   "sha256_manifest": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/SHA256SUMS",
-   "comparison_json": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/comparison.json",
+   "sha256_manifest": "notebooks/infer_offtarget_toxicity/outputs/SHA256SUMS",
+   "comparison_json": "notebooks/infer_offtarget_toxicity/outputs/comparison.json",
    "per_run_files": "<run>/{RNA0,RNA1}{,_ranked,_ranked_filtered}.txt, <run>/infer/<rec>/{pita.tab,targetscan.tab,siRNA.fa} (copied from runtime data/infer/<rec>/), empty <run>/result/",
    "table_shape": "39 rows x 12 cols per record: pos,sense,siRNA,efficacy,func_filter,pita_score,targetscan_score,off_target_filter,Seed,cell_viability,toxicity_filter,filter",
    "pita_tab": {
@@ -282,7 +282,7 @@
   "changed_params": {
    "command": "... -off -tox --pita_threshold -5 --targetscan_threshold 0.2",
    "exit_status": 0,
-   "dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params",
+   "dir": "notebooks/infer_offtarget_toxicity/outputs/changed_params",
    "result": {
     "RNA0": {
      "scores_equal": true,

@@ -3,8 +3,8 @@
     "name": "traverse-reference-example-fasta",
     "tool": "predict_sirna_efficacy_from_mrna",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path"],
     "expected_subset": {
@@ -28,15 +28,15 @@
       }
     },
     "min_artifacts": 6,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "traverse-repeated-call-distinct-artifacts",
     "tool": "predict_sirna_efficacy_from_mrna",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/only_RNA0.fa",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "mrna_fasta_path": "tests/data/cli_wrapper/only_RNA0.fa",
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path"],
     "expected_subset": {
@@ -45,17 +45,17 @@
       "per_record_summary": {"RNA0": {"rows": 39, "rows_passing_filter": 16}}
     },
     "min_artifacts": 3,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "traverse-toxicity-threshold-80",
     "tool": "predict_sirna_efficacy_from_mrna",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/only_RNA0.fa",
+      "mrna_fasta_path": "tests/data/cli_wrapper/only_RNA0.fa",
       "include_toxicity": true,
       "toxicity_threshold": 80.0,
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path"],
     "expected_subset": {
@@ -69,14 +69,14 @@
       }
     },
     "min_artifacts": 3,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "traverse-missing-input-file",
     "tool": "predict_sirna_efficacy_from_mrna",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/missing.fa"
+      "mrna_fasta_path": "tests/data/cli_wrapper/missing.fa"
     },
     "required_inputs": ["mrna_fasta_path"],
     "error_contains": "mRNA FASTA not found"
@@ -85,7 +85,7 @@
     "name": "traverse-record-shorter-than-19nt",
     "tool": "predict_sirna_efficacy_from_mrna",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/bad_short_record.fa"
+      "mrna_fasta_path": "tests/data/cli_wrapper/bad_short_record.fa"
     },
     "required_inputs": ["mrna_fasta_path"],
     "error_contains": "requires at least 19 nt"
@@ -94,9 +94,9 @@
     "name": "specific-sirnas-reference",
     "tool": "predict_specific_sirna_efficacy",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
-      "sirna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example_siRNA.fa",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
+      "sirna_fasta_path": "tests/data/cli_wrapper/example_siRNA.fa",
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path", "sirna_fasta_path"],
     "expected_subset": {
@@ -113,16 +113,16 @@
       }
     },
     "min_artifacts": 6,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "specific-sirnas-record-prefiltering",
     "tool": "predict_specific_sirna_efficacy",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
-      "sirna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/zero_match_RNA1_siRNA.fa",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
+      "sirna_fasta_path": "tests/data/cli_wrapper/zero_match_RNA1_siRNA.fa",
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path", "sirna_fasta_path"],
     "expected_subset": {
@@ -132,15 +132,15 @@
       "per_record_summary": {"RNA0": {"rows": 1}}
     },
     "min_artifacts": 4,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "specific-sirnas-non-19nt-sequence",
     "tool": "predict_specific_sirna_efficacy",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
-      "sirna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/error_20nt_siRNA.fa"
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
+      "sirna_fasta_path": "tests/data/cli_wrapper/error_20nt_siRNA.fa"
     },
     "required_inputs": ["mrna_fasta_path", "sirna_fasta_path"],
     "error_contains": "Invalid siRNA on line"
@@ -149,8 +149,8 @@
     "name": "specific-sirnas-no-match-at-all",
     "tool": "predict_specific_sirna_efficacy",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/changed_input_Hu_mRNA_RNA3.fa",
-      "sirna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example_siRNA.fa"
+      "mrna_fasta_path": "tests/data/cli_wrapper/changed_input_Hu_mRNA_RNA3.fa",
+      "sirna_fasta_path": "tests/data/cli_wrapper/example_siRNA.fa"
     },
     "required_inputs": ["mrna_fasta_path", "sirna_fasta_path"],
     "error_contains": "match any record"
@@ -159,9 +159,9 @@
     "name": "offtarget-reference-slow",
     "tool": "screen_sirna_offtarget",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
       "include_toxicity": true,
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["mrna_fasta_path"],
     "expected_subset": {
@@ -178,15 +178,15 @@
       }
     },
     "min_artifacts": 10,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
     "name": "offtarget-empty-utr-reference",
     "tool": "screen_sirna_offtarget",
     "arguments": {
-      "mrna_fasta_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa",
-      "utr_reference_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/broken_utr_reference.txt"
+      "mrna_fasta_path": "tests/data/cli_wrapper/example.fa",
+      "utr_reference_path": "tests/data/cli_wrapper/broken_utr_reference.txt"
     },
     "required_inputs": ["mrna_fasta_path"],
     "error_contains": "missing or empty"
@@ -239,7 +239,7 @@
     "tool": "scan_sirna_mismatch_variants",
     "arguments": {
       "base_rna": "UCGCAAAUUAAAUUGAACC",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["base_rna"],
     "expected_subset": {
@@ -250,7 +250,7 @@
       "rows_per_num_mismatch": {"1": 57, "2": 1539}
     },
     "min_artifacts": 1,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
@@ -258,7 +258,7 @@
     "tool": "scan_sirna_mismatch_variants",
     "arguments": {
       "base_rna": "UCGCAAAUUAAAUUGAACC",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["base_rna"],
     "expected_subset": {
@@ -266,7 +266,7 @@
       "rows_per_num_mismatch": {"1": 57, "2": 1539}
     },
     "min_artifacts": 1,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {
@@ -274,7 +274,7 @@
     "tool": "scan_sirna_mismatch_variants",
     "arguments": {
       "base_rna": "GACUUAGCAUGCAAUGCUA",
-      "output_dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance"
+      "output_dir": "tmp/outputs/acceptance"
     },
     "required_inputs": ["base_rna"],
     "expected_subset": {
@@ -283,7 +283,7 @@
       "rows_per_num_mismatch": {"1": 57, "2": 1539}
     },
     "min_artifacts": 1,
-    "artifact_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/acceptance",
+    "artifact_root": "tmp/outputs/acceptance",
     "unique_artifacts": true
   },
   {

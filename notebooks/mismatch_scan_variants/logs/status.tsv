@@ -1,9 +1,9 @@
 case	mode	input	exit	wall_s	command
-run1	2	UCGCAAAUUAAAUUGAACC	0	9.14	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run1
-run2	2	UCGCAAAUUAAAUUGAACC	0	5.35	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run2
-run3	2	UCGCAAAUUAAAUUGAACC	0	5.81	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run3
-changed_input	2	GACUUAGCAUGCAAUGCUA	0	8.5	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/changed_input
-err_T	2	TCGCAAATTAAATTGAACC	1	2.01	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_T
-err_18nt	2	UCGCAAAUUAAAUUGAAC	1	2.41	printf '%s\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_18nt
-depth3	3	UCGCAAAUUAAAUUGAACC	0	95.28	printf 'UCGCAAAUUAAAUUGAACC\n' | python scripts/main.py -m 3 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/depth3  [timeout 900s]
-replay	2	UCGCAAAUUAAAUUGAACC	0	5.9	printf 'UCGCAAAUUAAAUUGAACC\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/replay
+run1	2	UCGCAAAUUAAAUUGAACC	0	9.14	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run1
+run2	2	UCGCAAAUUAAAUUGAACC	0	5.35	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run2
+run3	2	UCGCAAAUUAAAUUGAACC	0	5.81	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run3
+changed_input	2	GACUUAGCAUGCAAUGCUA	0	8.5	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/changed_input
+err_T	2	TCGCAAATTAAATTGAACC	1	2.01	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_T
+err_18nt	2	UCGCAAAUUAAAUUGAAC	1	2.41	printf '%s\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_18nt
+depth3	3	UCGCAAAUUAAAUUGAACC	0	95.28	printf 'UCGCAAAUUAAAUUGAACC\n' | python scripts/main.py -m 3 --output_dir notebooks/mismatch_scan_variants/outputs/depth3  [timeout 900s]
+replay	2	UCGCAAAUUAAAUUGAACC	0	5.9	printf 'UCGCAAAUUAAAUUGAACC\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/replay

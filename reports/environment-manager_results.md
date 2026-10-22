@@ -7,10 +7,10 @@ Route: `cli` / `cli_backend: python` (`.pipeline/language.json`).
 
 | Item | Value |
 | --- | --- |
-| PROJECT_ENV | `/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env` |
-| PROJECT_PYTHON | `/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python` |
+| PROJECT_ENV | `OligoFormer-env` |
+| PROJECT_PYTHON | `OligoFormer-env/bin/python` |
 | Python | 3.11.12 (uv-managed `cpython-3.11.12-macos-aarch64-none`) |
-| Creator | `uv 0.7.3` (`/Users/james/.local/bin/uv`) |
+| Creator | `uv 0.7.3` (`<HOME>/.local/bin/uv`) |
 | Jupyter kernel | `oligoformer-mcp` ("OligoFormer MCP (py3.11)") at `OligoFormer-env/share/jupyter/kernels/oligoformer-mcp` |
 
 ### Deviation from README's Python 3.8 (recorded)
@@ -262,7 +262,7 @@ required; `make install` changes 21 `.pl` files, not 25).
 | `runtime/OligoFormer/` | The runtime copy (git checkout @ e2f53ad…) for executors, the wrapper and delivery. |
 | `runtime/OligoFormer.env.sh` | Env file emitted by the script (`source` it before running). |
 
-Note: `deps/offtarget-env` is **x86_64 (osx-64)** because `/Users/james/miniconda` is an x86_64
+Note: `deps/offtarget-env` is **x86_64 (osx-64)** because `<CONDA>` is an x86_64
 install. Its perl, RNAplfold, sed and grep run under **Rosetta 2** on this arm64 host. This worked
 in every run; an arm64-native host needs Rosetta or an osx-arm64 re-solve of the same top-level pins.
 

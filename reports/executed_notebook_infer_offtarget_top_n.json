@@ -9,13 +9,13 @@
   "status": "success",
   "status_note": "Documented command (with -top 10, no -a) runs to exit 0 in 3/3 runs + replay; -top 50 fails with IndexError as expected (exit 1). The top_n FASTA is confirmed mislabelled (upstream defect, recorded not fixed).",
   "execution_mode": "native_command",
-  "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/run.sh",
-  "analysis_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analyze.py",
-  "analysis_output": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analysis.json",
+  "execution_path": "notebooks/infer_offtarget_top_n/run.sh",
+  "analysis_script": "notebooks/infer_offtarget_top_n/analyze.py",
+  "analysis_output": "notebooks/infer_offtarget_top_n/analysis.json",
   "commands": [
    {
     "label": "run1",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run1/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run1/",
     "exit_status": 0,
     "wall_seconds": 222.1,
     "stdout": "logs/run1.stdout",
@@ -24,7 +24,7 @@
    },
    {
     "label": "run2",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run2/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run2/",
     "exit_status": 0,
     "wall_seconds": 170.0,
     "stdout": "logs/run2.stdout",
@@ -33,7 +33,7 @@
    },
    {
     "label": "run3",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run3/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run3/",
     "exit_status": 0,
     "wall_seconds": 166.8,
     "stdout": "logs/run3.stdout",
@@ -42,7 +42,7 @@
    },
    {
     "label": "top50",
-    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 50 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/top50/",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 50 --output_dir notebooks/infer_offtarget_top_n/outputs/top50/",
     "exit_status": 1,
     "wall_seconds": 12.2,
     "stdout": "logs/top50.stdout",
@@ -51,7 +51,7 @@
    },
    {
     "label": "replay",
-    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/replay/",
+    "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_offtarget_top_n/data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/replay/",
     "exit_status": 0,
     "wall_seconds": 166.2,
     "stdout": "logs/replay.stdout",
@@ -59,28 +59,28 @@
     "cmd_record": "logs/replay.cmd"
    }
   ],
-  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+  "cwd": "notebooks/infer_offtarget_top_n/runtime/OligoFormer",
   "runtime_copy": {
-   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+   "path": "notebooks/infer_offtarget_top_n/runtime/OligoFormer",
    "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
    "git_status_short_lines_after_setup": 699,
    "git_status_note": "698 ' M' (675 file-mode-only + 23 content changes from PITA make install/staged arm64 binaries) + '?? RNA-FM/'; after runs also '?? data/infer/' and '?? off-target/pita/RNA1_pita_results.tab' (704 lines)",
-   "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/setup.log"
+   "setup_log": "notebooks/infer_offtarget_top_n/setup.log"
   },
   "executables": {
-   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python": "OligoFormer-env/bin/python",
    "python_version": "3.11.12",
    "torch": "2.2.1 CPU",
    "perl": "v5.32.1 (deps/offtarget-env, osx-64 under Rosetta)",
    "RNAplfold": "2.7.2"
   },
   "env_vars": {
-   "source_file": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer.env.sh",
+   "source_file": "notebooks/infer_offtarget_top_n/runtime/OligoFormer.env.sh",
    "PATH_prefix": [
     "OligoFormer-env/bin",
     "deps/offtarget-env/bin"
    ],
-   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/torch_home",
+   "TORCH_HOME": "notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/torch_home",
    "PERL5LIB": "unset"
   },
   "inputs": {
@@ -706,7 +706,7 @@
    "suggested_tolerance": "exact for deterministic columns; efficacy abs <= ~0.15 (or Spearman >= 0.9); set-level checks for top-N (>=8/10 overlap); for off-target columns compare the scores keyed by actually-scored sequence (rows 0..N-1) rather than by row"
   },
   "replay": {
-   "input": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa",
+   "input": "notebooks/infer_offtarget_top_n/data/example.fa",
    "result": "exit 0; deterministic columns identical to run1-3; efficacy within the same spread (max abs 0.07-0.12); top-10 overlap 9-10; same mislabel pattern; off_target_filter counts identical"
   },
   "hazards": [

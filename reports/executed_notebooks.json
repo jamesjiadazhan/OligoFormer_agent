@@ -25,9 +25,9 @@
     "execution_mode": "native_command",
     "execution_path": "notebooks/infer_mrna_traverse/run.sh",
     "analysis_script": "notebooks/infer_mrna_traverse/compare_runs.py (reads saved outputs only; writes logs/comparison.json)",
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+    "cwd": "notebooks/infer_mrna_traverse/runtime/OligoFormer",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+      "path": "notebooks/infer_mrna_traverse/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_lines": 699,
       "git_status_note": "698 lines are mode/content changes under off-target/pita from setup script (PITA make install, staged binaries) + 1 untracked RNA-FM/; scripts/, model/, data/ have no diff",
@@ -37,14 +37,14 @@
     "env_vars": {
       "source": "notebooks/infer_mrna_traverse/runtime/OligoFormer.env.sh",
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "executables": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 (CPU)",
       "pandas": "2.0.3",
@@ -60,31 +60,31 @@
       },
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run1/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run1/",
         "exit_status": 0,
         "wall_seconds": 48
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run2/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run2/",
         "exit_status": 0,
         "wall_seconds": 35
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run3/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run3/",
         "exit_status": 0,
         "wall_seconds": 27
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/replay/",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/replay/",
         "exit_status": 0,
         "wall_seconds": 27
       },
       {
         "label": "changed_input",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/changed_input/",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir notebooks/infer_mrna_traverse/outputs/changed_input/",
         "exit_status": 0,
         "wall_seconds": 12
       }
@@ -307,69 +307,69 @@
       "built_with": "SKIP_OFFTARGET=1 OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh <runtime> (off-target staging skipped: -off not used by this assignment)"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 (CPU)",
       "pandas": "2.0.3",
       "numpy": "1.24.4",
       "perl_RNAplfold": "not used"
     },
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+    "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
     "env": {
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_specific_sirnas/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "commands": [
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run1/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run1/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.832
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run2/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run2/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 15.575
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run3/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run3/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.491
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/replay/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/replay/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 13.926
       },
       {
         "label": "changed_input",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/changed_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/changed_input/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/changed_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/changed_input/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.915
       },
       {
         "label": "error_len20",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/len20/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/error_cases/len20/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 1,
         "wall_seconds": 1.867
       },
       {
         "label": "error_zero_match_RNA1",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 1,
         "wall_seconds": 14.415
       }
@@ -621,98 +621,98 @@
     },
     "status": "success",
     "execution_mode": "native_command",
-    "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/run.sh",
-    "comparison_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/compare.py",
+    "execution_path": "notebooks/infer_toxicity_filter/run.sh",
+    "comparison_script": "notebooks/infer_toxicity_filter/compare.py",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer",
+      "path": "notebooks/infer_toxicity_filter/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_count": 699,
       "git_status_short_count_fileMode_false": 24,
       "note": "changes are the setup script's PITA make install (EXE_BASE_DIR substitution + mode bits) and staged arm64 binaries, as documented in environment-manager_results.md attempt 2; nothing else modified",
-      "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/setup.log",
+      "setup_log": "notebooks/infer_toxicity_filter/setup.log",
       "setup_command": "OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh notebooks/infer_toxicity_filter/runtime/OligoFormer (exit 0)"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 (CPU)",
       "perl_RNAplfold": "not used (no -off)"
     },
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer",
+    "cwd": "notebooks/infer_toxicity_filter/runtime/OligoFormer",
     "env_vars": {
-      "source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer.env.sh",
+      "source": "notebooks/infer_toxicity_filter/runtime/OligoFormer.env.sh",
       "PATH_prepend": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "commands": [
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run1/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/run1/",
         "exit_status": 0,
         "wall_s": 41.7,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run1/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/run1.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/run1.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/run1.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/run1/"
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run2/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/run2/",
         "exit_status": 0,
         "wall_s": 47.3,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run2/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/run2.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/run2.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/run2.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/run2/"
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run3/",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/run3/",
         "exit_status": 0,
         "wall_s": 44.3,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run3/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/run3.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/run3.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/run3.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/run3/"
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/replay/",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_toxicity_filter/data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/replay/",
         "exit_status": 0,
         "wall_s": 30.4,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/replay/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/replay.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/replay.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/replay.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/replay/"
       },
       {
         "label": "changed_params/thr80",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/thr80/ --toxicity_threshold 80",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/changed_params/thr80/ --toxicity_threshold 80",
         "exit_status": 0,
         "wall_s": 27.0,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/thr80/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/changed_params/thr80.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/changed_params/thr80.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/changed_params/thr80.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/changed_params/thr80/"
       },
       {
         "label": "changed_params/nf",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/nf/ -nf",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir notebooks/infer_toxicity_filter/outputs/changed_params/nf/ -nf",
         "exit_status": 0,
         "wall_s": 27.9,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.out",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.err",
-        "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.meta",
-        "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/nf/"
+        "stdout": "notebooks/infer_toxicity_filter/logs/changed_params/nf.out",
+        "stderr": "notebooks/infer_toxicity_filter/logs/changed_params/nf.err",
+        "meta": "notebooks/infer_toxicity_filter/logs/changed_params/nf.meta",
+        "outputs": "notebooks/infer_toxicity_filter/outputs/changed_params/nf/"
       }
     ],
     "inputs": {
       "example.fa": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/example.fa",
+        "path": "notebooks/infer_toxicity_filter/data/example.fa",
         "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851",
         "identical_to": "repo/OligoFormer/data/example.fa",
         "records": [
@@ -721,14 +721,14 @@
         ]
       },
       "cell_viability.txt": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/cell_viability.txt",
+        "path": "notebooks/infer_toxicity_filter/data/cell_viability.txt",
         "sha256": "7139bca70a15925dab1199fd6cee259223fa1ac78b54a32a58791dddbc8a6ab0",
         "identical_to": "repo/OligoFormer/toxicity/cell_viability.txt",
         "rows": 4096,
         "note": "read by infer.py from ./toxicity/cell_viability.txt relative to cwd (not configurable)"
       },
       "best_model.pth": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/model/best_model.pth",
+        "path": "notebooks/infer_toxicity_filter/runtime/OligoFormer/model/best_model.pth",
         "sha256": "8c2fb4bc847e20c63dfe69381c5dc5c341be71e65c011f4e9a4cd6fdb0e34eca"
       }
     },
@@ -804,7 +804,7 @@
         "outputs/run3/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
         "outputs/run3/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b"
       },
-      "comparison_json": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/comparison.json",
+      "comparison_json": "notebooks/infer_toxicity_filter/outputs/comparison.json",
       "columns_default": "pos sense siRNA efficacy func_filter Seed cell_viability toxicity_filter filter",
       "columns_nf": "pos sense siRNA efficacy Seed cell_viability toxicity_filter filter (no func_filter)",
       "rows_per_record": 39
@@ -1231,30 +1231,30 @@
     "status": "success",
     "status_note": "Primary command (README command without -a, default 100-gene UTR/ORF refs) executed 3x + replay + changed params, all exit 0 with populated pita/targetscan tables. Literal README '-a' variant exits 0 but is a SILENT FAILURE (see hazards) and must be excluded/deferred.",
     "execution_mode": "native_command",
-    "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/run.sh",
-    "analysis_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/compare.py",
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+    "execution_path": "notebooks/infer_offtarget_toxicity/run.sh",
+    "analysis_script": "notebooks/infer_offtarget_toxicity/compare.py",
+    "cwd": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+      "path": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_count_after_setup": 699,
       "git_status_note": "after setup: 698 off-target/pita mode/content changes from make install + '?? RNA-FM/'; after runs 704 (adds ?? data/infer/, ?? off-target/pita/RNA1_pita_results.tab, and modified tracked RNA0_pita_results.tab/tmp_seqfile*)",
-      "setup_command": "OLIGOFORMER_SRC=$PROJECT_ROOT/repo/OligoFormer RNAFM_SRC=$PROJECT_ROOT/deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=$PROJECT_ROOT/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash $PROJECT_ROOT/deps/setup_oligoformer_runtime.sh /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
+      "setup_command": "OLIGOFORMER_SRC=$PROJECT_ROOT/repo/OligoFormer RNAFM_SRC=$PROJECT_ROOT/deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=$PROJECT_ROOT/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash $PROJECT_ROOT/deps/setup_oligoformer_runtime.sh notebooks/infer_offtarget_toxicity/runtime/OligoFormer",
       "setup_exit": 0,
-      "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/runtime_setup.log"
+      "setup_log": "notebooks/infer_offtarget_toxicity/logs/runtime_setup.log"
     },
     "pristine_repo_unchanged": "git -C repo/OligoFormer status --short -> '?? RNA-FM/' only (pre-existing)",
     "env_vars": {
-      "source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer.env.sh",
+      "source": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer.env.sh",
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "executables": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python (3.11.12, torch 2.2.1 CPU)",
+      "python": "OligoFormer-env/bin/python (3.11.12, torch 2.2.1 CPU)",
       "perl": "deps/offtarget-env/bin/perl v5.32.1 (x86_64, Rosetta 2)",
       "RNAplfold": "2.7.2",
       "grep": "GNU grep 3.12 (conda; verified via /bin/sh child)",
@@ -1264,76 +1264,76 @@
     "commands": [
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run1/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run1/",
         "exit_status": 0,
         "wall_seconds": 466.02,
         "start_utc": "2026-10-22T03:25:41Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run1.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run1.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/run1.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/run1.stderr.log"
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run2/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run2/",
         "exit_status": 0,
         "wall_seconds": 423.7,
         "start_utc": "2026-10-22T03:33:27Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run2.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run2.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/run2.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/run2.stderr.log"
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run3/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/run3/",
         "exit_status": 0,
         "wall_seconds": 425.7,
         "start_utc": "2026-10-22T03:40:31Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run3.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/run3.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/run3.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/run3.stderr.log"
       },
       {
         "label": "changed_params",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --pita_threshold -5 --targetscan_threshold 0.2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --pita_threshold -5 --targetscan_threshold 0.2 --output_dir notebooks/infer_offtarget_toxicity/outputs/changed_params/",
         "exit_status": 0,
         "wall_seconds": 427.33,
         "start_utc": "2026-10-22T03:47:36Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/changed_params.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/changed_params.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/changed_params.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/changed_params.stderr.log"
       },
       {
         "label": "readme_all_human",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -a --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/readme_all_human/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -a --output_dir notebooks/infer_offtarget_toxicity/outputs/readme_all_human/",
         "exit_status": 0,
         "wall_seconds": 25.09,
         "start_utc": "2026-10-22T03:54:44Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/readme_all_human.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/readme_all_human.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/readme_all_human.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/readme_all_human.stderr.log"
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/example.fa --utr /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt --orf /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt -off -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/replay/",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_offtarget_toxicity/data/example.fa --utr notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt --orf notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt -off -tox --output_dir notebooks/infer_offtarget_toxicity/outputs/replay/",
         "exit_status": 0,
         "wall_seconds": 424.51,
         "start_utc": "2026-10-22T03:55:09Z",
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/replay.stdout.log",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/logs/replay.stderr.log"
+        "stdout": "notebooks/infer_offtarget_toxicity/logs/replay.stdout.log",
+        "stderr": "notebooks/infer_offtarget_toxicity/logs/replay.stderr.log"
       }
     ],
     "runtime_note": "Each off-target run took ~7 min (424-466 s) here vs ~1 min in env-manager smoke test; PITA perl runs under Rosetta and other executors ran concurrently. readme_all_human took 25 s because PITA/TargetScan had no reference to scan.",
     "inputs": {
       "files": {
         "example.fa": {
-          "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/example.fa",
+          "path": "notebooks/infer_offtarget_toxicity/data/example.fa",
           "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851"
         },
         "100_human_UTR.txt": {
-          "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt",
+          "path": "notebooks/infer_offtarget_toxicity/data/100_human_UTR.txt",
           "sha256": "e602627469c577bae8c5706fe2950df0b1884c630885ad85edf8eb0f8fba2e1e"
         },
         "100_human_ORF.txt": {
-          "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt",
+          "path": "notebooks/infer_offtarget_toxicity/data/100_human_ORF.txt",
           "sha256": "31e4bc2978853a4670c42c1c02c8c9868e381a0d48ee94f4fb15872ff2531f39"
         },
         "cell_viability.txt": {
-          "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/data/cell_viability.txt",
+          "path": "notebooks/infer_offtarget_toxicity/data/cell_viability.txt",
           "sha256": "7139bca70a15925dab1199fd6cee259223fa1ac78b54a32a58791dddbc8a6ab0"
         }
       },
@@ -1341,15 +1341,15 @@
     },
     "outputs": {
       "dirs": {
-        "run1": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run1",
-        "run2": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run2",
-        "run3": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run3",
-        "replay": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/replay",
-        "changed_params": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params",
-        "readme_all_human": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/readme_all_human"
+        "run1": "notebooks/infer_offtarget_toxicity/outputs/run1",
+        "run2": "notebooks/infer_offtarget_toxicity/outputs/run2",
+        "run3": "notebooks/infer_offtarget_toxicity/outputs/run3",
+        "replay": "notebooks/infer_offtarget_toxicity/outputs/replay",
+        "changed_params": "notebooks/infer_offtarget_toxicity/outputs/changed_params",
+        "readme_all_human": "notebooks/infer_offtarget_toxicity/outputs/readme_all_human"
       },
-      "sha256_manifest": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/SHA256SUMS",
-      "comparison_json": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/comparison.json",
+      "sha256_manifest": "notebooks/infer_offtarget_toxicity/outputs/SHA256SUMS",
+      "comparison_json": "notebooks/infer_offtarget_toxicity/outputs/comparison.json",
       "per_run_files": "<run>/{RNA0,RNA1}{,_ranked,_ranked_filtered}.txt, <run>/infer/<rec>/{pita.tab,targetscan.tab,siRNA.fa} (copied from runtime data/infer/<rec>/), empty <run>/result/",
       "table_shape": "39 rows x 12 cols per record: pos,sense,siRNA,efficacy,func_filter,pita_score,targetscan_score,off_target_filter,Seed,cell_viability,toxicity_filter,filter",
       "pita_tab": {
@@ -1503,7 +1503,7 @@
     "changed_params": {
       "command": "... -off -tox --pita_threshold -5 --targetscan_threshold 0.2",
       "exit_status": 0,
-      "dir": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/changed_params",
+      "dir": "notebooks/infer_offtarget_toxicity/outputs/changed_params",
       "result": {
         "RNA0": {
           "scores_equal": true,
@@ -1561,13 +1561,13 @@
     "status": "success",
     "status_note": "Documented command (with -top 10, no -a) runs to exit 0 in 3/3 runs + replay; -top 50 fails with IndexError as expected (exit 1). The top_n FASTA is confirmed mislabelled (upstream defect, recorded not fixed).",
     "execution_mode": "native_command",
-    "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/run.sh",
-    "analysis_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analyze.py",
-    "analysis_output": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analysis.json",
+    "execution_path": "notebooks/infer_offtarget_top_n/run.sh",
+    "analysis_script": "notebooks/infer_offtarget_top_n/analyze.py",
+    "analysis_output": "notebooks/infer_offtarget_top_n/analysis.json",
     "commands": [
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run1/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run1/",
         "exit_status": 0,
         "wall_seconds": 222.1,
         "stdout": "logs/run1.stdout",
@@ -1576,7 +1576,7 @@
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run2/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run2/",
         "exit_status": 0,
         "wall_seconds": 170.0,
         "stdout": "logs/run2.stdout",
@@ -1585,7 +1585,7 @@
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run3/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/run3/",
         "exit_status": 0,
         "wall_seconds": 166.8,
         "stdout": "logs/run3.stdout",
@@ -1594,7 +1594,7 @@
       },
       {
         "label": "top50",
-        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 50 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/top50/",
+        "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 50 --output_dir notebooks/infer_offtarget_top_n/outputs/top50/",
         "exit_status": 1,
         "wall_seconds": 12.2,
         "stdout": "logs/top50.stdout",
@@ -1603,7 +1603,7 @@
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/replay/",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_offtarget_top_n/data/example.fa -off -tox -top 10 --output_dir notebooks/infer_offtarget_top_n/outputs/replay/",
         "exit_status": 0,
         "wall_seconds": 166.2,
         "stdout": "logs/replay.stdout",
@@ -1611,28 +1611,28 @@
         "cmd_record": "logs/replay.cmd"
       }
     ],
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+    "cwd": "notebooks/infer_offtarget_top_n/runtime/OligoFormer",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+      "path": "notebooks/infer_offtarget_top_n/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_lines_after_setup": 699,
       "git_status_note": "698 ' M' (675 file-mode-only + 23 content changes from PITA make install/staged arm64 binaries) + '?? RNA-FM/'; after runs also '?? data/infer/' and '?? off-target/pita/RNA1_pita_results.tab' (704 lines)",
-      "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/setup.log"
+      "setup_log": "notebooks/infer_offtarget_top_n/setup.log"
     },
     "executables": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 CPU",
       "perl": "v5.32.1 (deps/offtarget-env, osx-64 under Rosetta)",
       "RNAplfold": "2.7.2"
     },
     "env_vars": {
-      "source_file": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer.env.sh",
+      "source_file": "notebooks/infer_offtarget_top_n/runtime/OligoFormer.env.sh",
       "PATH_prefix": [
         "OligoFormer-env/bin",
         "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "inputs": {
@@ -2258,7 +2258,7 @@
       "suggested_tolerance": "exact for deterministic columns; efficacy abs <= ~0.15 (or Spearman >= 0.9); set-level checks for top-N (>=8/10 overlap); for off-target columns compare the scores keyed by actually-scored sequence (rows 0..N-1) rather than by row"
     },
     "replay": {
-      "input": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa",
+      "input": "notebooks/infer_offtarget_top_n/data/example.fa",
       "result": "exit 0; deterministic columns identical to run1-3; efficacy within the same spread (max abs 0.07-0.12); top-10 overlap 9-10; same mislabel pattern; off_target_filter counts identical"
     },
     "hazards": [
@@ -2294,17 +2294,17 @@
     },
     "status": "success",
     "execution_mode": "native_command",
-    "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/run.sh",
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer",
+    "execution_path": "notebooks/mismatch_scan_variants/run.sh",
+    "cwd": "notebooks/mismatch_scan_variants/runtime/OligoFormer",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer",
+      "path": "notebooks/mismatch_scan_variants/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_count": 699,
       "git_status_note": "698 modified files all under off-target/pita (setup script make install) + 1 untracked RNA-FM/; scripts/ and model/ unmodified",
-      "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/setup_runtime.log"
+      "setup_log": "notebooks/mismatch_scan_variants/logs/setup_runtime.log"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1",
       "pandas": "2.0.3",
@@ -2312,29 +2312,29 @@
       "perl_rnaplfold": "not used by -m"
     },
     "env_vars": {
-      "sourced": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer.env.sh",
+      "sourced": "notebooks/mismatch_scan_variants/runtime/OligoFormer.env.sh",
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/mismatch_scan_variants/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "output_dir_handling": "mismatch.py writes Args.output_dir + '/result/mismatch.txt' (string concat with '/'), so --output_dir is passed WITHOUT trailing slash as <case_dir> and <case_dir>/result is pre-created with mkdir -p; the file is not created if result/ is missing (not tested). main.py also creates ./result in cwd unconditionally.",
     "inputs": {
       "base_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/base_input.txt",
+        "path": "notebooks/mismatch_scan_variants/data/base_input.txt",
         "sha256": "bd9da9cb14d402e2005d974d7bf75521059ee54436eb04d750a6a9ff55458375",
         "value": "UCGCAAAUUAAAUUGAACC",
         "delivery": "stdin (input() prompt 'please input base RNA:')"
       },
       "changed_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/changed_input.txt",
+        "path": "notebooks/mismatch_scan_variants/data/changed_input.txt",
         "sha256": "53c907ee472a09871539bac53f79c285ecfb3535173b33b26c11caeb52e8d74f",
         "value": "GACUUAGCAUGCAAUGCUA"
       },
       "model": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/mismatch_model.pth",
+        "path": "notebooks/mismatch_scan_variants/data/mismatch_model.pth",
         "sha256": "fb32c9a31d436113ff5271edd138cc86fe4065b7b1082e7c1cadb3563d627043",
         "note": "copy of runtime model/mismatch_model.pth (loaded from fixed relative path at import)"
       }
@@ -2342,72 +2342,72 @@
     "commands": [
       {
         "case": "run1",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run1",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run1",
         "exit_status": 0,
         "wall_s": 9.14,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run1.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run1.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run1.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run1.stderr"
       },
       {
         "case": "run2",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run2",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run2",
         "exit_status": 0,
         "wall_s": 5.35,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run2.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run2.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run2.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run2.stderr"
       },
       {
         "case": "run3",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run3",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run3",
         "exit_status": 0,
         "wall_s": 5.81,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run3.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run3.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run3.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run3.stderr"
       },
       {
         "case": "changed_input",
-        "command": "printf 'GACUUAGCAUGCAAUGCUA\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/changed_input",
+        "command": "printf 'GACUUAGCAUGCAAUGCUA\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/changed_input",
         "exit_status": 0,
         "wall_s": 8.5,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/changed_input.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/changed_input.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/changed_input.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/changed_input.stderr"
       },
       {
         "case": "err_T",
-        "command": "printf 'TCGCAAATTAAATTGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_T",
+        "command": "printf 'TCGCAAATTAAATTGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_T",
         "exit_status": 1,
         "wall_s": 2.01,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_T.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_T.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/err_T.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/err_T.stderr"
       },
       {
         "case": "err_18nt",
-        "command": "printf 'UCGCAAAUUAAAUUGAAC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_18nt",
+        "command": "printf 'UCGCAAAUUAAAUUGAAC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_18nt",
         "exit_status": 1,
         "wall_s": 2.41,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_18nt.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_18nt.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/err_18nt.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/err_18nt.stderr"
       },
       {
         "case": "depth3",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 3 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/depth3",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 3 --output_dir notebooks/mismatch_scan_variants/outputs/depth3",
         "exit_status": 0,
         "wall_s": 95.28,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/depth3.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/depth3.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/depth3.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/depth3.stderr"
       },
       {
         "case": "replay",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/replay",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/replay",
         "exit_status": 0,
         "wall_s": 5.9,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/replay.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/replay.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/replay.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/replay.stderr"
       }
     ],
     "outputs": {
       "run1": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run1/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run1/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -2424,7 +2424,7 @@
         "kon_mean": 0.9611725169315672
       },
       "run2": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run2/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run2/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -2441,7 +2441,7 @@
         "kon_mean": 0.9611725169315672
       },
       "run3": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run3/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run3/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -2458,7 +2458,7 @@
         "kon_mean": 0.9611725169315672
       },
       "replay": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/replay/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/replay/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -2475,7 +2475,7 @@
         "kon_mean": 0.9611725169315672
       },
       "changed_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/changed_input/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/changed_input/result/mismatch.txt",
         "sha256": "b06c7d56fc01f8955ba86b8a77274838b935397cf0cc1ec085f78ab3cc6f9b3e",
         "rows": 1596,
         "columns": [
@@ -2492,7 +2492,7 @@
         "kon_mean": 0.6028601305377215
       },
       "depth3": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/depth3/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/depth3/result/mismatch.txt",
         "sha256": "3c4c8eafde1a9a40bcdad4d9c7a6f3eea1bd64379bf4182714f621022cb3726d",
         "rows": 27759,
         "columns": [
@@ -2525,7 +2525,7 @@
     },
     "replay_check": {
       "case": "replay",
-      "inputs_from": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/base_input.txt",
+      "inputs_from": "notebooks/mismatch_scan_variants/data/base_input.txt",
       "result": "byte-identical to run1 (sha256 e96550d8...)",
       "passed": true
     },
@@ -2618,7 +2618,7 @@
       "git_status_short": "?? RNA-FM/ (unchanged after all runs; ./result/ is created but empty so git does not show it; __pycache__ is gitignored)"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 (CPU)",
       "numpy": "1.24.4",
@@ -2626,7 +2626,7 @@
       "perl": null,
       "RNAplfold": null
     },
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/runtime/OligoFormer",
+    "cwd": "notebooks/mismatch_compare_pair/runtime/OligoFormer",
     "env_vars_set": "source runtime/OligoFormer.env.sh: OLIGOFORMER_RUNTIME, PATH (OligoFormer-env/bin, deps/offtarget-env/bin first), TORCH_HOME=<runtime>/RNA-FM/torch_home, unset PERL5LIB. -m 1 needs only the python on PATH.",
     "inputs": {
       "stdin_files": "notebooks/mismatch_compare_pair/data/*.stdin.txt (sha256 in data/SHA256SUMS)",

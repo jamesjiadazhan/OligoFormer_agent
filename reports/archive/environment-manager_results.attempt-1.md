@@ -7,10 +7,10 @@ Route: `cli` / `cli_backend: python` (`.pipeline/language.json`).
 
 | Item | Value |
 | --- | --- |
-| PROJECT_ENV | `/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env` |
-| PROJECT_PYTHON | `/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python` |
+| PROJECT_ENV | `OligoFormer-env` |
+| PROJECT_PYTHON | `OligoFormer-env/bin/python` |
 | Python | 3.11.12 (uv-managed `cpython-3.11.12-macos-aarch64-none`) |
-| Creator | `uv 0.7.3` (`/Users/james/.local/bin/uv`) |
+| Creator | `uv 0.7.3` (`<HOME>/.local/bin/uv`) |
 | Jupyter kernel | `oligoformer-mcp` ("OligoFormer MCP (py3.11)") at `OligoFormer-env/share/jupyter/kernels/oligoformer-mcp` |
 
 ### Deviation from README's Python 3.8 (recorded)

@@ -12,17 +12,17 @@
     },
     "status": "success",
     "execution_mode": "native_command",
-    "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/run.sh",
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer",
+    "execution_path": "notebooks/mismatch_scan_variants/run.sh",
+    "cwd": "notebooks/mismatch_scan_variants/runtime/OligoFormer",
     "runtime_copy": {
-      "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer",
+      "path": "notebooks/mismatch_scan_variants/runtime/OligoFormer",
       "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
       "git_status_short_count": 699,
       "git_status_note": "698 modified files all under off-target/pita (setup script make install) + 1 untracked RNA-FM/; scripts/ and model/ unmodified",
-      "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/setup_runtime.log"
+      "setup_log": "notebooks/mismatch_scan_variants/logs/setup_runtime.log"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1",
       "pandas": "2.0.3",
@@ -30,29 +30,29 @@
       "perl_rnaplfold": "not used by -m"
     },
     "env_vars": {
-      "sourced": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer.env.sh",
+      "sourced": "notebooks/mismatch_scan_variants/runtime/OligoFormer.env.sh",
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/mismatch_scan_variants/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "output_dir_handling": "mismatch.py writes Args.output_dir + '/result/mismatch.txt' (string concat with '/'), so --output_dir is passed WITHOUT trailing slash as <case_dir> and <case_dir>/result is pre-created with mkdir -p; the file is not created if result/ is missing (not tested). main.py also creates ./result in cwd unconditionally.",
     "inputs": {
       "base_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/base_input.txt",
+        "path": "notebooks/mismatch_scan_variants/data/base_input.txt",
         "sha256": "bd9da9cb14d402e2005d974d7bf75521059ee54436eb04d750a6a9ff55458375",
         "value": "UCGCAAAUUAAAUUGAACC",
         "delivery": "stdin (input() prompt 'please input base RNA:')"
       },
       "changed_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/changed_input.txt",
+        "path": "notebooks/mismatch_scan_variants/data/changed_input.txt",
         "sha256": "53c907ee472a09871539bac53f79c285ecfb3535173b33b26c11caeb52e8d74f",
         "value": "GACUUAGCAUGCAAUGCUA"
       },
       "model": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/mismatch_model.pth",
+        "path": "notebooks/mismatch_scan_variants/data/mismatch_model.pth",
         "sha256": "fb32c9a31d436113ff5271edd138cc86fe4065b7b1082e7c1cadb3563d627043",
         "note": "copy of runtime model/mismatch_model.pth (loaded from fixed relative path at import)"
       }
@@ -60,72 +60,72 @@
     "commands": [
       {
         "case": "run1",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run1",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run1",
         "exit_status": 0,
         "wall_s": 9.14,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run1.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run1.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run1.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run1.stderr"
       },
       {
         "case": "run2",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run2",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run2",
         "exit_status": 0,
         "wall_s": 5.35,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run2.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run2.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run2.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run2.stderr"
       },
       {
         "case": "run3",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run3",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/run3",
         "exit_status": 0,
         "wall_s": 5.81,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run3.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/run3.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/run3.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/run3.stderr"
       },
       {
         "case": "changed_input",
-        "command": "printf 'GACUUAGCAUGCAAUGCUA\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/changed_input",
+        "command": "printf 'GACUUAGCAUGCAAUGCUA\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/changed_input",
         "exit_status": 0,
         "wall_s": 8.5,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/changed_input.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/changed_input.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/changed_input.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/changed_input.stderr"
       },
       {
         "case": "err_T",
-        "command": "printf 'TCGCAAATTAAATTGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_T",
+        "command": "printf 'TCGCAAATTAAATTGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_T",
         "exit_status": 1,
         "wall_s": 2.01,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_T.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_T.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/err_T.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/err_T.stderr"
       },
       {
         "case": "err_18nt",
-        "command": "printf 'UCGCAAAUUAAAUUGAAC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/err_18nt",
+        "command": "printf 'UCGCAAAUUAAAUUGAAC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/err_18nt",
         "exit_status": 1,
         "wall_s": 2.41,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_18nt.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/err_18nt.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/err_18nt.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/err_18nt.stderr"
       },
       {
         "case": "depth3",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 3 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/depth3",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 3 --output_dir notebooks/mismatch_scan_variants/outputs/depth3",
         "exit_status": 0,
         "wall_s": 95.28,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/depth3.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/depth3.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/depth3.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/depth3.stderr"
       },
       {
         "case": "replay",
-        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/replay",
+        "command": "printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir notebooks/mismatch_scan_variants/outputs/replay",
         "exit_status": 0,
         "wall_s": 5.9,
-        "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/replay.stdout",
-        "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/logs/replay.stderr"
+        "stdout": "notebooks/mismatch_scan_variants/logs/replay.stdout",
+        "stderr": "notebooks/mismatch_scan_variants/logs/replay.stderr"
       }
     ],
     "outputs": {
       "run1": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run1/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run1/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -142,7 +142,7 @@
         "kon_mean": 0.9611725169315672
       },
       "run2": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run2/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run2/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -159,7 +159,7 @@
         "kon_mean": 0.9611725169315672
       },
       "run3": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/run3/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/run3/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -176,7 +176,7 @@
         "kon_mean": 0.9611725169315672
       },
       "replay": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/replay/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/replay/result/mismatch.txt",
         "sha256": "e96550d8bb4229891aa6c45b02c45f7e0a643312499d4c7177493c98be5cbf98",
         "rows": 1596,
         "columns": [
@@ -193,7 +193,7 @@
         "kon_mean": 0.9611725169315672
       },
       "changed_input": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/changed_input/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/changed_input/result/mismatch.txt",
         "sha256": "b06c7d56fc01f8955ba86b8a77274838b935397cf0cc1ec085f78ab3cc6f9b3e",
         "rows": 1596,
         "columns": [
@@ -210,7 +210,7 @@
         "kon_mean": 0.6028601305377215
       },
       "depth3": {
-        "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/outputs/depth3/result/mismatch.txt",
+        "path": "notebooks/mismatch_scan_variants/outputs/depth3/result/mismatch.txt",
         "sha256": "3c4c8eafde1a9a40bcdad4d9c7a6f3eea1bd64379bf4182714f621022cb3726d",
         "rows": 27759,
         "columns": [
@@ -243,7 +243,7 @@
     },
     "replay_check": {
       "case": "replay",
-      "inputs_from": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/data/base_input.txt",
+      "inputs_from": "notebooks/mismatch_scan_variants/data/base_input.txt",
       "result": "byte-identical to run1 (sha256 e96550d8...)",
       "passed": true
     },

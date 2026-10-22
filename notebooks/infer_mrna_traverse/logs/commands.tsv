@@ -1,7 +1,7 @@
 label	command	exit	wall_s
 readme	python scripts/main.py --infer 1 -i1 data/example.fa	0	46
-run1	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run1/	0	48
-run2	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run2/	0	35
-run3	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run3/	0	27
-replay	python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/replay/	0	27
-changed_input	python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/changed_input/	0	12
+run1	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run1/	0	48
+run2	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run2/	0	35
+run3	python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run3/	0	27
+replay	python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/replay/	0	27
+changed_input	python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir notebooks/infer_mrna_traverse/outputs/changed_input/	0	12

@@ -25,9 +25,9 @@
   "execution_mode": "native_command",
   "execution_path": "notebooks/infer_mrna_traverse/run.sh",
   "analysis_script": "notebooks/infer_mrna_traverse/compare_runs.py (reads saved outputs only; writes logs/comparison.json)",
-  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+  "cwd": "notebooks/infer_mrna_traverse/runtime/OligoFormer",
   "runtime_copy": {
-   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+   "path": "notebooks/infer_mrna_traverse/runtime/OligoFormer",
    "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
    "git_status_short_lines": 699,
    "git_status_note": "698 lines are mode/content changes under off-target/pita from setup script (PITA make install, staged binaries) + 1 untracked RNA-FM/; scripts/, model/, data/ have no diff",
@@ -37,14 +37,14 @@
   "env_vars": {
    "source": "notebooks/infer_mrna_traverse/runtime/OligoFormer.env.sh",
    "PATH_prefix": [
-    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+    "OligoFormer-env/bin",
+    "deps/offtarget-env/bin"
    ],
-   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/torch_home",
+   "TORCH_HOME": "notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/torch_home",
    "PERL5LIB": "unset"
   },
   "executables": {
-   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python": "OligoFormer-env/bin/python",
    "python_version": "3.11.12",
    "torch": "2.2.1 (CPU)",
    "pandas": "2.0.3",
@@ -60,31 +60,31 @@
    },
    {
     "label": "run1",
-    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run1/",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run1/",
     "exit_status": 0,
     "wall_seconds": 48
    },
    {
     "label": "run2",
-    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run2/",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run2/",
     "exit_status": 0,
     "wall_seconds": 35
    },
    {
     "label": "run3",
-    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run3/",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/run3/",
     "exit_status": 0,
     "wall_seconds": 27
    },
    {
     "label": "replay",
-    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/replay/",
+    "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/example.fa --output_dir notebooks/infer_mrna_traverse/outputs/replay/",
     "exit_status": 0,
     "wall_seconds": 27
    },
    {
     "label": "changed_input",
-    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/changed_input/",
+    "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir notebooks/infer_mrna_traverse/outputs/changed_input/",
     "exit_status": 0,
     "wall_seconds": 12
    }

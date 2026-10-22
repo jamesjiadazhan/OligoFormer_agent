@@ -1,4 +1,4 @@
-stdin	/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/data/reference.stdin.txt
+stdin	notebooks/mismatch_compare_pair/data/reference.stdin.txt
 exit	0
 wall_s	2.254
 changed_paths	

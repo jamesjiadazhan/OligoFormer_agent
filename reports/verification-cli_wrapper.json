@@ -343,35 +343,35 @@
   },
   "pytest_runs": [
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py -q",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py -q",
       "exit": 0,
       "totals": "22 passed",
       "module_sha256": "e0f62648e4e58b9654afc6cb991a63b7bc2fa2b0ff6bce3661d596be6437e701",
       "note": "pre-repair development run"
     },
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py -q",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py -q",
       "exit": 0,
       "totals": "18 passed (includes the slow -m 3 depth test)",
       "module_sha256": "e0f62648e4e58b9654afc6cb991a63b7bc2fa2b0ff6bce3661d596be6437e701",
       "note": "pre-repair development run"
     },
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py -q",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py -q",
       "exit": 0,
       "totals": "23 passed",
       "module_sha256": "e0f62648e4e58b9654afc6cb991a63b7bc2fa2b0ff6bce3661d596be6437e701",
       "note": "pre-repair development run"
     },
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py -q",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py -q",
       "exit": 0,
       "totals": "23 passed",
       "module_sha256": "e0f62648e4e58b9654afc6cb991a63b7bc2fa2b0ff6bce3661d596be6437e701",
       "note": "pre-repair development run"
     },
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_screen_sirna_offtarget.py -q -p no:randomly",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper/test_screen_sirna_offtarget.py -q -p no:randomly",
       "exit": "1 test failed (pytest exit code was masked by the trailing `| tail`)",
       "totals": "18 passed, 1 failed in 895 s",
       "failed": "test_top_n_and_all_human_are_not_exposed: verifier test bug (FastMCP 4 @tool() returns the plain function, so there is no .fn); fixed in the test, then rerun alone: 1 passed. Both slow off-target comparisons (reference and changed thresholds) PASSED in this run.",
@@ -379,7 +379,7 @@
       "log": "tests/logs/cli_wrapper/pytest_offtarget_file_incl_slow.log"
     },
     {
-      "command": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper -m \"not slow\" -q -rA --durations=5",
+      "command": "OligoFormer-env/bin/python -m pytest tests/code/cli_wrapper -m \"not slow\" -q -rA --durations=5",
       "exit": 0,
       "totals": "105 passed, 3 deselected (slow) in 369 s",
       "module_sha256": "833e57bbd04e6e4ad02972a10c9b35999ce7454d44a51c906c2be17d54bfb3f0",

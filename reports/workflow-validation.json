@@ -129,6 +129,6 @@
     "screen_sirna_offtarget"
   ],
   "completion_files_checked": 18,
-  "project_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work",
-  "state": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/reports/agent-runs.json"
+  "project_root": ".",
+  "state": "reports/agent-runs.json"
 }

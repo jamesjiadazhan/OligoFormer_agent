@@ -20,69 +20,69 @@
       "built_with": "SKIP_OFFTARGET=1 OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh <runtime> (off-target staging skipped: -off not used by this assignment)"
     },
     "executable": {
-      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python": "OligoFormer-env/bin/python",
       "python_version": "3.11.12",
       "torch": "2.2.1 (CPU)",
       "pandas": "2.0.3",
       "numpy": "1.24.4",
       "perl_RNAplfold": "not used"
     },
-    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+    "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
     "env": {
       "PATH_prefix": [
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
-        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+        "OligoFormer-env/bin",
+        "deps/offtarget-env/bin"
       ],
-      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/RNA-FM/torch_home",
+      "TORCH_HOME": "notebooks/infer_specific_sirnas/runtime/OligoFormer/RNA-FM/torch_home",
       "PERL5LIB": "unset"
     },
     "commands": [
       {
         "label": "run1",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run1/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run1/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.832
       },
       {
         "label": "run2",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run2/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run2/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 15.575
       },
       {
         "label": "run3",
-        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run3/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/run3/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.491
       },
       {
         "label": "replay",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/replay/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/example_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/replay/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 13.926
       },
       {
         "label": "changed_input",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/changed_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/changed_input/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/changed_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/changed_input/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 0,
         "wall_seconds": 14.915
       },
       {
         "label": "error_len20",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/len20/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/error_cases/len20/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 1,
         "wall_seconds": 1.867
       },
       {
         "label": "error_zero_match_RNA1",
-        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/",
-        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "command": "python scripts/main.py --infer 1 -i1 notebooks/infer_specific_sirnas/data/example.fa -i2 notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa --output_dir notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/",
+        "cwd": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
         "exit_status": 1,
         "wall_seconds": 14.415
       }

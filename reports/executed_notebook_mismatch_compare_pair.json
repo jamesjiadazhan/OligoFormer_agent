@@ -43,7 +43,7 @@
    "git_status_short": "?? RNA-FM/ (unchanged after all runs; ./result/ is created but empty so git does not show it; __pycache__ is gitignored)"
   },
   "executable": {
-   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python": "OligoFormer-env/bin/python",
    "python_version": "3.11.12",
    "torch": "2.2.1 (CPU)",
    "numpy": "1.24.4",
@@ -51,7 +51,7 @@
    "perl": null,
    "RNAplfold": null
   },
-  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/runtime/OligoFormer",
+  "cwd": "notebooks/mismatch_compare_pair/runtime/OligoFormer",
   "env_vars_set": "source runtime/OligoFormer.env.sh: OLIGOFORMER_RUNTIME, PATH (OligoFormer-env/bin, deps/offtarget-env/bin first), TORCH_HOME=<runtime>/RNA-FM/torch_home, unset PERL5LIB. -m 1 needs only the python on PATH.",
   "inputs": {
    "stdin_files": "notebooks/mismatch_compare_pair/data/*.stdin.txt (sha256 in data/SHA256SUMS)",

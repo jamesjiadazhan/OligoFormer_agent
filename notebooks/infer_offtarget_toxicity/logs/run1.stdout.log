@@ -1,4 +1,4 @@
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:25:45,281 prediction INFO: Using CPU
 2026-10-21 23:25:45,281 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:25:45,281 prediction INFO: Model File:none
@@ -86,7 +86,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:25:55,142 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:25:57,143 prediction INFO: Using CPU
 2026-10-21 23:25:57,143 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:25:57,144 prediction INFO: Model File:none
@@ -275,7 +275,7 @@ Processing ENST00000519520.1
 Processing ENST00000361446.5
 Processing ENST00000593717.1
 RNAplfold 2.7.2
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:29:49,981 prediction INFO: Using CPU
 2026-10-21 23:29:49,981 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:29:49,981 prediction INFO: Model File:none
@@ -363,7 +363,7 @@ saved embedding shape: (57, 640)
 Iteration[39/39]
 saved embedding shape: (57, 640)
 2026-10-21 23:29:52,844 prediction.inference INFO: Finish Prediction
-work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
+work_dir:notebooks/infer_offtarget_toxicity/runtime/OligoFormer/RNA-FM/redevelop
 2026-10-21 23:29:54,603 prediction INFO: Using CPU
 2026-10-21 23:29:54,603 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
 2026-10-21 23:29:54,603 prediction INFO: Model File:none

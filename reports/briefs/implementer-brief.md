@@ -1,7 +1,7 @@
 # Stage 3A implementer brief — module `cli_wrapper` (OligoFormer, CLI route)
 
 Bound values
-- PROJECT_ROOT = /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work ; SKILL_ROOT = /Users/james/.claude/skills/paper2agent/paper2mcp
+- PROJECT_ROOT = . ; SKILL_ROOT = <SKILL_ROOT>/paper2mcp
 - PROJECT_PYTHON = $PROJECT_ROOT/OligoFormer-env/bin/python (fastmcp 4.0.3 installed)
 - Pinned source (read-only): $PROJECT_ROOT/repo/OligoFormer @ e2f53ad63387bbe166bf123949151e2bc9bf6ec3
 - Runtime copy used by the wrapper at run time: built by `$PROJECT_ROOT/deps/setup_oligoformer_runtime.sh <target>`; dev instance at $PROJECT_ROOT/runtime/OligoFormer with env file $PROJECT_ROOT/runtime/OligoFormer.env.sh (read it: PATH must have PROJECT_PYTHON's bin first because scripts/RNA-FM.sh calls bare `python`; off-target conda bin next; TORCH_HOME required; PERL5LIB unset).

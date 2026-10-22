@@ -62,7 +62,15 @@ See [`USAGE.md`](USAGE.md) for parameters, output columns, timeouts, client regi
 ./.venv/bin/python -m pytest tests/code/cli_wrapper                 # add the 3 slow ones
 ```
 
-The tests resolve paths relative to this repository root and compare the tools against the saved upstream reference outputs in `notebooks/`. They need the runtime built first. Reference logs under `tests/logs/` and `reports/` contain absolute paths from the machine that produced them; that is recorded evidence and is left unmodified.
+The tests resolve paths relative to this repository root and compare the tools against the saved upstream reference outputs in `notebooks/`. They need the runtime built first.
+
+To replay the 18 stdio acceptance cases, resolve their paths against your checkout first (the helper requires an absolute `artifact_root`):
+
+```bash
+python tools/localize_acceptance_cases.py    # -> tmp/mcp-acceptance-cases.local.json
+```
+
+Paths in the published evidence were rewritten to be repository-relative, so the sha256 values recorded inside `reports/agent-runs.json` no longer match the rewritten text files. See [`reports/PATH-NORMALIZATION.md`](reports/PATH-NORMALIZATION.md) for exactly what changed and what is still hash-exact (the ZIP, the verified wrapper module, and every scientific reference output).
 
 What was validated: 108 tests against direct upstream runs of the same commands; 18 stdio acceptance cases passing in three separate environments (development, a clean install, and the extracted ZIP); PITA/TargetScan tables byte-identical to upstream; all deterministic columns exactly equal. This covers the five tools above — not the whole repository, and not the paper's published results.
 
