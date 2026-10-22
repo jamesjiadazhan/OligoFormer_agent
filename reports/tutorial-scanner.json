@@ -1,0 +1,431 @@
+{
+  "scan_metadata": {
+    "repository": "OligoFormer",
+    "repository_url": "https://github.com/lulab/OligoFormer",
+    "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+    "paper": "Bai Y, Zhong H, Wang T, Lu ZJ. OligoFormer: an accurate and robust prediction method for siRNA design (bioRxiv 2024.02)",
+    "route": "cli",
+    "cli_backend": "python",
+    "scan_date": "2026-10-21",
+    "requested_filter": null,
+    "evaluated_source_files": 24,
+    "included_source_files": 3,
+    "success": true,
+    "explanation": "The only documented user interface is `python scripts/main.py ...` run from the repository root (README 'Usage' sections 2-3 and the Docker `oligoformer` alias examples). scripts/main.py:argparse is the full CLI contract and dispatches to infer(), mismatch(), test()/test_single(), train()/train_single(). Evaluated: README.md, scripts/{main,infer,mismatch,test,test_single,train,train_single,loader,loader_infer,logger,metrics,model,flanking_mRNA_symmetric,flanking_mRNA_asymmetric}.py, scripts/{RNA-FM,RNA-FM-features,pita,targetscan,phelim}.sh, scripts/TD_calculation.ipynb, data/process_demo/process.py, 'Comparison methods' notebooks, data/, off-target/, toxicity/, model/. Five tools selected, all owned by module cli_wrapper; evaluation (-t) and training are deferred with concrete blockers; manual-input mode, RNA-FM embedding extraction, dataset preparation and the comparison-method notebooks are internal or out of scope."
+  },
+  "tutorials": [
+    {
+      "id": "infer_mrna_traverse",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Usage 3.1 Model inference without off-target - Option 1 (traverse mRNA)",
+      "description": "Documented command that traverses every 19-nt window of an mRNA FASTA, predicts siRNA efficacy and writes the three result tables plus the functionality filter.",
+      "type": "markdown",
+      "section": "## Usage / ### 3.Model inference / #### 3.1 Inference without off-target / Option 1",
+      "commands": [
+        "python scripts/main.py --infer 1 -i1 data/example.fa"
+      ],
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/example.fa (2 records, 57 nt each -> 39 windows per record)"
+      ],
+      "expected_outputs": [
+        "result/RNA0.txt",
+        "result/RNA0_ranked.txt",
+        "result/RNA0_ranked_filtered.txt",
+        "result/RNA1.txt",
+        "result/RNA1_ranked.txt",
+        "result/RNA1_ranked_filtered.txt",
+        "data/infer/RNA0/{siRNA.fa,mRNA.fa,siRNA/representations/*.npy,mRNA/representations/*.npy}"
+      ],
+      "prerequisites": [
+        "model/best_model.pth (in repo)",
+        "RNA-FM checkout + pretrained weights at repo/OligoFormer/RNA-FM/redevelop (scripts/RNA-FM.sh)"
+      ],
+      "runtime_estimate": "a few minutes on CPU for the 78 windows of data/example.fa (RNA-FM embedding extraction dominates)",
+      "status": "selected",
+      "conditional_on": null,
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Primary documented operation; reference evidence for predict_sirna_efficacy_from_mrna."
+    },
+    {
+      "id": "infer_specific_sirnas",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Usage 3.1 Option 2 (predict only user-specified siRNAs)",
+      "description": "Documented command that scores only the siRNAs given in a second FASTA against the target mRNA, locating each siRNA's site by reverse-complement search.",
+      "type": "markdown",
+      "section": "## Usage / ### 3.Model inference / #### 3.1 / Option 2",
+      "commands": [
+        "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa"
+      ],
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/example.fa",
+        "data/example_siRNA.fa (2 siRNAs, 19 nt each)"
+      ],
+      "expected_outputs": [
+        "result/RNA0*.txt",
+        "result/RNA1*.txt (only rows for siRNAs whose antisense matches that mRNA)"
+      ],
+      "prerequisites": [
+        "model/best_model.pth",
+        "RNA-FM checkout + weights"
+      ],
+      "runtime_estimate": "under a minute (<=2 windows per record)",
+      "status": "selected",
+      "conditional_on": null,
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Reference evidence for predict_specific_sirna_efficacy; distinct input contract (19-nt siRNA FASTA, hard exception otherwise)."
+    },
+    {
+      "id": "infer_toxicity_filter",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Docker usage example `oligoformer -tox` (seed-based toxicity filter)",
+      "description": "Adds the seed-based cell-viability (toxicity) filter to an inference run; it is a dependency-free merge of siRNA positions 2-7 against toxicity/cell_viability.txt (4096 seeds).",
+      "type": "markdown",
+      "section": "## User-friendly Docker image / 4. Access the OligoFormer Tool",
+      "commands": [
+        "python scripts/main.py --infer 1 -i1 data/example.fa -tox"
+      ],
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/example.fa",
+        "toxicity/cell_viability.txt"
+      ],
+      "expected_outputs": [
+        "result/RNA0*.txt and result/RNA1*.txt with extra columns Seed, cell_viability, toxicity_filter and a filter column that includes it"
+      ],
+      "prerequisites": [
+        "model/best_model.pth",
+        "RNA-FM checkout + weights"
+      ],
+      "runtime_estimate": "same as infer_mrna_traverse",
+      "status": "selected",
+      "conditional_on": null,
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Evidence for the `toxicity` parameter of the two efficacy tools; needs no external dependency, so it is a parameter rather than its own tool.",
+      "supporting_evidence_for": "predict_sirna_efficacy_from_mrna (and predict_specific_sirna_efficacy): supporting example, assigns no new tool; not listed in the filtered inventory"
+    },
+    {
+      "id": "infer_offtarget_toxicity",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Usage 3.2 Inference with off-target (PITA + TargetScan) and toxicity",
+      "description": "Documented off-target pipeline: PITA (ViennaRNA + perl Statistics::Lite/Bio::TreeIO) and TargetScan 7.0 are run over reference human UTR/ORF sequences and their scores are merged into the efficacy table as pita_score/targetscan_score/off_target_filter.",
+      "type": "markdown",
+      "section": "## Usage / #### 3.2 Inference with off-target / - Command",
+      "commands": [
+        "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox"
+      ],
+      "documented_command_variant": "README shows `python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -a`; `-a` is dropped from the primary run because infer.py sets both Args.utr and Args.orf to ./off-target/ref/human_UTR.txt (a) an ORF/UTR mix-up and (b) a file that exists only as human_UTR.txt.zip in the pinned repo. The 100-sequence bundled references (off-target/ref/100_human_UTR.txt, 100_human_ORF.txt) are the argparse defaults and are present.",
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/example.fa",
+        "off-target/ref/100_human_UTR.txt",
+        "off-target/ref/100_human_ORF.txt",
+        "toxicity/cell_viability.txt"
+      ],
+      "expected_outputs": [
+        "data/infer/RNA0/pita.tab",
+        "data/infer/RNA0/targetscan.tab",
+        "result/RNA0*.txt with pita_score/targetscan_score/off_target_filter/toxicity_filter columns"
+      ],
+      "prerequisites": [
+        "perl Statistics::Lite, Bio::TreeIO (or the PerlLib.zip bundle with PERL5LIB set)",
+        "ViennaRNA on PATH",
+        "off-target/pita built: cd off-target/pita && make install"
+      ],
+      "runtime_estimate": "minutes to tens of minutes for 78 siRNAs against 100 reference UTR/ORF sequences; grows with the reference set",
+      "status": "conditional",
+      "conditional_on": "environment manager confirming perl modules, ViennaRNA and a successful off-target/pita build; otherwise this assignment and screen_sirna_offtarget are excluded with the recorded blocker",
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Reference evidence for screen_sirna_offtarget. Kept as a conditional assignment rather than dropped, per the off-target dependency being an environment question."
+    },
+    {
+      "id": "infer_offtarget_top_n",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Usage 3.2 off-target restricted to the top N most effective siRNAs",
+      "description": "Second documented off-target command: off-target scoring is run only on the top N siRNAs ranked by predicted efficacy, and unscored rows get off_target_filter = -5.",
+      "type": "markdown",
+      "section": "## Usage / #### 3.2 / - Command (second line)",
+      "commands": [
+        "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10"
+      ],
+      "documented_command_variant": "README uses `-top 100`; data/example.fa yields only 39 siRNAs per record, so N must be <= 39 (infer.py indexes RESULT_ranked.index[i] for i in range(top_n) without bounds checking). 10 is used.",
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/example.fa",
+        "off-target/ref/100_human_{UTR,ORF}.txt"
+      ],
+      "expected_outputs": [
+        "data/infer/RNA0/top_n_siRNA.fa",
+        "data/infer/RNA0/{pita.tab,targetscan.tab}",
+        "result/RNA0*.txt with off_target_filter in {-5,0,1}"
+      ],
+      "prerequisites": [
+        "same perl/ViennaRNA/PITA prerequisites as infer_offtarget_toxicity"
+      ],
+      "runtime_estimate": "shorter than the full off-target run, proportional to N",
+      "status": "conditional",
+      "conditional_on": "same off-target dependencies as infer_offtarget_toxicity",
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Exercises the separate top_n code path of screen_sirna_offtarget, including the known index defect (see hazards).",
+      "supporting_evidence_for": "screen_sirna_offtarget: supporting example for its top_n branch, assigns no new tool; not listed in the filtered inventory"
+    },
+    {
+      "id": "mismatch_scan_variants",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Docker usage example `oligoformer -m 2` (traverse 1- and 2-mismatch variants)",
+      "description": "Enumerates all 1- and 2-mismatch (and with -m 3 also 3-mismatch) variants of a 19-nt base RNA, scores each with the mismatch CNN (model/mismatch_model.pth) and writes a kon table.",
+      "type": "markdown",
+      "section": "## User-friendly Docker image / 4. Access the OligoFormer Tool (`oligoformer -m 2`)",
+      "commands": [
+        "mkdir -p <run_dir>/result && printf 'UCGCAAAUUAAAUUGAACC\\n' | python scripts/main.py -m 2 --output_dir <run_dir>"
+      ],
+      "stdin": "UCGCAAAUUAAAUUGAACC (base 19-nt RNA; mismatch.py uses input(), there is no flag)",
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "one 19-nt RNA string on stdin (the example siRNA from data/example_siRNA.fa)",
+        "model/mismatch_model.pth"
+      ],
+      "expected_outputs": [
+        "<run_dir>/result/mismatch.txt with columns seq, kon, num_mismatch (1539 one- plus two-mismatch variants for a 19-nt input)"
+      ],
+      "prerequisites": [
+        "model/mismatch_model.pth (in repo); no RNA-FM needed"
+      ],
+      "runtime_estimate": "-m 2: ~1.5k single-sequence forward passes, order of a minute on CPU; -m 3: ~28k passes, tens of minutes",
+      "status": "selected",
+      "conditional_on": null,
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Reference evidence for scan_sirna_mismatch_variants; --output_dir must be a directory containing result/ because mismatch.py writes Args.output_dir + '/result/mismatch.txt'."
+    },
+    {
+      "id": "mismatch_compare_pair",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/scripts/mismatch.py",
+      "sha256": "c317c6b53c59f5a5492ef11722f569ca7d6c07c72ac21444baca1fefe1f59669",
+      "path": "scripts/mismatch.py",
+      "title": "mismatch() branch Args.mismatch == 1 (compare two RNAs)",
+      "description": "Scores the relative on-rate (kon) of one mismatched 19-nt RNA against a 19-nt base RNA and prints it to stdout. Documented by scripts/main.py argparse help '-m 1: compare two RNAs'; the README only shows -m 2, so the real symbol/branch is the source binding.",
+      "type": "script",
+      "section": "mismatch.py:mismatch (Args.mismatch == 1) via scripts/main.py -m 1",
+      "commands": [
+        "printf 'UCGCAAAUUAAAUUGAACC\\nUCGCAAAUUAAAUUGAACG\\n' | python scripts/main.py -m 1"
+      ],
+      "stdin": "two lines: base RNA then mismatched RNA (both 19 nt; input() twice)",
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "two 19-nt RNA strings on stdin",
+        "model/mismatch_model.pth"
+      ],
+      "expected_outputs": [
+        "a single float (kon) on stdout; no files written"
+      ],
+      "prerequisites": [
+        "model/mismatch_model.pth"
+      ],
+      "runtime_estimate": "seconds",
+      "status": "selected",
+      "conditional_on": null,
+      "include_in_tools": true,
+      "reason_for_include_or_exclude": "Reference evidence for compare_sirna_mismatch_kon; stdout-only contract distinct from the -m 2/3 table."
+    },
+    {
+      "id": "test_inter_dataset",
+      "module": "cli_wrapper",
+      "source": "repo/OligoFormer/README.md",
+      "sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "path": "README.md",
+      "title": "Docker usage examples `oligoformer -i 0 -t` / `-i 0 -s -t` (evaluation on bundled datasets)",
+      "description": "Evaluates model/best_model.pth on the bundled Hu/Mix/Taka datasets (inter-dataset with -t, 5-fold intra-dataset with -s -t) and logs acc/F1/precision/recall/ROC-AUC/PR-AUC/MCC.",
+      "type": "markdown",
+      "section": "## User-friendly Docker image / 4. Access the OligoFormer Tool (`oligoformer -i 0 -t`)",
+      "commands": [
+        "python scripts/main.py --datasets Hu Mix -t --output_dir <run_dir>/",
+        "python scripts/main.py --datasets Hu Mix -s -t --output_dir <run_dir>/"
+      ],
+      "stdin": null,
+      "cwd": "repo/OligoFormer",
+      "inputs": [
+        "data/Hu.csv, data/Mix.csv",
+        "data/fasta/{Hu,Mix}_{siRNA,mRNA}.fa",
+        "data/RNAFM/{Hu,Mix}_{siRNA,mRNA}/representations/*.npy (NOT in the pinned repo)"
+      ],
+      "expected_outputs": [
+        "<run_dir>/<timestamp>_<dataset>/log/train/Train.log containing the metric lines (no result table is written)"
+      ],
+      "prerequisites": [
+        "precomputed RNA-FM embeddings for every dataset sequence: scripts/loader.py:71,74 load data/RNAFM/<dataset>_{siRNA,mRNA}/representations/<id>.npy, produced only by scripts/RNA-FM-features.sh (test.py/test_single.py never trigger it; only train.py does)"
+      ],
+      "runtime_estimate": "unknown; RNA-FM feature extraction for Hu+Mix (several thousand mRNA/siRNA sequences, 300-nt flanked mRNAs) is the dominant cost and is CPU-bound here",
+      "status": "deferred",
+      "conditional_on": "environment manager producing data/RNAFM embeddings for the bundled datasets; only then can this assignment run and evaluate_model_on_dataset be reconsidered",
+      "include_in_tools": false,
+      "reason_for_include_or_exclude": "Deferred: required embedding inputs are absent from the pinned repository and must be regenerated with RNA-FM over the whole training corpus; the mode also only logs metrics (no machine-readable artifact), so its value as an MCP tool on new data is low."
+    }
+  ],
+  "tool_review": [
+    {
+      "candidate": "siRNA efficacy prediction by traversing an mRNA FASTA (19-nt window)",
+      "task_and_io": "User gives an mRNA FASTA (one or more records, each >= 19 nt) and gets every 19-nt antisense siRNA candidate with a predicted efficacy (sigmoid output * 1.341), its sense strand, its position, a functionality-criteria filter code (0 pass, 1 GC content out of 30-65%, 2 five identical bases in a row, 3 six G/C in a row, 4 palindrome), an optional seed-based toxicity filter, and three tab-separated tables per record: <name>.txt (positional order), <name>_ranked.txt (by efficacy), <name>_ranked_filtered.txt (filter == 0 only).",
+      "implementation": "repo/OligoFormer/scripts/main.py (argparse -> infer) with `python scripts/main.py --infer 1 -i1 <mrna.fa> [--output_dir <dir>/] [-nf] [-tox] [--toxicity_threshold F] [--seed N]`; dispatches to scripts/infer.py:infer (Args.infer == 1, Args.infer_siRNA_fasta falsy branch), which calls antiRNA, calculate_td, func_filter, scripts/RNA-FM.sh, scripts/loader.py:data_process_loader (infer variant) and scripts/model.py:Oligo with model/best_model.pth.",
+      "verification_source": "Execution assignments infer_mrna_traverse (README 3.1 Option 1, input data/example.fa) and infer_toxicity_filter (Docker `oligoformer -tox`). Compared: the three result tables for RNA0/RNA1 - row count (39 per 57-nt record), pos/sense/siRNA columns, efficacy values, func_filter codes, and with -tox the Seed/cell_viability/toxicity_filter columns and the filter sum.",
+      "decision_and_reason": "Expose. Core documented operation, fully applicable to new mRNA FASTA inputs. -tox/-nf/--toxicity_threshold become typed parameters (no extra dependency); off-target stays in its own tool because of its external toolchain.",
+      "ownership": {
+        "tool_name": "predict_sirna_efficacy_from_mrna",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Prediction restricted to user-specified siRNAs (-i2)",
+      "task_and_io": "User gives a target mRNA FASTA plus a FASTA of candidate 19-nt siRNAs and gets the predicted efficacy (and filters) only for those siRNAs whose antisense sequence occurs in the mRNA; the same three tables are written. Inputs are rejected with an exception if any siRNA is not exactly 19 nt; siRNAs with no match in a record are silently omitted from that record's table.",
+      "implementation": "Same entry point, `python scripts/main.py --infer 1 -i1 <mrna.fa> -i2 <sirna.fa> [...]`; scripts/infer.py:infer, the `if Args.infer_siRNA_fasta:` branch (re.search(antiRNA(siRNA), mRNA) to locate the site and build the +-19 nt flanked context).",
+      "verification_source": "Execution assignment infer_specific_sirnas (README 3.1 Option 2, data/example.fa + data/example_siRNA.fa). Compared: that only the matching siRNAs appear, their pos/sense/siRNA values and efficacy, plus the exception behaviour for a non-19-nt siRNA.",
+      "decision_and_reason": "Expose as a separate tool rather than merging into predict_sirna_efficacy_from_mrna. Justification: the user task differs (evaluate a given candidate set vs. de-novo scan of the whole transcript), the required input set differs (a second FASTA with a hard 19-nt contract), and the output semantics differ (pos is a row counter over matched siRNAs, not a window index, and silently-unmatched siRNAs are a result the tool must report). Merging would hide those contract differences behind one optional argument. Both tools share the single cli_wrapper module, so this costs no extra ownership.",
+      "ownership": {
+        "tool_name": "predict_specific_sirna_efficacy",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Off-target screening (-off, PITA + TargetScan, -top N, -a, thresholds)",
+      "task_and_io": "User gives an mRNA FASTA (and optionally reference human UTR/ORF FASTA-like tables) and gets the efficacy table augmented with pita_score (min PITA ddG per siRNA), targetscan_score (max context score per siRNA) and off_target_filter, optionally combined with the toxicity filter; off-target scoring can be restricted to the top N siRNAs by efficacy.",
+      "implementation": "`python scripts/main.py --infer 1 -i1 <mrna.fa> -off [-tox] [-top N] [-a] [--utr F] [--orf F] [--pita_threshold F] [--targetscan_threshold F]`; scripts/infer.py:infer `if Args.off_target:` blocks, which os.system scripts/pita.sh (off-target/pita/pita_prediction.pl, ViennaRNA, perl Statistics::Lite + Bio::TreeIO) and scripts/targetscan.sh (off-target/targetscan/targetscan_70*.pl chain), then merge data/infer/<name>/pita.tab and targetscan.tab.",
+      "verification_source": "Execution assignments infer_offtarget_toxicity and infer_offtarget_top_n (README 3.2 commands, data/example.fa with the bundled off-target/ref/100_human_{UTR,ORF}.txt). Compared: existence and content of data/infer/<name>/{pita.tab,targetscan.tab} and the added columns/filter codes in the result tables.",
+      "decision_and_reason": "Expose, conditional on the environment manager. It is an independently useful user task (off-target safety screening of designed siRNAs) and is implemented in the pinned repo, but it needs perl modules, ViennaRNA and a PITA build that are not present by default. If those are unavailable at the end of stage 1, both this tool and its two assignments are excluded with that blocker recorded, not silently dropped.",
+      "ownership": {
+        "tool_name": "screen_sirna_offtarget",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Mismatch module -m 1 (compare two RNAs)",
+      "task_and_io": "User gives a 19-nt base RNA and one 19-nt mismatched RNA and gets a single kon (relative on-rate) score on stdout. Both strings must be exactly 19 nt and over A/U/C/G (one_hot_encode raises KeyError on anything else, including T).",
+      "implementation": "`python scripts/main.py -m 1` with the two sequences supplied on stdin (scripts/mismatch.py:mismatch reads them with input(); there is no flag). Calls mismatch.py:calculate_kon with the module-level MismatchModule loaded from model/mismatch_model.pth.",
+      "verification_source": "Execution assignment mismatch_compare_pair (binding: scripts/main.py argparse help '-m 1: compare two RNAs' plus mismatch.py:mismatch branch; inputs taken from data/example_siRNA.fa with one substitution). Compared: the printed float and the error behaviour for wrong-length input.",
+      "decision_and_reason": "Expose. Distinct cheap task (how much does a specific mismatch cost), no RNA-FM dependency, stdout-only contract. Interactive input() is wrapped by writing the two sequences to the child's stdin - a documented, bounded use of the real CLI, not a reimplementation.",
+      "ownership": {
+        "tool_name": "compare_sirna_mismatch_kon",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Mismatch module -m 2 / -m 3 (traverse mismatch variants)",
+      "task_and_io": "User gives a 19-nt base RNA and gets a table of all 1- and 2-mismatch variants (-m 2; 1539 sequences) or additionally all 3-mismatch variants (-m 3; ~27.7k sequences) with their kon score and mismatch count, written to <output_dir>/result/mismatch.txt.",
+      "implementation": "`python scripts/main.py -m 2|3 --output_dir <dir>` with the base RNA on stdin; scripts/mismatch.py:mismatch else-branch -> generate_mismatch_sequences + calculate_kon, writing Args.output_dir + '/result/mismatch.txt'.",
+      "verification_source": "Execution assignment mismatch_scan_variants (Docker README `oligoformer -m 2`). Compared: row count per num_mismatch class, the seq column (sorted variant enumeration) and kon values; a -m 3 run is optional because of its runtime.",
+      "decision_and_reason": "Expose, separate from compare_sirna_mismatch_kon: different output contract (a file-based table vs a stdout scalar) and a very different runtime class, with `mismatch_depth` (2 or 3) as the typed parameter. -m 1 is not folded in as a third depth value because its required inputs differ (two sequences, not one).",
+      "ownership": {
+        "tool_name": "scan_sirna_mismatch_variants",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Evaluation / test mode (-t, and -s -t intra-dataset 5-fold)",
+      "task_and_io": "Would evaluate model/best_model.pth on the bundled Hu/Mix/Taka datasets and report acc, sensitivity, specificity, precision, recall, F1, ROC-AUC, PR-AUC, MCC.",
+      "implementation": "`python scripts/main.py --datasets Hu Mix -t [-s]` -> scripts/test.py:test / scripts/test_single.py:test_single, both using scripts/loader.py:data_process_loader.",
+      "verification_source": "Execution assignment test_inter_dataset (deferred). Metrics are only emitted to <output_dir>/<timestamp>_<dataset>/log/train/Train.log via scripts/logger.py:TrainLogger; no result table exists to compare.",
+      "decision_and_reason": "Defer with blocker. scripts/loader.py:71,74 require data/RNAFM/<dataset>_{siRNA,mRNA}/representations/*.npy, which are absent from the pinned repository; neither test() nor test_single() regenerates them (only train.py calls scripts/RNA-FM-features.sh), so the mode cannot run as shipped. Regenerating embeddings for the full Hu/Mix corpus on this CPU-only host is also costly. Secondary reasons against exposure: it only operates on the three bundled datasets (not new user data) and returns no structured artifact.",
+      "ownership": {
+        "tool_name": "evaluate_model_on_dataset (not exposed; deferred)",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Model training (default mode, and -s single-dataset/K-fold)",
+      "task_and_io": "Would retrain OligoFormer on the bundled datasets and write checkpoints under <output_dir>/<timestamp>_<dataset>/model/.",
+      "implementation": "`python scripts/main.py --datasets Hu Mix --cuda 0 --learning_rate 0.0001 --batch_size 16 --epoch 200 --early_stopping 30` -> scripts/train.py:train / scripts/train_single.py:train_single.",
+      "verification_source": "README 'Usage / 2.Model training' states ~60 min on a V100 GPU. No CPU reference run exists.",
+      "decision_and_reason": "Defer on this host. README requires an NVIDIA GPU; 200 epochs over Hu+Mix on Apple arm64 CPU is far beyond a tool call, and train.py additionally shells out to scripts/RNA-FM-features.sh to build the missing data/RNAFM embeddings (another long RNA-FM job). It also only consumes the bundled datasets, so it is not an operation on new user input. Kept visible as deferred rather than omitted.",
+      "ownership": {
+        "tool_name": "train_oligoformer_model (not exposed; deferred)",
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Manual mRNA input mode (--infer 2)",
+      "task_and_io": "Prompts for an mRNA sequence on stdin and performs exactly the window-traversal prediction of option 1, writing result/RNA0*.txt.",
+      "implementation": "scripts/infer.py:infer, `elif Args.infer == 2:` branch - a near-literal copy of the Args.infer == 1 traversal code.",
+      "verification_source": "README 3.1 Option 3 (`python scripts/main.py --infer 2`); no additional output to compare beyond option 1.",
+      "decision_and_reason": "Omit as a separate tool: it duplicates predict_sirna_efficacy_from_mrna through an interactive prompt, fixes the record name to RNA0 (so concurrent calls collide in data/infer/RNA0 and result/RNA0*.txt), and accepts only a single sequence. A wrapper that accepts a raw sequence string can write a one-record FASTA and use --infer 1 instead, if that convenience is ever wanted.",
+      "ownership": {
+        "tool_name": null,
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "RNA-FM embedding extraction (scripts/RNA-FM.sh, scripts/RNA-FM-features.sh)",
+      "task_and_io": "Runs RNA-FM launch/predict.py to write per-sequence .npy representations used as model features.",
+      "implementation": "scripts/RNA-FM.sh (called by infer.py via os.system for each inference run) and scripts/RNA-FM-features.sh (called by train.py when data/RNAFM is missing).",
+      "verification_source": "Implicitly verified by infer_mrna_traverse, whose data/infer/<name>/{siRNA,mRNA}/representations/*.npy must exist for the prediction to proceed.",
+      "decision_and_reason": "Keep internal. It is a feature-preparation step with no standalone user value here, and it is invoked automatically by the selected inference commands.",
+      "ownership": {
+        "tool_name": null,
+        "module": "cli_wrapper"
+      }
+    },
+    {
+      "candidate": "Dataset preparation and analysis scripts: data/process_demo/process.py, scripts/flanking_mRNA_symmetric.py, scripts/flanking_mRNA_asymmetric.py, scripts/TD_calculation.ipynb, 'Comparison methods'/* notebooks",
+      "task_and_io": "Rebuild the training CSVs from raw tables, sweep mRNA flanking-length variants, derive the thermodynamic (td) feature set, and reproduce the Monopoli-RF / siRNAPred comparison benchmarks.",
+      "implementation": "Standalone scripts/notebooks with hard-coded relative paths and hard-coded dataset names (e.g. flanking_mRNA_symmetric.py reads data/Hu_mRNA.fa, which does not exist at this path in the pinned tree - the files live in data/fasta/); none are reachable from scripts/main.py.",
+      "verification_source": "No documented command or example invokes them; they are not part of the README usage contract.",
+      "decision_and_reason": "Omit (out of the CLI contract). They are development/paper-reproduction code, not operations on new user input; the thermodynamic feature calculation they explore is already applied inside infer.py:calculate_td for every selected tool.",
+      "ownership": {
+        "tool_name": null,
+        "module": null
+      }
+    },
+    {
+      "candidate": "scripts/phelim.sh (PheLiM off-target alternative)",
+      "task_and_io": "Would run a PheLiM off-target prediction.",
+      "implementation": "scripts/phelim.sh copies ./PheLiM and runs predict-off-targets.sh.",
+      "verification_source": "None: the PheLiM directory does not exist in the pinned repository and no README command or main.py code path references the script.",
+      "decision_and_reason": "Omit: dead script with no bundled implementation and no documented invocation.",
+      "ownership": {
+        "tool_name": null,
+        "module": null
+      }
+    }
+  ],
+  "wrapping_hazards": [
+    "cwd must be the repository root for every call: scripts/*.py are imported by path (sys.path), model/best_model.pth, model/mismatch_model.pth, ./toxicity/cell_viability.txt, ./off-target/*, ./data/infer/* and scripts/RNA-FM.sh are all relative; scripts/mismatch.py loads model/mismatch_model.pth at import time, so main.py fails from any other directory even for inference.",
+    "--output_dir is string-concatenated (infer.py: Args.output_dir + str(_name) + '.txt'), so it MUST end with '/' or results land next to the directory (e.g. 'out' -> 'outRNA0.txt').",
+    "scripts/mismatch.py writes Args.output_dir + '/result/mismatch.txt'. With the default output_dir 'result/' this resolves to 'result//result/mismatch.txt' and fails because result/result does not exist. The wrapper must pass --output_dir <run_dir> (no trailing slash semantics needed) AND create <run_dir>/result first.",
+    "main.py unconditionally os.mkdir('./result') inside the repository on every call, so the checkout is written to even when --output_dir points elsewhere.",
+    "Inference always writes inside the repository at ./data/infer/<record_name>/ (FASTA, RNA-FM .npy, pita.tab, targetscan.tab, top_n_siRNA.fa); loader.py reads from that fixed location, so it cannot be redirected. Two concurrent calls using the same FASTA record name race: infer.py does os.system('rm -rf ./data/infer/' + _name) and then os.system('mkdir ...'). Serialize calls per record name (or globally) and treat the directory as scratch.",
+    "FASTA record names are interpolated unquoted into os.system commands (rm -rf, mkdir, bash scripts/pita.sh ... {_name}). A header containing shell metacharacters (;, $, backtick, quote, newline) is a command-injection and corruption risk; the wrapper must validate record names against a strict allow-list before invoking the CLI.",
+    "Spaces in record names are mangled to '_@_' (_name = _name.replace(' ','_@_')), which propagates into the output filenames (result/<mangled>.txt). The wrapper must map requested record names to the mangled names when collecting artifacts, and output files also collide across calls that reuse a name.",
+    "Appending writers: siRNA.fa / mRNA.fa / top_n_siRNA.fa are opened in 'a' mode. The per-record rm -rf covers siRNA.fa/mRNA.fa, but top_n_siRNA.fa is NOT removed between off-target runs on the same record, so repeated -top calls accumulate duplicate entries.",
+    "top_n index defect: `for i in range(Args.top_n): ... RESULT_ranked.index[i]` is positional but `RESULT_ranked['siRNA'][i]` is label-based, so the name written (>RNA<rank-i's index>) and the sequence written (siRNA at label i) come from different rows; the top_n FASTA is therefore mislabelled. There is also no bounds check, so top_n greater than the number of siRNAs raises IndexError. Keep top_n <= row count and record the defect rather than fixing the science in the wrapper.",
+    "-a/--all_human sets BOTH Args.utr and Args.orf to './off-target/ref/human_UTR.txt' (ORF replaced by UTR), and that file exists only as human_UTR.txt.zip / human_ORF.txt.zip in the pinned repo, so -a cannot run unmodified. Prefer explicit --utr/--orf (defaults off-target/ref/100_human_{UTR,ORF}.txt) and record -a as a known upstream defect.",
+    "off-target failures are silent: pita.sh/targetscan.sh are invoked through os.system and their exit status is ignored; the next pd.read_csv of a missing data/infer/<name>/pita.tab is what fails. The wrapper must check that pita.tab and targetscan.tab exist and that the final tables carry the expected columns, and must not report success from a zero exit of main.py alone.",
+    "scripts/pita.sh and targetscan.sh copy inputs into off-target/pita / off-target/tmp inside the repository and rm -rf off-target/tmp at the end: concurrent off-target calls clobber each other. Serialize off-target runs.",
+    "-i2 requires every siRNA to be exactly 19 nt (raise Exception otherwise) and mRNA records to be >= 19 nt; siRNAs with no reverse-complement match are dropped without warning, so the wrapper should report matched vs requested counts.",
+    "mismatch mode and --infer 2 read from stdin via input(); the wrapper must supply stdin and never leave the child waiting (use a non-interactive stdin and a timeout). one_hot_encode raises KeyError for any character outside A/U/C/G (T included), so sequences must be uppercased and T->U converted by the caller for the mismatch tools (infer does this conversion itself).",
+    "Determinism: --seed only seeds random/numpy/PYTHONHASHSEED (no torch.manual_seed); inference is a deterministic forward pass, so this matters only for the training/test paths. Efficacy values are the model sigmoid output multiplied by 1.341 - do not re-derive or rescale them in the wrapper.",
+    "No GPU on this host: torch falls back to CPU through torch.device('cuda:0' if torch.cuda.is_available() else 'cpu') with map_location=device in infer/test, so inference runs but is slower; --cuda only sets CUDA_VISIBLE_DEVICES in train/test paths.",
+    "Runtime scales linearly with mRNA length (one 19-nt window per position, one RNA-FM forward pass per window and per 57-nt context), so a tool-level timeout and an input-length guard are needed for realistic transcripts (a 2 kb mRNA means ~2000 windows)."
+  ]
+}

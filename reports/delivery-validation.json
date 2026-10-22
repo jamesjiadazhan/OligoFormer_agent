@@ -1,0 +1,911 @@
+{
+  "report": "delivery-validation",
+  "stage": 6,
+  "attempt": 2,
+  "agent": {
+    "role": "independent delivery verifier (Paper2MCP stage 6)",
+    "identity": "Claude Code subagent, model claude-opus-5",
+    "did_not_author": [
+      "src/tools/cli_wrapper.py",
+      "src/OligoFormer_mcp.py",
+      "USAGE.md",
+      "deps/*.sh",
+      "dist/OligoFormer-mcp.zip"
+    ],
+    "owns_only": [
+      "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/reports/delivery-validation.json",
+      "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad"
+    ],
+    "date": "2026-10-22"
+  },
+  "previous_attempts": [
+    {
+      "attempt": 1,
+      "archive_sha256": "8e1229837121fd6f67bd4da4759317e8d1c0067f91f0676bdd4b73edb7adc462",
+      "status": "superseded by the attempt-2 archive; its evidence no longer applies to the delivered ZIP",
+      "outcome": "all functional checks passed (18/18 acceptance, byte-identical PITA/TargetScan tables, 8/8 extra exercises), but installation required undocumented workarounds, so the installer/documentation was corrected and rebuilt",
+      "findings_raised": [
+        {
+          "id": "F1",
+          "severity": "medium",
+          "finding": "`python3.11 -m venv .venv` exits 127 on this host (no python3.11); USAGE.md does not say how to obtain Python 3.11",
+          "resolution": "NOT CHANGED - host condition; USAGE.md still lists Python 3.11 as a prerequisite and the documented uv alternative works. Re-observed in attempt 2."
+        },
+        {
+          "id": "F2",
+          "severity": "medium",
+          "finding": "documented `uv venv .venv --python 3.11` branch left no pip, so the next documented command `./.venv/bin/python -m pip install -r src/requirements.txt` failed with 'No module named pip'",
+          "resolution": "FIXED in USAGE.md (now `uv venv .venv --python 3.11 --seed`, plus a commented `uv pip install --python .venv/bin/python` alternative); re-tested in attempt 2 and the documented sequence now completes"
+        },
+        {
+          "id": "F3",
+          "severity": "medium",
+          "finding": "deps/create_offtarget_env.sh exited 134 on a clean run (its RNAplfold smoke test aborted in dyld) and its 'already complete' short-circuit only tested `-x`, so a re-run skipped the test that had failed",
+          "resolution": "FIXED: shared smoke_ok() now runs perl modules + RNAplfold --version + GNU sed/grep for both the short-circuit and the post-create check, with one retry; verified in attempt 2 including a negative test"
+        },
+        {
+          "id": "F4",
+          "severity": "high",
+          "finding": "deps/setup_oligoformer_runtime.sh was not idempotent: on a second run it sha256-checked locally built arm64 PITA binaries against published constants, died, and because the PITA tree had already been reset it left the runtime with Linux x86-64 binaries and unsubstituted EXE_BASE_DIR",
+          "resolution": "FIXED: host binaries are prepared before the checkout reset and a hash mismatch now triggers a rebuild from the pinned source instead of die; verified in attempt 2 by a run-1/run-2 sequence plus a real off-target call afterwards"
+        },
+        {
+          "id": "F5",
+          "severity": "informational",
+          "finding": "documented `chmod +x deps/*.sh` step is accurate (Python zipfile.extractall drops the bits; unzip/ditto preserve them)",
+          "resolution": "no change needed; re-confirmed in attempt 2"
+        },
+        {
+          "id": "F6",
+          "severity": "informational",
+          "finding": "all other USAGE.md claims checked out as written",
+          "resolution": "no change needed"
+        }
+      ],
+      "detail_kept_in": "this entry; the attempt-1 logs remain under /private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs"
+    }
+  ],
+  "archive": {
+    "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/dist/OligoFormer-mcp.zip",
+    "sha256": "dde0644144f5c38f23c826516c1031ff5e2656a7ca2d4185c11bf060f6f1655f",
+    "expected_sha256": "dde0644144f5c38f23c826516c1031ff5e2656a7ca2d4185c11bf060f6f1655f",
+    "sha256_matches_brief": true,
+    "supersedes_sha256": "8e1229837121fd6f67bd4da4759317e8d1c0067f91f0676bdd4b73edb7adc462",
+    "entries": 15,
+    "files": 10,
+    "directories": 5,
+    "unzip_t_integrity": "No errors detected in compressed data",
+    "changed_files_vs_attempt1": {
+      "USAGE.md": {
+        "attempt1": "d70b13d8229e6319466fb86abfa94bb509f24681377e5c48d113d5e3cc2eb38b",
+        "attempt2": "d39270414fd0cec7c826c0ae53820c6b85977e58d64324c415f38037aa07e7a6"
+      },
+      "deps/setup_oligoformer_runtime.sh": {
+        "attempt1": "5f8f66036f2524082480353b17b0421d823cbf9955988eb52958bef87a919302",
+        "attempt2": "b723c5d9cd7766543630094cf34499754ba3fcc0e07383b4c9eaf638a8f9cf61"
+      },
+      "deps/create_offtarget_env.sh": {
+        "attempt1": "0bf4d05bc55d446c4994b9ae6d2a67e76ffc2fef583706091027805f35f90d0e",
+        "attempt2": "90c79e171a8911586c675c1ecaeb2630ccb2f764fc7a91c950cd6163b972a2ef"
+      }
+    },
+    "unchanged_files_vs_attempt1": {
+      "src/tools/cli_wrapper.py": "833e57bbd04e6e4ad02972a10c9b35999ce7454d44a51c906c2be17d54bfb3f0",
+      "src/OligoFormer_mcp.py": "8e16af3038eacd80d15f076db4306aa98a84c29e650e39f7f53e012b53837eae",
+      "src/requirements.txt": "5f5e925107e9fa5bcbd8e579553da9652534f92d44bf25e6dcb2e9085cb27bca",
+      "deps/offtarget-env.lock": "17b8129c02c84bad1208ba07a4c709bc552d0ecb0d13874fc531010c867259d0",
+      "deps/rnafm_cpu_default.patch": "4a31d28910d3125f162b7b35b2a24e0056687caadfd7b3aca4b2d74d93e7ddaa",
+      "THIRD_PARTY_NOTICES/OligoFormer-LICENSE": "cb6981d84dd7aa2e25348850b8e863fbd1ecef7867fe605919bcf7fded18a5b9",
+      "THIRD_PARTY_NOTICES/RNA-FM-LICENSE": "b0809e99b532fdf51660f5a3d2a9010ed09d15aef0d131ad80fe80c2291a4fba"
+    },
+    "change_set_matches_coordinator_claim": true,
+    "wrapper_not_reverified": "src/tools/cli_wrapper.py and src/OligoFormer_mcp.py are byte identical to the revision validated in attempt 1 and to the production hash in reports/verification-cli_wrapper.json, so the wrapper logic was not re-reviewed; it was however re-executed in full through the 18 acceptance cases and the scientific comparison from this new extraction"
+  },
+  "extraction": {
+    "location": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2",
+    "fresh_empty_directory": true,
+    "all_extracted_files_match_archive_crc_and_size": true,
+    "developer_path_grep": {
+      "command": "grep -rn \"/Users/james\" .",
+      "matches": 0,
+      "exit": 1
+    },
+    "symlinks_fifos_sockets": 0,
+    "unexpected_content": "none: only USAGE.md, src/ (3 files), deps/ (4 files), THIRD_PARTY_NOTICES/ (2 files); no tests, reports, notebooks, .git, environments, caches or intermediate outputs",
+    "executable_bits": {
+      "zip_stores": "deps/create_offtarget_env.sh and deps/setup_oligoformer_runtime.sh 0755, everything else 0644",
+      "after_unzip": "0755 preserved, so `chmod +x deps/*.sh` was a no-op here",
+      "python_zipfile_extractall": "drops to 0644 (verified in attempt 1), so the documented chmod step remains justified"
+    },
+    "packaged_files": [
+      {
+        "path": "OligoFormer-mcp/THIRD_PARTY_NOTICES/OligoFormer-LICENSE",
+        "size": 1989,
+        "sha256": "cb6981d84dd7aa2e25348850b8e863fbd1ecef7867fe605919bcf7fded18a5b9",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/THIRD_PARTY_NOTICES/RNA-FM-LICENSE",
+        "size": 1069,
+        "sha256": "b0809e99b532fdf51660f5a3d2a9010ed09d15aef0d131ad80fe80c2291a4fba",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/USAGE.md",
+        "size": 11303,
+        "sha256": "d39270414fd0cec7c826c0ae53820c6b85977e58d64324c415f38037aa07e7a6",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/deps/rnafm_cpu_default.patch",
+        "size": 513,
+        "sha256": "4a31d28910d3125f162b7b35b2a24e0056687caadfd7b3aca4b2d74d93e7ddaa",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/deps/setup_oligoformer_runtime.sh",
+        "size": 10663,
+        "sha256": "b723c5d9cd7766543630094cf34499754ba3fcc0e07383b4c9eaf638a8f9cf61",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o755",
+        "extracted_mode": "0o755"
+      },
+      {
+        "path": "OligoFormer-mcp/deps/offtarget-env.lock",
+        "size": 20926,
+        "sha256": "17b8129c02c84bad1208ba07a4c709bc552d0ecb0d13874fc531010c867259d0",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/deps/create_offtarget_env.sh",
+        "size": 2404,
+        "sha256": "90c79e171a8911586c675c1ecaeb2630ccb2f764fc7a91c950cd6163b972a2ef",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o755",
+        "extracted_mode": "0o755"
+      },
+      {
+        "path": "OligoFormer-mcp/src/tools/cli_wrapper.py",
+        "size": 34787,
+        "sha256": "833e57bbd04e6e4ad02972a10c9b35999ce7454d44a51c906c2be17d54bfb3f0",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/src/requirements.txt",
+        "size": 2763,
+        "sha256": "5f5e925107e9fa5bcbd8e579553da9652534f92d44bf25e6dcb2e9085cb27bca",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      },
+      {
+        "path": "OligoFormer-mcp/src/OligoFormer_mcp.py",
+        "size": 370,
+        "sha256": "8e16af3038eacd80d15f076db4306aa98a84c29e650e39f7f53e012b53837eae",
+        "crc_matches_archive_entry": true,
+        "zip_stored_mode": "0o644",
+        "extracted_mode": "0o644"
+      }
+    ]
+  },
+  "host": {
+    "os": "macOS 15.7.3 (Darwin 24.6.0), build 24G419",
+    "arch": "arm64",
+    "git": "2.50.1",
+    "conda": "25.7.0",
+    "cc": "Apple clang 17.0.0",
+    "make": "GNU Make 3.81",
+    "uv": "present",
+    "python3.11_on_PATH": false
+  },
+  "installation": {
+    "followed": "the UPDATED USAGE.md 'Installation' section, verbatim, from inside the new extraction",
+    "working_directory": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp",
+    "commands": [
+      {
+        "step": 1,
+        "command": "unzip OligoFormer-mcp.zip -d <new empty dir>",
+        "exit": 0
+      },
+      {
+        "step": 2,
+        "command": "bash -n deps/create_offtarget_env.sh",
+        "exit": 0
+      },
+      {
+        "step": 3,
+        "command": "bash -n deps/setup_oligoformer_runtime.sh",
+        "exit": 0
+      },
+      {
+        "step": 4,
+        "command": "python3.11 -m venv .venv",
+        "exit": 127,
+        "result": "still fails: no python3.11 interpreter on this host (finding F1, host condition, unchanged)",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-01-venv.log"
+      },
+      {
+        "step": 5,
+        "command": "uv venv .venv --python 3.11 --seed   (documented alternative, now with --seed)",
+        "exit": 0,
+        "result": "CPython 3.11.12 with pip 26.2.2 seeded",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-02-uvvenv-seed.log"
+      },
+      {
+        "step": 6,
+        "command": "./.venv/bin/python -m pip install -r src/requirements.txt",
+        "exit": 0,
+        "result": "SUCCESS - F2 is fixed: the documented sequence now completes without any undocumented change. All 122 pins installed (fastmcp 4.0.3, torch 2.2.1, numpy 1.24.4, pandas 2.0.3)",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-03-pip.log"
+      },
+      {
+        "step": 7,
+        "command": "./deps/create_offtarget_env.sh \"$PWD/deps/offtarget-env\"",
+        "exit": 0,
+        "result": "'[offtarget-env] already complete' - the reused prefix passed the new functional smoke_ok() (perl modules, RNAplfold --version, GNU sed, GNU grep)",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-04-offtargetenv.log"
+      },
+      {
+        "step": 8,
+        "command": "CONDA_EXE=<stub> ./deps/create_offtarget_env.sh <prefix whose RNAplfold is executable but exits 1>   (negative test of the F3 fix)",
+        "exit": 7,
+        "result": "did NOT short-circuit: the script proceeded to `conda create` (stub exit 7), proving smoke_ok() now rejects an executable-but-broken RNAplfold where the old `-x`-only check would have reported 'already complete'",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-05b-smokeok-negative.log"
+      },
+      {
+        "step": 9,
+        "command": "same script against the same stub prefix with a working RNAplfold   (control)",
+        "exit": 0,
+        "result": "'already complete' as expected"
+      },
+      {
+        "step": 10,
+        "command": "PROJECT_ENV=$PWD/.venv OLIGOFORMER_SRC=<cache> RNAFM_SRC=<cache> RNAFM_WEIGHTS=<cache> ./deps/setup_oligoformer_runtime.sh \"$PWD/runtime/OligoFormer\"   (run 1)",
+        "exit": 0,
+        "duration_s": 36,
+        "result": "cloned OligoFormer @ e2f53ad and RNA-FM @ 3489515 (+ CPU patch), hard-linked and sha256-verified the checkpoint, built arm64 RNAduplex/RNAddG4 from the bundled ViennaRNA-1.6 source into the empty deps/pita-bin-arm64, staged them, ran PITA make install; EXE_BASE_DIR substituted",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-06-setup-run1.log"
+      },
+      {
+        "step": 11,
+        "command": "identical setup_oligoformer_runtime.sh invocation   (run 2 - the F4 re-test)",
+        "exit": 0,
+        "result": "SUCCESS - F4 is fixed. Run 2 logged 'PITA binaries in .../deps/pita-bin-arm64 are not the published ones; rebuilding from source', rebuilt and re-staged them, re-ran make install, and left: RNAduplex and RNAddG4 both 'Mach-O 64-bit executable arm64', 0 remaining EXE_BASE_DIR occurrences in pita_prediction.pl and lib/RNAddG_compute.pl, OligoFormer HEAD still e2f53ad. A real screen_sirna_offtarget call then succeeded (see acceptance.offtarget_after_second_setup_run)",
+        "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/install-07-setup-run2.log"
+      },
+      {
+        "step": 12,
+        "command": "./.venv/bin/python src/OligoFormer_mcp.py (stdio, via the acceptance helper), no OLIGOFORMER_* overrides set",
+        "exit": 0,
+        "result": "server started, exactly the 5 expected tools listed"
+      }
+    ],
+    "deviations_from_documentation": "none required for the venv/pip/runtime steps (attempt 1 needed `--seed` and `PITA_FORCE_BUILD=1`; neither was needed now). The only deviation is the reused off-target conda prefix described below, which the verification brief explicitly permits.",
+    "offtarget_conda_prefix_provenance": "REUSED, not rebuilt for attempt 2: deps/offtarget-env in this extraction is a symlink to the prefix that attempt 1 created at <attempt-1 extraction>/OligoFormer-mcp/deps/offtarget-env, which attempt 1 built independently in its own extraction location by running the packaged deps/create_offtarget_env.sh against deps/offtarget-env.lock (CONDA_SUBDIR=osx-64, conda create -p ... --file lock). deps/offtarget-env.lock is byte-identical between the two archives, and the packaged create_offtarget_env.sh was still executed against that prefix (step 7) and verified functionally. It was never taken from the development workspace at $PROJECT_ROOT/deps/offtarget-env.",
+    "reused_caches_as_documented_inputs": {
+      "note": "permitted by the brief to avoid ~1.2 GB of re-downloads; inputs to the packaged installer, not code imported from the development workspace",
+      "RNAFM_WEIGHTS": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth",
+      "OLIGOFORMER_SRC": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/repo/OligoFormer",
+      "RNAFM_SRC": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/downloads/rnafm_git/RNA-FM",
+      "consequence": "the GitHub clone URLs and the 1.2 GB HuggingFace download were not exercised; the script's commit and sha256 verification of all three did run and pass"
+    },
+    "pita_binaries_built_locally": {
+      "RNAduplex": {
+        "sha256": "b01a67068a5168f87df18a967c72398d0ea4d6ff6847f055ee6b743aea2c0df8",
+        "published_constant": "b01a67068a5168f87df18a967c72398d0ea4d6ff6847f055ee6b743aea2c0df8",
+        "matches_published": true,
+        "arch": "Mach-O 64-bit executable arm64"
+      },
+      "RNAddG4": {
+        "sha256": "2a35308a80eb7154dfd8102778b7be96ddf521162e4e0d0f028095ec9755fa72",
+        "published_constant": "ada0a5af757ae3a086adda5dc5968d1b7703bcb352c706f3f61e94e64f28c607",
+        "matches_published": false,
+        "handled_as": "the fixed script now logs 'not the published ones' and rebuilds from the pinned source instead of failing; the locally built binary reproduces byte-identically across builds on this host",
+        "arch": "Mach-O 64-bit executable arm64"
+      }
+    }
+  },
+  "identities": {
+    "interpreter": {
+      "sys_executable": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp/.venv/bin/python",
+      "version": "3.11.12",
+      "prefix": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp/.venv",
+      "fastmcp": "4.0.3",
+      "fastmcp_file": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp/.venv/lib/python3.11/site-packages/fastmcp/__init__.py",
+      "torch": "2.2.1 (CPU)",
+      "torch_file": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp/.venv/lib/python3.11/site-packages/torch/__init__.py",
+      "pandas": "2.0.3",
+      "numpy": "1.24.4",
+      "resolves_to_extracted_venv_not_dev_env": true
+    },
+    "native_runtime": {
+      "oligoformer_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+      "oligoformer_head_expected": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+      "oligoformer_origin": "https://github.com/lulab/OligoFormer",
+      "rnafm_head": "348951516e0963d22bbb33b3c9fc18c89081d38e",
+      "rnafm_head_expected": "348951516e0963d22bbb33b3c9fc18c89081d38e",
+      "rnafm_origin": "https://github.com/ml4bio/RNA-FM.git",
+      "rnafm_local_modification": "redevelop/launch/predict.py (deps/rnafm_cpu_default.patch)",
+      "rnafm_weights_sha256": "5b5d7d87b37c291ef42c140ef9edf7aea29f255fa2a4fd435f776c52e93d5e99",
+      "rnafm_weights_expected": "5b5d7d87b37c291ef42c140ef9edf7aea29f255fa2a4fd435f776c52e93d5e99",
+      "offtarget_toolchain": {
+        "prefix": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp/deps/offtarget-env (symlink to the attempt-1 built prefix)",
+        "perl": "5.32.1 darwin-thread-multi-2level (x86_64, Rosetta 2)",
+        "bioperl": "Bio::TreeIO importable",
+        "statistics_lite": "importable",
+        "RNAplfold": "2.7.2",
+        "sed": "GNU sed 4.10",
+        "grep": "GNU grep 3.12"
+      },
+      "pita_after_second_setup_run": {
+        "RNAduplex": "Mach-O arm64",
+        "RNAddG4": "Mach-O arm64",
+        "EXE_BASE_DIR_substituted": true
+      },
+      "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/identity.log"
+    },
+    "packaged_wrapper_matches_verified_revision": {
+      "src/tools/cli_wrapper.py": "833e57bbd04e6e4ad02972a10c9b35999ce7454d44a51c906c2be17d54bfb3f0",
+      "verification_report_sha256": "833e57bbd04e6e4ad02972a10c9b35999ce7454d44a51c906c2be17d54bfb3f0",
+      "matches": true,
+      "source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/reports/verification-cli_wrapper.json -> production_file_hashes"
+    }
+  },
+  "acceptance": {
+    "helper": "/Users/james/.claude/skills/paper2agent/paper2mcp/scripts/verify_mcp_server.py",
+    "command": "<extracted>/.venv/bin/python $SKILL_ROOT/scripts/verify_mcp_server.py --server src/OligoFormer_mcp.py --expected <relocated expected> --cases <relocated cases> --require-all-tools --call-timeout 1800 --report <report>",
+    "cwd": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/install2/OligoFormer-mcp",
+    "report_path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/acceptance-report.json",
+    "run_log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/acceptance-run.log",
+    "mode": "calls",
+    "require_all_tools": true,
+    "expected_tools": [
+      "compare_sirna_mismatch_kon",
+      "predict_sirna_efficacy_from_mrna",
+      "predict_specific_sirna_efficacy",
+      "scan_sirna_mismatch_variants",
+      "screen_sirna_offtarget"
+    ],
+    "actual_tools": [
+      "compare_sirna_mismatch_kon",
+      "predict_sirna_efficacy_from_mrna",
+      "predict_specific_sirna_efficacy",
+      "scan_sirna_mismatch_variants",
+      "screen_sirna_offtarget"
+    ],
+    "missing": [],
+    "unexpected": [],
+    "relocation": {
+      "cases_source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/reports/mcp-acceptance-cases.json",
+      "cases_relocated": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/mcp-acceptance-cases.relocated.json",
+      "cases_relocated_sha256": "5dd104dbb54c78227381fb53410f65fa441aa3301961cb2a49e36d7a84e8b13f",
+      "expected_tools_copy_sha256": "863cb2114a66ef4c2e6510fc710cabb60378884c383c918a7efcb7497d9cbb74",
+      "rewrites": [
+        "<PROJECT_ROOT>/tests/data/cli_wrapper -> <scratch>/delivery/acceptance2/fixtures",
+        "<PROJECT_ROOT>/tmp/outputs/acceptance -> <scratch>/delivery/acceptance2/outputs/acceptance"
+      ],
+      "fixtures_copied": 17,
+      "assertions_unchanged": "verified programmatically for all 18 cases (name, tool, required_inputs, expected_subset, min_artifacts, error_contains, unique_artifacts and the field set byte-equal to the source); only path strings were rewritten",
+      "fresh_output_root": true
+    },
+    "cases_total": 18,
+    "cases_passed": 18,
+    "success": true,
+    "per_case": [
+      {
+        "name": "traverse-reference-example-fasta",
+        "tool": "predict_sirna_efficacy_from_mrna",
+        "success": true,
+        "artifacts_checked": 6
+      },
+      {
+        "name": "traverse-repeated-call-distinct-artifacts",
+        "tool": "predict_sirna_efficacy_from_mrna",
+        "success": true,
+        "artifacts_checked": 3
+      },
+      {
+        "name": "traverse-toxicity-threshold-80",
+        "tool": "predict_sirna_efficacy_from_mrna",
+        "success": true,
+        "artifacts_checked": 3
+      },
+      {
+        "name": "traverse-missing-input-file",
+        "tool": "predict_sirna_efficacy_from_mrna",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "traverse-record-shorter-than-19nt",
+        "tool": "predict_sirna_efficacy_from_mrna",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "specific-sirnas-reference",
+        "tool": "predict_specific_sirna_efficacy",
+        "success": true,
+        "artifacts_checked": 6
+      },
+      {
+        "name": "specific-sirnas-record-prefiltering",
+        "tool": "predict_specific_sirna_efficacy",
+        "success": true,
+        "artifacts_checked": 4
+      },
+      {
+        "name": "specific-sirnas-non-19nt-sequence",
+        "tool": "predict_specific_sirna_efficacy",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "specific-sirnas-no-match-at-all",
+        "tool": "predict_specific_sirna_efficacy",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "offtarget-reference-slow",
+        "tool": "screen_sirna_offtarget",
+        "success": true,
+        "artifacts_checked": 10
+      },
+      {
+        "name": "offtarget-empty-utr-reference",
+        "tool": "screen_sirna_offtarget",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "mismatch-kon-reference-pair",
+        "tool": "compare_sirna_mismatch_kon",
+        "success": true,
+        "artifacts_checked": 0
+      },
+      {
+        "name": "mismatch-kon-five-mismatches",
+        "tool": "compare_sirna_mismatch_kon",
+        "success": true,
+        "artifacts_checked": 0
+      },
+      {
+        "name": "mismatch-kon-dna-sequence-rejected",
+        "tool": "compare_sirna_mismatch_kon",
+        "success": true,
+        "artifacts_checked": null
+      },
+      {
+        "name": "mismatch-scan-depth2-reference",
+        "tool": "scan_sirna_mismatch_variants",
+        "success": true,
+        "artifacts_checked": 1
+      },
+      {
+        "name": "mismatch-scan-repeated-call-distinct-artifacts",
+        "tool": "scan_sirna_mismatch_variants",
+        "success": true,
+        "artifacts_checked": 1
+      },
+      {
+        "name": "mismatch-scan-changed-base",
+        "tool": "scan_sirna_mismatch_variants",
+        "success": true,
+        "artifacts_checked": 1
+      },
+      {
+        "name": "mismatch-scan-18nt-base-rejected",
+        "tool": "scan_sirna_mismatch_variants",
+        "success": true,
+        "artifacts_checked": null
+      }
+    ],
+    "offtarget_after_second_setup_run": "the whole suite, including offtarget-reference-slow (10 artifacts) and offtarget-empty-utr-reference, ran AFTER the second setup_oligoformer_runtime.sh run, so a real screen_sirna_offtarget call is proven to work on a twice-set-up runtime"
+  },
+  "scientific_comparison": {
+    "script": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/work/compare_sci.py",
+    "script_sha256": "4f9145dc1f8a89fa7dde5d93ca1780f967308e6542e003a40ba89f5c849d2476",
+    "log": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/scientific-comparison.log",
+    "report": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2/scientific-comparison.json",
+    "reference": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_toxicity/outputs/run1",
+    "reference_command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox --output_dir .../run1/   (upstream, direct CLI)",
+    "compared_call": "screen_sirna_offtarget(mrna_fasta_path=<relocated example.fa>, include_toxicity=true) from the attempt-2 extraction",
+    "all_checks_passed": true,
+    "checks_total": 16,
+    "checks": [
+      {
+        "name": "single-offtarget-run-dir",
+        "success": true
+      },
+      {
+        "name": "RNA0/pita.tab-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA0/targetscan.tab-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA0/siRNA.fa-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA0-deterministic-columns-present",
+        "success": true
+      },
+      {
+        "name": "RNA0-deterministic-columns-exact",
+        "success": true
+      },
+      {
+        "name": "RNA0-efficacy-tolerance",
+        "success": true
+      },
+      {
+        "name": "RNA1/pita.tab-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA1/targetscan.tab-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA1/siRNA.fa-sha256",
+        "success": true
+      },
+      {
+        "name": "RNA1-deterministic-columns-present",
+        "success": true
+      },
+      {
+        "name": "RNA1-deterministic-columns-exact",
+        "success": true
+      },
+      {
+        "name": "RNA1-efficacy-tolerance",
+        "success": true
+      },
+      {
+        "name": "mismatch-scan-run-dirs",
+        "success": true
+      },
+      {
+        "name": "mismatch-scan-1596-rows",
+        "success": true
+      },
+      {
+        "name": "scan-table-kon-matches-pair-tool",
+        "success": true
+      }
+    ],
+    "detail": {
+      "single-offtarget-run-dir": {
+        "dirs": [
+          "offtarget_20261022T132816Z_ce28e09d"
+        ]
+      },
+      "RNA0/pita.tab-sha256": {
+        "extracted": "b8213843769f0d0d6c602bb68531a48f72ca11fc82ce6c5a1d6afe31223c1e78",
+        "reference": "b8213843769f0d0d6c602bb68531a48f72ca11fc82ce6c5a1d6afe31223c1e78",
+        "bytes": 55834,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA0/pita.tab"
+      },
+      "RNA0/targetscan.tab-sha256": {
+        "extracted": "0d1eaf98036dc5b85fc23f3d9f58f5a0832b9795026c7ed167966b4114409a16",
+        "reference": "0d1eaf98036dc5b85fc23f3d9f58f5a0832b9795026c7ed167966b4114409a16",
+        "bytes": 14260,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA0/targetscan.tab"
+      },
+      "RNA0/siRNA.fa-sha256": {
+        "extracted": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+        "reference": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+        "bytes": 1043,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA0/siRNA.fa"
+      },
+      "RNA0-deterministic-columns-present": {
+        "compared": [
+          "pos",
+          "sense",
+          "siRNA",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ],
+        "missing": [],
+        "extracted_columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "efficacy",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ],
+        "reference_columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "efficacy",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ]
+      },
+      "RNA0-deterministic-columns-exact": {
+        "rows_extracted": 39,
+        "rows_reference": 39,
+        "columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ]
+      },
+      "RNA0-efficacy-tolerance": {
+        "max_abs_diff": 0.059114,
+        "spearman": 0.973077,
+        "limits": {
+          "max_abs_diff": 0.25,
+          "spearman_min": 0.9
+        }
+      },
+      "RNA1/pita.tab-sha256": {
+        "extracted": "9160a1564e621459f35e4fe261ae46505d181ed18c34b43e01077e2ef980646c",
+        "reference": "9160a1564e621459f35e4fe261ae46505d181ed18c34b43e01077e2ef980646c",
+        "bytes": 54471,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA1/pita.tab"
+      },
+      "RNA1/targetscan.tab-sha256": {
+        "extracted": "c74d47ea2228baf899e8c49aee7048f49eaff3e49ee1d706c03d183944d38b86",
+        "reference": "c74d47ea2228baf899e8c49aee7048f49eaff3e49ee1d706c03d183944d38b86",
+        "bytes": 14981,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA1/targetscan.tab"
+      },
+      "RNA1/siRNA.fa-sha256": {
+        "extracted": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+        "reference": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+        "bytes": 1043,
+        "path": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery/acceptance2/outputs/acceptance/offtarget_20261022T132816Z_ce28e09d/offtarget/RNA1/siRNA.fa"
+      },
+      "RNA1-deterministic-columns-present": {
+        "compared": [
+          "pos",
+          "sense",
+          "siRNA",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ],
+        "missing": [],
+        "extracted_columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "efficacy",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ],
+        "reference_columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "efficacy",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ]
+      },
+      "RNA1-deterministic-columns-exact": {
+        "rows_extracted": 39,
+        "rows_reference": 39,
+        "columns": [
+          "pos",
+          "sense",
+          "siRNA",
+          "func_filter",
+          "pita_score",
+          "targetscan_score",
+          "off_target_filter",
+          "Seed",
+          "cell_viability",
+          "toxicity_filter",
+          "filter"
+        ]
+      },
+      "RNA1-efficacy-tolerance": {
+        "max_abs_diff": 0.038719,
+        "spearman": 0.986437,
+        "limits": {
+          "max_abs_diff": 0.25,
+          "spearman_min": 0.9
+        }
+      },
+      "mismatch-scan-run-dirs": {
+        "dirs": [
+          "mismatch_scan_20261022T133526Z_28f2d18a",
+          "mismatch_scan_20261022T133528Z_714912e8",
+          "mismatch_scan_20261022T133531Z_4641771a"
+        ]
+      },
+      "mismatch-scan-1596-rows": [
+        {
+          "dir": "mismatch_scan_20261022T133526Z_28f2d18a",
+          "file": "mismatch.txt",
+          "rows": 1596,
+          "rows_per_num_mismatch": {
+            "1": 57,
+            "2": 1539
+          }
+        },
+        {
+          "dir": "mismatch_scan_20261022T133528Z_714912e8",
+          "file": "mismatch.txt",
+          "rows": 1596,
+          "rows_per_num_mismatch": {
+            "1": 57,
+            "2": 1539
+          }
+        },
+        {
+          "dir": "mismatch_scan_20261022T133531Z_4641771a",
+          "file": "mismatch.txt",
+          "rows": 1596,
+          "rows_per_num_mismatch": {
+            "1": 57,
+            "2": 1539
+          }
+        }
+      ],
+      "scan-table-kon-matches-pair-tool": {
+        "expected": 0.9940418601036072,
+        "found": [
+          {
+            "dir": "mismatch_scan_20261022T133526Z_28f2d18a",
+            "kon": 0.9940418601036072
+          },
+          {
+            "dir": "mismatch_scan_20261022T133528Z_714912e8",
+            "kon": 0.9940418601036072
+          }
+        ]
+      }
+    }
+  },
+  "reused_from_attempt1_without_repeating": [
+    "wrapper source review and the 108 scientific pytest comparisons (src/tools/cli_wrapper.py and src/OligoFormer_mcp.py are byte-identical; both were still fully re-executed through MCP)",
+    "the 8 extra exercises (repeated calls produce distinct artifact dirs, invalid inputs raise MCP errors, output_dir containing a space, OLIGOFORMER_RUNTIME and OLIGOFORMER_OFFTARGET_ENV overrides both positive and negative) - all passed in attempt 1 against the identical wrapper; results kept at /private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/work/extra_checks.json",
+    "the off-target conda prefix built from the (byte-identical) lock in the attempt-1 extraction",
+    "the python zipfile / ditto executable-bit comparison"
+  ],
+  "usage_md_findings": [
+    {
+      "id": "F1",
+      "severity": "medium",
+      "status": "open (host condition, accepted)",
+      "finding": "`python3.11 -m venv .venv` still exits 127 here because no python3.11 exists on the host; USAGE.md lists Python 3.11 as a prerequisite but does not say how to obtain it. The documented `uv venv ... --seed` alternative works.",
+      "recommendation": "optional: name a concrete way to install 3.11 (uv, pyenv, python.org)"
+    },
+    {
+      "id": "F2",
+      "severity": "medium",
+      "status": "FIXED and verified",
+      "verification": "the documented uv branch now seeds pip, and the following documented `./.venv/bin/python -m pip install -r src/requirements.txt` exits 0"
+    },
+    {
+      "id": "F3",
+      "severity": "medium",
+      "status": "FIXED and verified",
+      "verification": "the shared smoke_ok() runs on both paths; a prefix with an executable-but-broken RNAplfold no longer short-circuits (proceeds to conda create), while a working one reports 'already complete'"
+    },
+    {
+      "id": "F4",
+      "severity": "high",
+      "status": "FIXED and verified",
+      "verification": "two consecutive identical setup runs both exit 0; run 2 rebuilds the locally built binaries instead of dying, leaves Mach-O arm64 RNAduplex/RNAddG4 and a substituted EXE_BASE_DIR, and the full off-target acceptance case then passed with reference-identical tables"
+    },
+    {
+      "id": "F5",
+      "severity": "informational",
+      "status": "unchanged, accurate"
+    },
+    {
+      "id": "F6",
+      "severity": "informational",
+      "status": "unchanged, accurate",
+      "note": "the new USAGE.md paragraph about the first-run PITA build and safe re-runs matches observed behaviour. One nuance: on a host without the published binaries every later run rebuilds RNAduplex/RNAddG4 (~30 s), which the text describes as 'rebuild rather than fail' - accurate, but re-runs are not free."
+    },
+    {
+      "id": "F7",
+      "severity": "informational",
+      "status": "new, no action",
+      "finding": "USAGE.md's claim that 'a failed build leaves the previous working runtime in place' follows from the reordering and was confirmed by inspection of the script, but was not exercised adversarially (no build failure was injected)."
+    }
+  ],
+  "limitations": [
+    "Platform: validated only on macOS 15.7.3 arm64 with Python 3.11.12 and torch 2.2.1 CPU. Linux untested (there the script keeps the shipped x86-64 PITA binaries, a different path).",
+    "The off-target toolchain prefix is platform osx-64, so perl, RNAplfold, GNU sed and GNU grep run under Rosetta 2; Rosetta 2 must be installed.",
+    "The off-target conda prefix was reused from the attempt-1 extraction (same byte-identical lock) rather than created again, so `conda create` from the lock was not re-executed in attempt 2; attempt 1 did execute it successfully. Channel availability of the 178 locked URLs was never re-proven against the network (warm local package cache).",
+    "The 1.2 GB RNA-FM checkpoint download and the GitHub clones were not exercised (local caches passed through the documented RNAFM_WEIGHTS / OLIGOFORMER_SRC / RNAFM_SRC inputs); identity was still verified by the script's sha256 and commit checks.",
+    "screen_sirna_offtarget requires an installation path without spaces (upstream passes reference paths unquoted to a shell); the package was installed at a space-free path as documented and this limit was not re-tested.",
+    "Training, evaluation modes, -top N and -a/--all_human remain out of scope and unexposed, as USAGE.md documents. No GPU path was exercised.",
+    "Efficacy is stochastic upstream; agreement is asserted only within 0.25 absolute and Spearman >= 0.9, and the *_ranked ordering differs between runs by design."
+  ],
+  "logs": {
+    "attempt2_directory": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs2",
+    "attempt2_files": [
+      "acceptance-report.json",
+      "acceptance-run.log",
+      "hash-inventory.txt",
+      "identity.log",
+      "install-01-venv.log",
+      "install-02-uvvenv-seed.log",
+      "install-03-pip.log",
+      "install-04-offtargetenv.log",
+      "install-05-smokeok-negative.log",
+      "install-05b-smokeok-negative.log",
+      "install-06-setup-run1.log",
+      "install-07-setup-run2.log",
+      "scientific-comparison.json",
+      "scientific-comparison.log"
+    ],
+    "attempt1_directory": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/logs",
+    "work_directories": [
+      "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/work",
+      "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/work2"
+    ],
+    "extraction_root": "/private/tmp/claude-501/-Users-james-Local-paper2agent-paper2agent-test-OligoFormer/fe9c38f5-c6db-4d6a-be18-8e087c75e604/scratchpad/delivery"
+  },
+  "success": true,
+  "success_qualifier": "Attempt 2 of the archive installs and runs correctly from the extracted package alone, following USAGE.md verbatim with no undocumented workaround, and reproduces the upstream reference results. F2, F3 and F4 from attempt 1 are confirmed fixed, including a second setup run followed by a working off-target screen. Only F1 (no python3.11 on this host, covered by the documented uv alternative) remains open and needs no package change."
+}

@@ -1,0 +1,292 @@
+Calculating predictions...
+Reading relations from file tmp_upstream_stab_8211 done.
+Joining on file - done.
+Reading relations from file tmp_utr_stab_8211 done.
+Joining on file tmp_prefix_8211 done.
+Finding potential targets...
+allowed lengths = 6 7 8
+allowed_gu_wobbles{6} = 0
+allowed_gu_wobbles{7} = 1
+allowed_gu_wobbles{8} = 1
+allowed_mismatches{6} = 0
+allowed_mismatches{7} = 0
+allowed_mismatches{8} = 1
+allowed_loops = 
+MicroRNA Names: RNA1 RNA0 RNA15 RNA4 RNA11 RNA6 RNA2 RNA10 RNA21 RNA5
+MicroRNA Sequences: TCGCAAATTAAATTGAACC TTCGCAAATTAAATTGAAC TTTCGCAAATTAAATTGAA CTTTCGCAAATTAAATTGA TCTTTCGCAAATTAAATTG CTCTTTCGCAAATTAAATT TCTCTTTCGCAAATTAAAT GTCTCTTTCGCAAATTAAA GGTCTCTTTCGCAAATTAA AGGTCTCTTTCGCAAATTA
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+Computing site scores...
+Reading relations from file RNA0_ext_utr.stab done.
+Joining on file -
+Computing 1000 results: Calling RNAduplex with 1000 targets... Calling RNAddG with 1000 targets...  done.
+
+Computing 325 results: Calling RNAduplex with 325 targets... Calling RNAddG with 325 targets...  Done.
+Done.
+Sorting targetscan_70_output.txt by group number and creating targetscan_70_output.sort.txt
+Sorting [ sort -k8,8n targetscan_70_output.txt > targetscan_70_output.sort.txt ] is done
+
+All done -- Also see ORF.lengths.txt for sequence lengths.
+
+Using 9606 as the reference species (as set by $REF_SPECIES).
+Reading miRNA file (sirnas_for_context_scores.txt)...
+Reading UTRs file (UTR.txt)... done
+Reading affected isoform ratios (AIRs) file (All_cell_lines.AIRs.txt)...
+Creating directory RNAplfold_in_out
+Running RNAplfold on UTRs (if we didn't do so before)....
+[WARNING] window size 80 larger than sequence length 60
+[WARNING] window size 80 larger than sequence length 59
+[WARNING] window size 80 larger than sequence length 15
+[WARNING] window size 80 larger than sequence length 17
+[WARNING] window size 80 larger than sequence length 62
+Reading ORF lengths file (ORF.length.txt)...
+Reading ORF 8mer counts file (ORF_8mer_counts.txt)...
+Reading and processing targets file (targetscan_70_output.BL_PCT.txt).... done
+Deleted temporary file (Targets.BL_PCT.context_scores.txt.tmp)
+
+All done!  -  See Targets.BL_PCT.context_scores.txt for output.
+
+Calculating predictions...
+Reading relations from file tmp_upstream_stab_58599 done.
+Joining on file - done.
+Reading relations from file tmp_utr_stab_58599 done.
+Joining on file tmp_prefix_58599 done.
+Finding potential targets...
+allowed lengths = 6 7 8
+allowed_gu_wobbles{6} = 0
+allowed_gu_wobbles{7} = 1
+allowed_gu_wobbles{8} = 1
+allowed_mismatches{6} = 0
+allowed_mismatches{7} = 0
+allowed_mismatches{8} = 1
+allowed_loops = 
+MicroRNA Names: RNA6 RNA7 RNA10 RNA21 RNA17 RNA0 RNA8 RNA12 RNA16 RNA1
+MicroRNA Sequences: ATTAAATTGAACCTATAGT CATTAAATTGAACCTATAG ACATTAAATTGAACCTATA CACATTAAATTGAACCTAT GCACATTAAATTGAACCTA CGCACATTAAATTGAACCT TCGCACATTAAATTGAACC TTCGCACATTAAATTGAAC TTTCGCACATTAAATTGAA CTTTCGCACATTAAATTGA
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+Computing site scores...
+Reading relations from file RNA1_ext_utr.stab done.
+Joining on file -
+Computing 1000 results: Calling RNAduplex with 1000 targets... Calling RNAddG with 1000 targets...  done.
+
+Computing 349 results: Calling RNAduplex with 349 targets... Calling RNAddG with 349 targets...  Done.
+Done.
+Sorting targetscan_70_output.txt by group number and creating targetscan_70_output.sort.txt
+Sorting [ sort -k8,8n targetscan_70_output.txt > targetscan_70_output.sort.txt ] is done
+
+All done -- Also see ORF.lengths.txt for sequence lengths.
+
+Using 9606 as the reference species (as set by $REF_SPECIES).
+Reading miRNA file (sirnas_for_context_scores.txt)...
+Reading UTRs file (UTR.txt)... done
+Reading affected isoform ratios (AIRs) file (All_cell_lines.AIRs.txt)...
+Creating directory RNAplfold_in_out
+Running RNAplfold on UTRs (if we didn't do so before)....
+[WARNING] window size 80 larger than sequence length 60
+[WARNING] window size 80 larger than sequence length 59
+[WARNING] window size 80 larger than sequence length 15
+[WARNING] window size 80 larger than sequence length 17
+[WARNING] window size 80 larger than sequence length 62
+Reading ORF lengths file (ORF.length.txt)...
+Reading ORF 8mer counts file (ORF_8mer_counts.txt)...
+Reading and processing targets file (targetscan_70_output.BL_PCT.txt).... done
+Deleted temporary file (Targets.BL_PCT.context_scores.txt.tmp)
+
+All done!  -  See Targets.BL_PCT.context_scores.txt for output.
+

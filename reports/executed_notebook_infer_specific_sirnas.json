@@ -1,0 +1,327 @@
+{
+  "infer_specific_sirnas": {
+    "source": {
+      "path": "repo/OligoFormer/README.md",
+      "section": "Usage / 3. Model inference / 3.1 Option 2",
+      "url": "https://github.com/lulab/OligoFormer",
+      "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+      "readme_sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1",
+      "documented_command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa"
+    },
+    "status": "success",
+    "execution_mode": "native_command",
+    "execution_path": "notebooks/infer_specific_sirnas/run.sh",
+    "runtime_copy": {
+      "path": "notebooks/infer_specific_sirnas/runtime/OligoFormer",
+      "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+      "git_status_short_count": 1,
+      "git_status_note": "only '?? RNA-FM/' (nested RNA-FM checkout); data/infer removed after runs",
+      "rnafm_head": "348951516e0963d22bbb33b3c9fc18c89081d38e (+deps/rnafm_cpu_default.patch)",
+      "built_with": "SKIP_OFFTARGET=1 OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh <runtime> (off-target staging skipped: -off not used by this assignment)"
+    },
+    "executable": {
+      "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+      "python_version": "3.11.12",
+      "torch": "2.2.1 (CPU)",
+      "pandas": "2.0.3",
+      "numpy": "1.24.4",
+      "perl_RNAplfold": "not used"
+    },
+    "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+    "env": {
+      "PATH_prefix": [
+        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
+        "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+      ],
+      "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/RNA-FM/torch_home",
+      "PERL5LIB": "unset"
+    },
+    "commands": [
+      {
+        "label": "run1",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run1/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 0,
+        "wall_seconds": 14.832
+      },
+      {
+        "label": "run2",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run2/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 0,
+        "wall_seconds": 15.575
+      },
+      {
+        "label": "run3",
+        "command": "python scripts/main.py --infer 1 -i1 data/example.fa -i2 data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/run3/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 0,
+        "wall_seconds": 14.491
+      },
+      {
+        "label": "replay",
+        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/replay/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 0,
+        "wall_seconds": 13.926
+      },
+      {
+        "label": "changed_input",
+        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/changed_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/changed_input/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 0,
+        "wall_seconds": 14.915
+      },
+      {
+        "label": "error_len20",
+        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/len20/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 1,
+        "wall_seconds": 1.867
+      },
+      {
+        "label": "error_zero_match_RNA1",
+        "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/example.fa -i2 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/",
+        "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer",
+        "exit_status": 1,
+        "wall_seconds": 14.415
+      }
+    ],
+    "logs": "notebooks/infer_specific_sirnas/logs/<label>.{stdout,stderr}, logs/commands.tsv",
+    "inputs": {
+      "notebooks/infer_specific_sirnas/data/changed_siRNA.fa": "be9677337fa01f20f224acc8c452b29e3b4123998ffecbaf1f94195747f0b76d",
+      "notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa": "7d1a81a23ff5fd4c959fe6fbd937e7ff333952d3c69c91d443c79bed08810cf6",
+      "notebooks/infer_specific_sirnas/data/example.fa": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851",
+      "notebooks/infer_specific_sirnas/data/example_siRNA.fa": "f4e377dcef82531c1d15f4feda68ffaa8db7206f4ffbf532c38d54aaa3c128e6",
+      "notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa": "1fc1971a14e223e6c41cc35b4dd6ce78b7109dc399580dfceaba2919d9b5a985"
+    },
+    "outputs": {
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA0.txt": "7bce0492f0a5656670a3d241e2f92f89137a0a5df9c8ff06801eb76a27601d44",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA0_ranked.txt": "023ed92f30319e335e7a03c9341afc5d07149e4d3332d3ddb89cda068eb8332c",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA1.txt": "36e203354fa38a3c547560aa42376b8194a5230535865234cfaf71714698762d",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA1_ranked.txt": "1e8987d58fd07bf62c2a43a7be4c0470d4763bdd80ad474c7554c6d0ac2e42d7",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/RNA1_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA0/file_listing.txt": "2fea98e26ef177d890236e125fd5942b2d3027b20e1bcd95a9b02e808eb9f84d",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA0/mRNA.fa": "3983a96a87bb0da699ec8978d784dbeb674a498efc5bb91ddb17e0d7d82ccfb2",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA0/siRNA.fa": "508f101291180937968603f71bd2256d8fad22f1ceeb3241da87eae35975592c",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA1/file_listing.txt": "2fea98e26ef177d890236e125fd5942b2d3027b20e1bcd95a9b02e808eb9f84d",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA1/mRNA.fa": "2ef6a48fa73b075cd39fad4aa8c85e6024538f57b82402e2f62262452d6451c4",
+      "notebooks/infer_specific_sirnas/outputs/changed_input/infer_intermediate/RNA1/siRNA.fa": "640e2792371ae9f605b54ee401fda0fa707298bc8d9b90c70e20e80318eb5524",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/RNA0.txt": "987c3db2069e18d9ad82754781e6f7bb23ca7967d7641c55a6565df0fe1b5c60",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/RNA0_ranked.txt": "987c3db2069e18d9ad82754781e6f7bb23ca7967d7641c55a6565df0fe1b5c60",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/infer_intermediate/RNA0/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/infer_intermediate/RNA0/mRNA.fa": "07181d9ecec7a1176afd631cca56eb064568c6740e2a10319bed69476aa235fc",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/infer_intermediate/RNA0/siRNA.fa": "7a532e81c64dbacb9cdd034f4edef73c952ae0916717a1d070f11e6c21732a7e",
+      "notebooks/infer_specific_sirnas/outputs/error_cases/zero_match_RNA1/infer_intermediate/RNA1/file_listing.txt": "c9fe9a87a2db5aa91e44aadd6f196fe685d3d8d2f9e0e7ddc29ae359af942bcb",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA0.txt": "3b3522958ca05aa8edb96433a77c4e08fb480bbdf855c88c3e4f229328b0efe6",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA0_ranked.txt": "3b3522958ca05aa8edb96433a77c4e08fb480bbdf855c88c3e4f229328b0efe6",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA1.txt": "47bf459b02fbd803e928b85e308fffba646806af872b913846a57ea38c7e1eba",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA1_ranked.txt": "47bf459b02fbd803e928b85e308fffba646806af872b913846a57ea38c7e1eba",
+      "notebooks/infer_specific_sirnas/outputs/replay/RNA1_ranked_filtered.txt": "47bf459b02fbd803e928b85e308fffba646806af872b913846a57ea38c7e1eba",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA0/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA0/mRNA.fa": "07181d9ecec7a1176afd631cca56eb064568c6740e2a10319bed69476aa235fc",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA0/siRNA.fa": "7a532e81c64dbacb9cdd034f4edef73c952ae0916717a1d070f11e6c21732a7e",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA1/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA1/mRNA.fa": "d409535d7bfd490e95809be6e7c9d13520dbe244f7c531adbe2f6c05d106a7a8",
+      "notebooks/infer_specific_sirnas/outputs/replay/infer_intermediate/RNA1/siRNA.fa": "892d003ee25c7df8b8f113a2b942e3949f8bb9ba82fb57df1144e962c7a07a72",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA0.txt": "ea1265abf7f64ec21f0238b33189ab119273627d7e1e0c97da428afe9d4c8ab7",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA0_ranked.txt": "ea1265abf7f64ec21f0238b33189ab119273627d7e1e0c97da428afe9d4c8ab7",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA1.txt": "3cf459c0561c96382c86984348b07d67cf96d2c176d33b1df17277ccbe3a5169",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA1_ranked.txt": "3cf459c0561c96382c86984348b07d67cf96d2c176d33b1df17277ccbe3a5169",
+      "notebooks/infer_specific_sirnas/outputs/run1/RNA1_ranked_filtered.txt": "3cf459c0561c96382c86984348b07d67cf96d2c176d33b1df17277ccbe3a5169",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA0/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA0/mRNA.fa": "07181d9ecec7a1176afd631cca56eb064568c6740e2a10319bed69476aa235fc",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA0/siRNA.fa": "7a532e81c64dbacb9cdd034f4edef73c952ae0916717a1d070f11e6c21732a7e",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA1/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA1/mRNA.fa": "d409535d7bfd490e95809be6e7c9d13520dbe244f7c531adbe2f6c05d106a7a8",
+      "notebooks/infer_specific_sirnas/outputs/run1/infer_intermediate/RNA1/siRNA.fa": "892d003ee25c7df8b8f113a2b942e3949f8bb9ba82fb57df1144e962c7a07a72",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA0.txt": "6dfcd74a8f530b1a143dd331ab1ae3743cdd29362eabc9e73f168007d22769b6",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA0_ranked.txt": "6dfcd74a8f530b1a143dd331ab1ae3743cdd29362eabc9e73f168007d22769b6",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA1.txt": "e65c322b018a019f382968f040f264103dcc6bb8b9faf4e076b25e7a81f6cac0",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA1_ranked.txt": "e65c322b018a019f382968f040f264103dcc6bb8b9faf4e076b25e7a81f6cac0",
+      "notebooks/infer_specific_sirnas/outputs/run2/RNA1_ranked_filtered.txt": "e65c322b018a019f382968f040f264103dcc6bb8b9faf4e076b25e7a81f6cac0",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA0/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA0/mRNA.fa": "07181d9ecec7a1176afd631cca56eb064568c6740e2a10319bed69476aa235fc",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA0/siRNA.fa": "7a532e81c64dbacb9cdd034f4edef73c952ae0916717a1d070f11e6c21732a7e",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA1/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA1/mRNA.fa": "d409535d7bfd490e95809be6e7c9d13520dbe244f7c531adbe2f6c05d106a7a8",
+      "notebooks/infer_specific_sirnas/outputs/run2/infer_intermediate/RNA1/siRNA.fa": "892d003ee25c7df8b8f113a2b942e3949f8bb9ba82fb57df1144e962c7a07a72",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA0.txt": "068d66782837e2f69b2bb43cf738d538316954b2b16221a5ebb0b362f00b92a5",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA0_ranked.txt": "068d66782837e2f69b2bb43cf738d538316954b2b16221a5ebb0b362f00b92a5",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA0_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA1.txt": "92273f58bc2b10473049ebec365e5c215a737c6f1704b3f49c09f8821e467162",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA1_ranked.txt": "92273f58bc2b10473049ebec365e5c215a737c6f1704b3f49c09f8821e467162",
+      "notebooks/infer_specific_sirnas/outputs/run3/RNA1_ranked_filtered.txt": "92273f58bc2b10473049ebec365e5c215a737c6f1704b3f49c09f8821e467162",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA0/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA0/mRNA.fa": "07181d9ecec7a1176afd631cca56eb064568c6740e2a10319bed69476aa235fc",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA0/siRNA.fa": "7a532e81c64dbacb9cdd034f4edef73c952ae0916717a1d070f11e6c21732a7e",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA1/file_listing.txt": "ecfe68429a2aed473d370502bbf3817d1498ec71ec73e6d9ad8b89fe9ac00233",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA1/mRNA.fa": "d409535d7bfd490e95809be6e7c9d13520dbe244f7c531adbe2f6c05d106a7a8",
+      "notebooks/infer_specific_sirnas/outputs/run3/infer_intermediate/RNA1/siRNA.fa": "892d003ee25c7df8b8f113a2b942e3949f8bb9ba82fb57df1144e962c7a07a72"
+    },
+    "output_contract": {
+      "files_per_record": [
+        "<output_dir><record>.txt",
+        "<output_dir><record>_ranked.txt",
+        "<output_dir><record>_ranked_filtered.txt"
+      ],
+      "columns": [
+        "pos",
+        "sense",
+        "siRNA",
+        "efficacy",
+        "func_filter",
+        "filter"
+      ],
+      "format": "tab-separated, header, no index; record name = FASTA header with ' ' -> '_@_'",
+      "pos_semantics": "ROW COUNTER (1..n over the siRNAs matched in that record, in siRNA-FASTA order), NOT the genomic/window position. Verified in changed_input: RNA0 window i=36 siRNA gets pos 1, window i=25 gets pos 2; RNA1 window i=31 -> pos 1, i=3 -> pos 2.",
+      "sense": "antiRNA(siRNA) = the matched 19-nt mRNA window (5'->3')",
+      "matching": "per record, re.search(antiRNA(siRNA), mRNA); first occurrence only; siRNAs that match nowhere are silently dropped (no warning, no row)",
+      "siRNA_fasta_contract": "every non-header line must be exactly 19 chars (else Exception 'The length of some siRNA is not 19 nt!' before any output); lines are NOT upper-cased or T->U converted (unlike the mRNA FASTA); a blank line would also trigger the 19-nt exception",
+      "ranked": "sorted by efficacy desc; ranked_filtered keeps filter==0 (header-only when none pass)",
+      "flank_mRNA": "57-nt context = 19 nt left + window + 19 nt right, X-padded at ends (see infer_intermediate/*/mRNA.fa)"
+    },
+    "documented_run_results": {
+      "matches": {
+        "RNA0": [
+          "siRNA0 UCGCAAAUUAAAUUGAACC (window i=0)"
+        ],
+        "RNA1": [
+          "siRNA1 UCUCUUUCGCACAUUAAAU (window i=12)"
+        ]
+      },
+      "row_counts": {
+        "RNA0.txt": 1,
+        "RNA0_ranked.txt": 1,
+        "RNA0_ranked_filtered.txt": 0,
+        "RNA1.txt": 1,
+        "RNA1_ranked.txt": 1,
+        "RNA1_ranked_filtered.txt": 1
+      },
+      "func_filter": {
+        "RNA0 siRNA0": 4,
+        "RNA1 siRNA1": 0
+      }
+    },
+    "run_to_run_comparison": {
+      "deterministic_columns_identical_runs_1_3_and_replay": [
+        "pos",
+        "sense",
+        "siRNA",
+        "func_filter",
+        "filter"
+      ],
+      "identical": true,
+      "ranked_and_filtered_row_sets_identical": true,
+      "efficacy_spread": {
+        "RNA0": {
+          "siRNA": "UCGCAAAUUAAAUUGAACC",
+          "efficacy": {
+            "run1": 1.032477255821228,
+            "run2": 1.030568131864071,
+            "run3": 1.0246978454589843,
+            "replay": 1.018351576924324
+          },
+          "max_abs_diff_run1_3": 0.007779,
+          "max_abs_diff_incl_replay": 0.014126,
+          "max_rel_diff_incl_replay": 0.0139
+        },
+        "RNA1": {
+          "siRNA": "UCUCUUUCGCACAUUAAAU",
+          "efficacy": {
+            "run1": 0.9087643448710442,
+            "run2": 0.9311148031353951,
+            "run3": 0.9120720809698105,
+            "replay": 0.9173682314157485
+          },
+          "max_abs_diff_run1_3": 0.02235,
+          "max_abs_diff_incl_replay": 0.02235,
+          "max_rel_diff_incl_replay": 0.0246
+        }
+      },
+      "spearman": "not informative: one row per record (n=1)",
+      "cause": "scripts/infer.py never calls model.eval() and does not seed torch; nn.Dropout active at inference",
+      "suggested_tolerance": "efficacy abs diff <= 0.05 (observed max 0.0223 abs / 2.5% rel over 4 runs); exact match for pos/sense/siRNA/func_filter/filter"
+    },
+    "replay_check": {
+      "description": "same command re-run on saved inputs notebooks/infer_specific_sirnas/data/{example.fa,example_siRNA.fa} (sha256 equal to runtime copies)",
+      "exit_status": 0,
+      "deterministic_columns_identical": true,
+      "efficacy_within_run_to_run_spread": true
+    },
+    "changed_input": {
+      "input": "notebooks/infer_specific_sirnas/data/changed_siRNA.fa",
+      "design": "siRNA = antiRNA(mRNA[i:i+19]) from traverse-mode windows: A=RNA0 i=36 (RNA0 only, right X-pad), D=GCUAGCUAGCUAGCUAGCU (no match anywhere), B=RNA0 i=25 == RNA1 i=31 (both records), C=RNA1 i=3 (RNA1 only, left X-pad); file order A,D,B,C",
+      "exit_status": 0,
+      "result": {
+        "RNA0.txt": [
+          {
+            "pos": 1,
+            "siRNA": "GGAGGUCCACUGGCGCCCA",
+            "window_i": 36
+          },
+          {
+            "pos": 2,
+            "siRNA": "GGCGCCCACGUCCGUAAGG",
+            "window_i": 25
+          }
+        ],
+        "RNA1.txt": [
+          {
+            "pos": 1,
+            "siRNA": "GGCGCCCACGUCCGUAAGG",
+            "window_i": 31
+          },
+          {
+            "pos": 2,
+            "siRNA": "CACAUUAAAUUGAACCUAU",
+            "window_i": 3
+          }
+        ],
+        "nomatch_siRNA_D": "absent from all outputs, no warning",
+        "func_filter": "1 (GC content out of 30-65%) for all 4 rows -> both *_ranked_filtered.txt header-only",
+        "note": "same siRNA B gets different efficacy in RNA0 (0.6029) vs RNA1 (0.6231) because flanking context differs (plus dropout noise)"
+      }
+    },
+    "error_cases": {
+      "len20": {
+        "input": "notebooks/infer_specific_sirnas/data/error_20nt_siRNA.fa",
+        "exit_status": 1,
+        "stderr_last_line": "Exception: The length of some siRNA is not 19 nt!",
+        "outputs_written": "none (raised before the record loop; output dir empty)",
+        "log": "notebooks/infer_specific_sirnas/logs/error_len20.stderr"
+      },
+      "zero_match_record": {
+        "input": "notebooks/infer_specific_sirnas/data/zero_match_RNA1_siRNA.fa (siRNA0 only; matches RNA0, nothing in RNA1)",
+        "exit_status": 1,
+        "behaviour": "UPSTREAM BUG: a record with zero matched siRNAs crashes the whole run. RNA0 files were written (1 row; efficacy 1.0314); for RNA1 no siRNA.fa/mRNA.fa is written, RNA-FM.sh fails on the missing FASTA (os.system, ignored), then loader.py raises FileNotFoundError: './data/infer/RNA1/siRNA.fa'. No RNA1*.txt files are produced, and any later records would not be processed. Wrapper must pre-check matches per record (or report the failure) rather than expect empty tables.",
+        "log": "notebooks/infer_specific_sirnas/logs/error_zero_match_RNA1.stderr"
+      }
+    },
+    "observed_hazards": [
+      "Efficacy stochastic (dropout active, no model.eval()).",
+      "pos is a row counter, not a window/genomic position; true position = mRNA.find(sense).",
+      "Unmatched siRNAs silently dropped.",
+      "Zero-match record -> FileNotFoundError crash (exit 1), aborts remaining records.",
+      "Writes fixed ./data/infer/<record>/ in cwd (concurrency hazard); --output_dir string-concatenated, must end with '/'.",
+      "siRNA FASTA lines not normalised (case/T) and must be exactly 19 chars incl. no blank lines.",
+      "Only the first occurrence of a siRNA site per record is scored."
+    ],
+    "limitations": [
+      "Off-target staging skipped in runtime build (not needed for this command).",
+      "Embedding .npy files not retained (listed in infer_intermediate/*/file_listing.txt)."
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "result": "success, all 7 runs executed as planned"
+      }
+    ],
+    "figures": "not applicable (CLI produces tables only)"
+  }
+}

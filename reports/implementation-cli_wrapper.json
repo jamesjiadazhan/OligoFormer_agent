@@ -1,0 +1,264 @@
+{
+  "module": "src/tools/cli_wrapper.py",
+  "server_instance": "cli_wrapper_mcp = FastMCP(name=\"cli_wrapper\")",
+  "route": "cli",
+  "pinned_source": {
+    "repo": "https://github.com/lulab/OligoFormer",
+    "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+    "read_only_checkout": "repo/OligoFormer",
+    "entry_point": "scripts/main.py (argparse) -> scripts/infer.py:infer, scripts/mismatch.py:mismatch"
+  },
+  "execution_contract": {
+    "invocation": "subprocess.run([sys.executable, 'scripts/main.py', ...], cwd=<runtime>, shell=False, capture_output=True, text=True, timeout=...)",
+    "cwd": "the runtime copy root (required: model/best_model.pth, model/mismatch_model.pth, ./toxicity/cell_viability.txt, ./off-target/*, ./data/infer/*, scripts/RNA-FM.sh are all relative paths)",
+    "runtime_resolution": "env OLIGOFORMER_RUNTIME, else Path(__file__).resolve().parents[2]/'runtime'/'OligoFormer'",
+    "offtarget_env_resolution": "env OLIGOFORMER_OFFTARGET_ENV, else parents[2]/'deps'/'offtarget-env' (perl + RNAplfald checked in <env>/bin)",
+    "runtime_identity_check": "scripts/main.py, scripts/infer.py, scripts/mismatch.py, scripts/RNA-FM.sh, model/best_model.pth, model/mismatch_model.pth, toxicity/cell_viability.txt and RNA-FM/torch_home/hub/checkpoints/RNA-FM_pretrained.pth must exist, and scripts/main.py must contain 'OligoFormer' and '--infer'; otherwise ToolError (an executable bit / exit 0 alone is not accepted)",
+    "child_env": {
+      "PATH": "os.path.dirname(os.path.abspath(sys.executable)) [+ <offtarget-env>/bin for -off] + inherited PATH; NOT Path(sys.executable).resolve(), because the venv's bin/python is a symlink to the base interpreter whose bin directory has no torch (observed failure: RNA-FM.sh's bare 'python' raised ModuleNotFoundError: torch and the run died in loader.py)",
+      "TORCH_HOME": "<runtime>/RNA-FM/torch_home (RNA-FM loads its checkpoint from the torch.hub cache; no download)",
+      "PERL5LIB": "removed, so the conda perl finds its own BioPerl/Statistics::Lite"
+    },
+    "diagnostics": "stdout/stderr captured, never printed; written to <run_dir>/logs/<label>.{stdout,stderr}.log plus the exact command; a nonzero exit or a timeout raises fastmcp.exceptions.ToolError with a 4000-char tail of each stream"
+  },
+  "tools": [
+    {
+      "name": "predict_sirna_efficacy_from_mrna",
+      "upstream_command": "python scripts/main.py --infer 1 -i1 <mrna.fa> --output_dir <run_dir>/ [-nf] [-tox --toxicity_threshold F]",
+      "upstream_implementation": "scripts/infer.py:infer, Args.infer == 1 with falsy Args.infer_siRNA_fasta (antiRNA window traversal, calculate_td, func_filter, scripts/RNA-FM.sh, loader.py:data_process_loader_infer, model.py:Oligo + model/best_model.pth)",
+      "reference": "https://github.com/lulab/OligoFormer/blob/e2f53ad63387bbe166bf123949151e2bc9bf6ec3/scripts/infer.py",
+      "parameters": {
+        "mrna_fasta_path": "required; no default (never loads the bundled data/example.fa)",
+        "apply_functionality_filter": "bool = True; False maps to upstream -nf. Default True keeps upstream's default behaviour (the func_filter column present).",
+        "include_toxicity": "bool = False; True maps to -tox. Default False is upstream's default (no toxicity columns).",
+        "toxicity_threshold": "float = 50.0, upstream's --toxicity_threshold default; only meaningful together with include_toxicity and passed only then",
+        "output_dir": "optional base; a fresh subdirectory predict_mrna_<utc>_<uuid8> is created per call. Default base: <project>/tmp/outputs/cli_wrapper."
+      },
+      "excluded_upstream_options": "-off/-a/-top (own tool / defects, see excluded_options), --infer 2, training and test flags, model hyper-parameters (--vocab_size, --lstm_dim, ... belong to training), --seed (see stochasticity), --best_model, --path",
+      "outputs": "<run_dir>/<record>.txt, <record>_ranked.txt, <record>_ranked_filtered.txt (upstream's own tables, written directly by the CLI into the fresh directory) plus <run_dir>/windows/<record>/{siRNA.fa,mRNA.fa} copied out of the scratch directory; returned fields: records, windows_per_record, per_record_summary (rows, columns, func_filter_counts, rows_passing_filter, ranked_filtered_rows, missing-value counts), output_dir, stochastic_efficacy"
+    },
+    {
+      "name": "predict_specific_sirna_efficacy",
+      "upstream_command": "python scripts/main.py --infer 1 -i1 <mrna.fa|matched_records.fa> -i2 <sirna.fa> --output_dir <run_dir>/ [-nf] [-tox --toxicity_threshold F]",
+      "upstream_implementation": "scripts/infer.py:infer, Args.infer == 1 with the `if Args.infer_siRNA_fasta:` branch (re.search(antiRNA(siRNA), mRNA) site location, +-19 nt flanked context)",
+      "reference": "https://github.com/lulab/OligoFormer/blob/e2f53ad63387bbe166bf123949151e2bc9bf6ec3/scripts/infer.py",
+      "parameters": "mrna_fasta_path, sirna_fasta_path (both required), then the same filter parameters and output_dir as predict_sirna_efficacy_from_mrna",
+      "outputs": "the same three tables per scored record; returned fields: records_scored, matched_sirnas_per_record, unmatched_records, unmatched_sirnas, per_record_summary, output_dir, stochastic_efficacy. The message states that 'pos' is a row counter over matched siRNAs (not a transcript position) and that only the first site per record is scored."
+    },
+    {
+      "name": "screen_sirna_offtarget",
+      "upstream_command": "python scripts/main.py --infer 1 -i1 <mrna.fa> -off --utr <utr> --orf <orf> --pita_threshold F --targetscan_threshold F --output_dir <run_dir>/ [-nf] [-tox --toxicity_threshold F]",
+      "upstream_implementation": "scripts/infer.py:infer `if Args.off_target:` with Args.top_n == -1, which os.system's scripts/pita.sh (off-target/pita/pita_prediction.pl, RNAplfold, perl Statistics::Lite/Bio::TreeIO) and scripts/targetscan.sh (off-target/targetscan/targetscan_70*.pl), then merges data/infer/<record>/{pita.tab,targetscan.tab}",
+      "reference": "https://github.com/lulab/OligoFormer/blob/e2f53ad63387bbe166bf123949151e2bc9bf6ec3/scripts/infer.py",
+      "parameters": {
+        "pita_threshold": "float = -10.0 (upstream default)",
+        "targetscan_threshold": "float = 1.0 (upstream default)",
+        "utr_reference_path": "optional; default <runtime>/off-target/ref/100_human_UTR.txt (upstream default). User paths must exist, be non-empty and contain no space/shell metacharacter, because infer.py interpolates them unquoted into os.system('bash scripts/pita.sh ...').",
+        "orf_reference_path": "optional; default <runtime>/off-target/ref/100_human_ORF.txt (upstream default), same checks",
+        "other": "apply_functionality_filter / include_toxicity / toxicity_threshold / output_dir as in tool 1"
+      },
+      "outputs": "the three result tables per record (now with pita_score, targetscan_score, off_target_filter) plus <run_dir>/offtarget/<record>/{pita.tab,targetscan.tab,siRNA.fa}; returned fields add pita_rows per record and the resolved utr/orf reference paths",
+      "timeout": "3600 s + 60 s per 19-nt window (reference runs took ~7 min for the 78 windows of data/example.fa)"
+    },
+    {
+      "name": "compare_sirna_mismatch_kon",
+      "upstream_command": "python scripts/main.py -m 1 with \"<base>\\n<mismatched>\\n\" on stdin",
+      "upstream_implementation": "scripts/mismatch.py:mismatch, Args.mismatch == 1 branch -> calculate_kon with the module-level MismatchModule from model/mismatch_model.pth (model.eval() is called; deterministic)",
+      "reference": "https://github.com/lulab/OligoFormer/blob/e2f53ad63387bbe166bf123949151e2bc9bf6ec3/scripts/mismatch.py",
+      "parameters": "base_rna, mismatched_rna (required; each validated as exactly 19 nt of A/C/G/U)",
+      "outputs": "no files (artifacts: []); returns kon (float), base_rna, mismatched_rna, num_mismatches, mismatch_positions",
+      "stdout_parsing": "input() prompts are printed to stdout even with piped stdin; the tool requires exit 0 and parses the last non-empty stdout line with float()"
+    },
+    {
+      "name": "scan_sirna_mismatch_variants",
+      "upstream_command": "python scripts/main.py -m 2|3 --output_dir <run_dir> with \"<base>\\n\" on stdin",
+      "upstream_implementation": "scripts/mismatch.py:mismatch else-branch -> generate_mismatch_sequences + calculate_kon, writing Args.output_dir + '/result/mismatch.txt'",
+      "reference": "https://github.com/lulab/OligoFormer/blob/e2f53ad63387bbe166bf123949151e2bc9bf6ec3/scripts/mismatch.py",
+      "parameters": {
+        "base_rna": "required; validated as exactly 19 nt of A/C/G/U",
+        "max_mismatches": "Literal[2, 3] = 2, mapped to upstream -m 2 / -m 3. 2 -> 1596 rows (~6 s); 3 -> 27759 rows (~95 s).",
+        "output_dir": "optional base; fresh mismatch_scan_<utc>_<uuid8> subdirectory per call"
+      },
+      "outputs": "<run_dir>/result/mismatch.txt (seq, kon, num_mismatch); returns num_rows, columns, rows_per_num_mismatch"
+    }
+  ],
+  "io_adaptations": [
+    {
+      "adaptation": "Fresh per-call output directory with a UTC timestamp plus 8 hex characters of uuid4, created inside the function (not at import).",
+      "justification": "A persistent MCP server must distinguish repeated requests; upstream string-concatenates --output_dir, so the directory is passed with a trailing separator for --infer (infer.py: Args.output_dir + name + '.txt') and WITHOUT one for -m, where mismatch.py concatenates '/result/mismatch.txt' and needs <dir>/result to exist (pre-created by the wrapper)."
+    },
+    {
+      "adaptation": "Global serialization of every tool execution: a threading.Lock plus an fcntl.flock on <runtime>/.cli_wrapper.lock.",
+      "justification": "Upstream writes fixed in-tree paths: ./data/infer/<record>/ (rm -rf + mkdir per record), ./result/, off-target/pita/* and off-target/tmp (created and removed by targetscan.sh). Executor evidence (infer_offtarget_toxicity, infer_offtarget_top_n hazards) shows concurrent runs in one tree clobber each other."
+    },
+    {
+      "adaptation": "After each run, per-record intermediates are copied out of ./data/infer/<record> (siRNA.fa/mRNA.fa, and pita.tab/targetscan.tab for off-target) and the per-record scratch directories are removed with shutil.rmtree.",
+      "justification": "loader.py reads from that fixed location, so it cannot be redirected; the executors copied the same files per run. Removing the scratch avoids stale state after a crash (hazard recorded in infer_offtarget_top_n). The empty ./data/infer parent and the files upstream itself writes under off-target/pita are left in place: removing tracked runtime files is not the wrapper's business."
+    },
+    {
+      "adaptation": "mRNA FASTA validation: header must match ^[A-Za-z0-9_.-]+$ and be unique; each record >= 19 nt; sequence characters restricted to A/C/G/T/U.",
+      "justification": "Record names are interpolated unquoted into os.system('rm -rf ./data/infer/' + name) and the pita/targetscan commands (injection and corruption risk), and spaces are mangled to '_@_' in output filenames. '>= 19 nt' is upstream's own requirement (Exception 'The length of mRNA is less than 19 nt!'). infer.py:antiRNA silently drops characters outside A/U/C/G/T/X, which would shift the window sequences, so other letters (N, IUPAC codes) are rejected with a clear message instead of producing misleading rows. Documented limitation: headers with spaces are not supported."
+    },
+    {
+      "adaptation": "siRNA FASTA validation: every non-header line must match ^[ACGU]{19}$; blank lines are reported as invalid; no case folding and no T->U conversion.",
+      "justification": "infer.py raises 'The length of some siRNA is not 19 nt!' for any other length (executor case error_len20, exit 1) and, unlike the mRNA path, does not upper-case or convert T for siRNA input, so lowercase/DNA input would reach the model unchanged. Silently converting would alter the user's scientific input, so it is rejected with an explanatory error."
+    },
+    {
+      "adaptation": "predict_specific_sirna_efficacy pre-scans which records contain a match (re.search(_anti_rna(siRNA), mRNA.upper().replace('T','U')), the same rule as infer.py) and passes upstream a FASTA containing only records with >= 1 match, in one run; unmatched records and unmatched siRNAs are returned.",
+      "justification": "Executor infer_specific_sirnas error_zero_match_RNA1: a record with zero matching siRNAs makes RNA-FM.sh fail silently and loader.py raise FileNotFoundError('./data/infer/RNA1/siRNA.fa'), exit 1, which aborts the whole run so later records get no output at all. The pre-scan changes only which records are handed to the CLI, not how matching or scoring is done (that stays in infer.py). _anti_rna is a 4-letter reverse-complement helper used solely for routing, mirroring infer.py:antiRNA for the validated A/C/G/U alphabet; it is not used in any scored computation. If no siRNA matches any record, the tool raises a clear ToolError instead of running."
+    },
+    {
+      "adaptation": "Off-target result verification after a zero exit: data/infer/<record>/pita.tab must have the header RefSeq/microRNA/Sites/Score and at least one data row, targetscan.tab must be non-empty, and pita_score / targetscan_score must not be missing for every row of the result table.",
+      "justification": "infer.py calls pita.sh and targetscan.sh through os.system and ignores their status. Executor infer_offtarget_toxicity reproduced the silent-failure mode with the README '-a' variant: exit 0, header-only pita.tab, 0-byte targetscan.tab, all scores NaN and off_target_filter 0 for every row, i.e. every siRNA falsely passing. Reference-file existence and non-emptiness are checked for the same reason."
+    },
+    {
+      "adaptation": "Result-table presence check for every tool: <record>.txt must exist and have >= 1 data row, else ToolError.",
+      "justification": "The RNA-FM embedding step also runs through os.system with an unchecked status, so a zero exit from main.py does not establish that the tables were produced."
+    },
+    {
+      "adaptation": "Bounded timeouts, scaled per window (infer 900 s + 30 s/window; off-target 3600 s + 60 s/window; mismatch pair 600 s; mismatch scan 3600 s), and stdin always supplied (empty string when unused).",
+      "justification": "Runtime scales linearly with mRNA length (one RNA-FM forward pass per window); --infer 2 and the mismatch modes read stdin with input(), so a child must never be left waiting for a terminal."
+    }
+  ],
+  "stochasticity": {
+    "finding": "scripts/infer.py never calls model.eval() and never seeds torch, while scripts/model.py keeps nn.Dropout(0.02) layers active, so the efficacy column varies run to run: executors measured up to 0.183 absolute / 31.5% relative differences and always-different ranked order, with all other columns byte-identical.",
+    "wrapper_behaviour": "Not repaired (no eval(), no seeding, no rescaling of the sigmoid * 1.341 output). Every efficacy-producing tool returns stochastic_efficacy: true and states the effect in its message and tool description. No seed parameter is exposed, because main.py --seed only seeds random/numpy/PYTHONHASHSEED and not torch.",
+    "mismatch_tools": "scripts/mismatch.py calls model.eval() on a CNN without dropout; the executors measured byte-identical repeats, so those tools are reported as deterministic."
+  },
+  "excluded_options": [
+    {
+      "option": "-top/--top_n",
+      "reason": "Upstream defect confirmed by executor infer_offtarget_top_n: the top-N FASTA writes headers from RESULT_ranked.index[i] (positional) but sequences from RESULT_ranked['siRNA'][i] (label-based), so 8-10 of 10 entries per file carry a sequence from the wrong row and the PITA/TargetScan scores are merged onto rows that were never scored. There is also no bounds check (-top 50 on 39 windows -> IndexError, exit 1). Exposing it would return mislabelled off-target scores; fixing it in the wrapper would mean replacing upstream's selection logic, which is out of scope."
+    },
+    {
+      "option": "-a/--all_human",
+      "reason": "infer.py sets BOTH Args.utr and Args.orf to './off-target/ref/human_UTR.txt', which ships only as human_UTR.txt.zip; executor infer_offtarget_toxicity ran it and got exit 0 with cp/cat/awk 'No such file' errors, header-only pita.tab, 0-byte targetscan.tab and all-NaN scores, i.e. a silent false pass for every siRNA."
+    },
+    {
+      "option": "--infer 2",
+      "reason": "Interactive duplicate of the --infer 1 traversal with the record name hard-coded to RNA0 (so concurrent calls collide in data/infer/RNA0 and result/RNA0*.txt) and a single sequence only; a one-record FASTA through predict_sirna_efficacy_from_mrna covers the same task."
+    },
+    {
+      "option": "-t/--test (and -s -t)",
+      "reason": "Deferred by the scanner with a blocker: loader.py requires data/RNAFM/<dataset>_{siRNA,mRNA}/representations/*.npy, which are absent from the pinned repository and are not regenerated by the test paths; metrics are only written into a log file."
+    },
+    {
+      "option": "training (default mode, -s, --epoch, --learning_rate, --cuda, model hyper-parameters)",
+      "reason": "README requires an NVIDIA GPU (~60 min on a V100) and train.py first rebuilds the missing RNA-FM embeddings; it also consumes only the bundled datasets, so it is not an operation on user input. No reference execution exists."
+    },
+    {
+      "option": "--seed",
+      "reason": "Does not seed torch, so exposing it would promise reproducibility the runtime does not provide."
+    }
+  ],
+  "smoke_checks": {
+    "method": "fastmcp.Client(cli_wrapper_mcp) in the project interpreter (OligoFormer-env/bin/python); outputs under tmp/outputs/impl_smoke/",
+    "tool_listing": [
+      "compare_sirna_mismatch_kon",
+      "predict_sirna_efficacy_from_mrna",
+      "predict_specific_sirna_efficacy",
+      "scan_sirna_mismatch_variants",
+      "screen_sirna_offtarget"
+    ],
+    "results": [
+      {
+        "check": "import and server startup, list_tools",
+        "outcome": "pass",
+        "detail": "5 tools listed; every parameter carries an Annotated description; every docstring is exactly 2 lines"
+      },
+      {
+        "check": "compare_sirna_mismatch_kon(UCGCAAAUUAAAUUGAACC, UCGCAAAUUAAAUUGAACG)",
+        "outcome": "pass",
+        "detail": "kon = 0.9940418601036072, byte-for-byte the value recorded by executor mismatch_compare_pair (stdout_contract.exact_reference_stdout); num_mismatches 1 at position 19"
+      },
+      {
+        "check": "scan_sirna_mismatch_variants(UCGCAAAUUAAAUUGAACC, max_mismatches=2)",
+        "outcome": "pass",
+        "detail": "1596 rows with rows_per_num_mismatch {1: 57, 2: 1539}, matching executor mismatch_scan_variants row_count_note exactly; table at <run>/result/mismatch.txt",
+        "artifact": "tmp/outputs/impl_smoke/mismatch_scan_20261022T074759Z_767f8cd2/result/mismatch.txt"
+      },
+      {
+        "check": "predict_sirna_efficacy_from_mrna(notebooks/infer_mrna_traverse/data/example.fa, include_toxicity=True)",
+        "outcome": "pass",
+        "detail": "RNA0 and RNA1: 39 rows each, columns pos/sense/siRNA/efficacy/func_filter/Seed/cell_viability/toxicity_filter/filter; func_filter_counts RNA0 {0:16,1:22,4:1} and RNA1 {0:24,1:15}; rows passing filter RNA0 10, RNA1 18 - identical to executor infer_toxicity_filter run1 (filter_pass 10 / 18) and infer_mrna_traverse func_filter counts. Efficacy differs from the reference runs as expected (stochastic).",
+        "artifact": "tmp/outputs/impl_smoke/predict_mrna_20261022T074844Z_6d87fd90/"
+      },
+      {
+        "check": "predict_specific_sirna_efficacy(example.fa, example_siRNA.fa)",
+        "outcome": "pass",
+        "detail": "One matched siRNA per record (RNA0 UCGCAAAUUAAAUUGAACC func_filter 4, RNA1 UCUCUUUCGCACAUUAAAU func_filter 0, 1 row each), matching executor infer_specific_sirnas; unmatched_records [] and unmatched_sirnas [] reported.",
+        "artifact": "tmp/outputs/impl_smoke/predict_sirnas_20261022T074904Z_790e754e/"
+      },
+      {
+        "check": "predict_specific_sirna_efficacy(example.fa, zero_match_RNA1_siRNA.fa) - the upstream crash case",
+        "outcome": "pass (adaptation verified)",
+        "detail": "Succeeded with records_scored ['RNA0'], unmatched_records ['RNA1'], unmatched_sirnas []; the same input makes the bare CLI exit 1 with FileNotFoundError('./data/infer/RNA1/siRNA.fa') and produce no RNA1 output (executor error_zero_match_RNA1). The retained-record FASTA is returned as matched_records.fa.",
+        "artifact": "tmp/outputs/impl_smoke/predict_sirnas_20261022T074915Z_2dcdd0db/"
+      },
+      {
+        "check": "screen_sirna_offtarget(example.fa, include_toxicity=True) with an output_dir containing a space",
+        "outcome": "pass",
+        "detail": "Both records: 39 rows with the 12 off-target columns, pita_score/targetscan_score/cell_viability missing counts all 0, pita_rows 1771 (RNA0) / 1732 (RNA1). RNA0 off_target_filter distribution {0: 13, 1: 26}, 4 rows passing, and the first pita_score/targetscan_score values are identical to executor infer_offtarget_toxicity run1 (-5.47/-4.3/-3.52/-3.94/-4.58 and 0.414/0.561/0.142/0.0/0.131), i.e. the deterministic off-target columns reproduce the reference run. pita.tab/targetscan.tab verification and the table checks all passed. Wall time ~11 min on this host.",
+        "artifact": "tmp/outputs/impl_smoke/space dir/offtarget_20261022T075025Z_f7079411/"
+      },
+      {
+        "check": "input-error cases (all must raise fastmcp ToolError, not a successful result)",
+        "outcome": "pass",
+        "detail": "missing mRNA FASTA path; FASTA header with a space ('RNA 0'); record shorter than 19 nt; 20-nt siRNA FASTA (error_20nt_siRNA.fa, the input that makes the bare CLI raise 'The length of some siRNA is not 19 nt!'); base_rna with DNA 'T' for the mismatch tool. Each raised ToolError with an explanatory message."
+      },
+      {
+        "check": "repeated calls",
+        "outcome": "pass",
+        "detail": "Seven invocations produced seven distinct run directories under tmp/outputs/impl_smoke/; no output was overwritten."
+      },
+      {
+        "check": "wrong-runtime detection (development check of the identity guard)",
+        "outcome": "pass",
+        "detail": "An initial PATH bug (Path(sys.executable).resolve() pointed at the base interpreter's bin, so RNA-FM.sh's bare 'python' had no torch) surfaced as a clear ToolError carrying the child's traceback rather than a silent empty result; fixed by using os.path.dirname(os.path.abspath(sys.executable))."
+      }
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "outcome": "failed",
+        "reason": "cli_wrapper_mcp was not instantiated (NameError at import) and the child PATH used Path(sys.executable).resolve(), whose directory lacks torch, so RNA-FM.sh failed and infer died in loader.py"
+      },
+      {
+        "attempt": 2,
+        "outcome": "success",
+        "reason": "FastMCP instance added; child PATH switched to the non-resolved venv bin directory; siRNA blank-line handling simplified; shell-unsafe utr/orf paths rejected. All smoke checks above then passed."
+      }
+    ]
+  },
+  "notes_for_the_verifier": [
+    "Repeated calls land in separate directories; the smoke run produced six distinct run directories under tmp/outputs/impl_smoke/.",
+    "The runtime copy accumulates upstream's own by-products (./result, ./data/infer parent, off-target/pita scratch and <record>_pita_results.tab) plus the wrapper's .cli_wrapper.lock; no tracked runtime file is edited by the wrapper.",
+    "Paths containing spaces are supported for mrna_fasta_path, sirna_fasta_path and output_dir (argv, shell=False). They are NOT supported for utr_reference_path/orf_reference_path, because upstream passes those through a shell; the tool rejects them with an explanatory error.",
+    "FASTA headers with spaces are rejected (upstream mangles them to '_@_' and interpolates them into shell commands)."
+  ],
+  "file_hashes": {
+    "src/tools/cli_wrapper.py": {
+      "sha256": "e0f62648e4e58b9654afc6cb991a63b7bc2fa2b0ff6bce3661d596be6437e701",
+      "bytes": 34569,
+      "lines": 745
+    }
+  },
+  "handoff": {
+    "production_files_written": [
+      "src/tools/cli_wrapper.py"
+    ],
+    "reports_written": [
+      "reports/implementation-cli_wrapper.json"
+    ],
+    "smoke_outputs": "tmp/outputs/impl_smoke/",
+    "not_touched": [
+      "tests/",
+      "repo/OligoFormer",
+      "runtime/OligoFormer tracked files",
+      "notebooks/",
+      "any other report"
+    ],
+    "no_src_tools_init": "src/tools/__init__.py was not created; the module imports cleanly as tools.cli_wrapper with src/ on sys.path (namespace package).",
+    "status": "production edits stopped at handoff; independent verification pending"
+  }
+}

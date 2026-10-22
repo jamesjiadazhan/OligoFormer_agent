@@ -1,0 +1,12 @@
+[run] python=/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python (Python 3.11.12) cwd=/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/runtime/OligoFormer head=e2f53ad63387bbe166bf123949151e2bc9bf6ec3
+[run] run1: exit=0 expect=ok stdout_last=0.9940418601036072
+[run] run2: exit=0 expect=ok stdout_last=0.9940418601036072
+[run] run3: exit=0 expect=ok stdout_last=0.9940418601036072
+[run] a_identical: exit=0 expect=ok stdout_last=0.991731584072113
+[run] b_2mm: exit=0 expect=ok stdout_last=0.9802688956260681
+[run] c_5mm: exit=0 expect=ok stdout_last=0.8994343876838684
+[run] d_other_base_1mm: exit=0 expect=ok stdout_last=0.7939964532852173
+[run] e_len_19_vs_18: exit=1 expect=fail stdout_last=please input mismatched RNA: 
+[run] f1_lowercase: exit=1 expect=fail stdout_last=please input mismatched RNA: 
+[run] f2_T_containing: exit=1 expect=fail stdout_last=please input mismatched RNA: 
+[run] all cases finished as expected

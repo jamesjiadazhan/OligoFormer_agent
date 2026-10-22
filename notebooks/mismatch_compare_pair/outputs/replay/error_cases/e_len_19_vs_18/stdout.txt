@@ -1,0 +1,2 @@
+please input base RNA: 
+please input mismatched RNA: 

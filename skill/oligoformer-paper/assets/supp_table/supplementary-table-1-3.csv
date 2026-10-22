@@ -1,0 +1,15 @@
+Supplementary Table 1.3. Parameter settings of model and training,,
+,Module,Parameter
+Model parameters,2D Convolution Layer ,"Kernel size = 1x5/5x5, Stride = 1, Filters = 32, Pad = 0"
+,Max Pooling Layer, Pool size = 2x2
+,Average Pooling Layer ,Pool size = 2x2
+,Bidirectional LSTM,Hidden dimension = 32
+,Multi-head Transformer Encoder ,"Layers: 2 layers, Hidden dimension = 64"
+Training parameters,Optimizer,Adam
+,Loss function,MSE
+,Learning Rate,1E-4
+,Weight decay,0.999
+,Batch Size,16
+,Epochs,200
+,Early stop,30
+,Seed,42

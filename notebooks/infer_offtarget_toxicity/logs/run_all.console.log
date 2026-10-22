@@ -1,0 +1,10 @@
+[run1] exit=0 wall=466.02s
+[run2] exit=0 wall=423.7s
+[run3] exit=0 wall=425.7s
+[changed_params] exit=0 wall=427.33s
+[readme_all_human] exit=0 wall=25.09s
+example.fa: OK
+100_human_UTR.txt: OK
+100_human_ORF.txt: OK
+cell_viability.txt: OK
+[replay] exit=0 wall=424.51s

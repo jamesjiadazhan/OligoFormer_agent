@@ -1,0 +1,8 @@
+./mRNA.fa
+./mRNA/log_prediction.txt
+./mRNA/representations/RNA0.npy
+./mRNA/representations/RNA1.npy
+./siRNA.fa
+./siRNA/log_prediction.txt
+./siRNA/representations/RNA0.npy
+./siRNA/representations/RNA1.npy

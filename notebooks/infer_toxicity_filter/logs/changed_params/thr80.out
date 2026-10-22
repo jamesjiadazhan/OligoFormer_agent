@@ -1,0 +1,436 @@
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:28:20,373 prediction INFO: Using CPU
+2026-10-21 23:28:20,374 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:28:20,374 prediction INFO: Model File:none
+2026-10-21 23:28:20,374 prediction INFO: Batch Size:1
+2026-10-21 23:28:20,374 prediction INFO: Threshold:0.5
+2026-10-21 23:28:20,374 prediction INFO: Prediction Dataset: ../../data/infer/RNA0/mRNA.fa
+Sequence Num: 39
+2026-10-21 23:28:20,981 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (57, 640)
+Iteration[2/39]
+saved embedding shape: (57, 640)
+Iteration[3/39]
+saved embedding shape: (57, 640)
+Iteration[4/39]
+saved embedding shape: (57, 640)
+Iteration[5/39]
+saved embedding shape: (57, 640)
+Iteration[6/39]
+saved embedding shape: (57, 640)
+Iteration[7/39]
+saved embedding shape: (57, 640)
+Iteration[8/39]
+saved embedding shape: (57, 640)
+Iteration[9/39]
+saved embedding shape: (57, 640)
+Iteration[10/39]
+saved embedding shape: (57, 640)
+Iteration[11/39]
+saved embedding shape: (57, 640)
+Iteration[12/39]
+saved embedding shape: (57, 640)
+Iteration[13/39]
+saved embedding shape: (57, 640)
+Iteration[14/39]
+saved embedding shape: (57, 640)
+Iteration[15/39]
+saved embedding shape: (57, 640)
+Iteration[16/39]
+saved embedding shape: (57, 640)
+Iteration[17/39]
+saved embedding shape: (57, 640)
+Iteration[18/39]
+saved embedding shape: (57, 640)
+Iteration[19/39]
+saved embedding shape: (57, 640)
+Iteration[20/39]
+saved embedding shape: (57, 640)
+Iteration[21/39]
+saved embedding shape: (57, 640)
+Iteration[22/39]
+saved embedding shape: (57, 640)
+Iteration[23/39]
+saved embedding shape: (57, 640)
+Iteration[24/39]
+saved embedding shape: (57, 640)
+Iteration[25/39]
+saved embedding shape: (57, 640)
+Iteration[26/39]
+saved embedding shape: (57, 640)
+Iteration[27/39]
+saved embedding shape: (57, 640)
+Iteration[28/39]
+saved embedding shape: (57, 640)
+Iteration[29/39]
+saved embedding shape: (57, 640)
+Iteration[30/39]
+saved embedding shape: (57, 640)
+Iteration[31/39]
+saved embedding shape: (57, 640)
+Iteration[32/39]
+saved embedding shape: (57, 640)
+Iteration[33/39]
+saved embedding shape: (57, 640)
+Iteration[34/39]
+saved embedding shape: (57, 640)
+Iteration[35/39]
+saved embedding shape: (57, 640)
+Iteration[36/39]
+saved embedding shape: (57, 640)
+Iteration[37/39]
+saved embedding shape: (57, 640)
+Iteration[38/39]
+saved embedding shape: (57, 640)
+Iteration[39/39]
+saved embedding shape: (57, 640)
+2026-10-21 23:28:24,959 prediction.inference INFO: Finish Prediction
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:28:26,899 prediction INFO: Using CPU
+2026-10-21 23:28:26,899 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:28:26,899 prediction INFO: Model File:none
+2026-10-21 23:28:26,899 prediction INFO: Batch Size:1
+2026-10-21 23:28:26,899 prediction INFO: Threshold:0.5
+2026-10-21 23:28:26,899 prediction INFO: Prediction Dataset: ../../data/infer/RNA0/siRNA.fa
+Sequence Num: 39
+2026-10-21 23:28:27,556 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (19, 640)
+Iteration[2/39]
+saved embedding shape: (19, 640)
+Iteration[3/39]
+saved embedding shape: (19, 640)
+Iteration[4/39]
+saved embedding shape: (19, 640)
+Iteration[5/39]
+saved embedding shape: (19, 640)
+Iteration[6/39]
+saved embedding shape: (19, 640)
+Iteration[7/39]
+saved embedding shape: (19, 640)
+Iteration[8/39]
+saved embedding shape: (19, 640)
+Iteration[9/39]
+saved embedding shape: (19, 640)
+Iteration[10/39]
+saved embedding shape: (19, 640)
+Iteration[11/39]
+saved embedding shape: (19, 640)
+Iteration[12/39]
+saved embedding shape: (19, 640)
+Iteration[13/39]
+saved embedding shape: (19, 640)
+Iteration[14/39]
+saved embedding shape: (19, 640)
+Iteration[15/39]
+saved embedding shape: (19, 640)
+Iteration[16/39]
+saved embedding shape: (19, 640)
+Iteration[17/39]
+saved embedding shape: (19, 640)
+Iteration[18/39]
+saved embedding shape: (19, 640)
+Iteration[19/39]
+saved embedding shape: (19, 640)
+Iteration[20/39]
+saved embedding shape: (19, 640)
+Iteration[21/39]
+saved embedding shape: (19, 640)
+Iteration[22/39]
+saved embedding shape: (19, 640)
+Iteration[23/39]
+saved embedding shape: (19, 640)
+Iteration[24/39]
+saved embedding shape: (19, 640)
+Iteration[25/39]
+saved embedding shape: (19, 640)
+Iteration[26/39]
+saved embedding shape: (19, 640)
+Iteration[27/39]
+saved embedding shape: (19, 640)
+Iteration[28/39]
+saved embedding shape: (19, 640)
+Iteration[29/39]
+saved embedding shape: (19, 640)
+Iteration[30/39]
+saved embedding shape: (19, 640)
+Iteration[31/39]
+saved embedding shape: (19, 640)
+Iteration[32/39]
+saved embedding shape: (19, 640)
+Iteration[33/39]
+saved embedding shape: (19, 640)
+Iteration[34/39]
+saved embedding shape: (19, 640)
+Iteration[35/39]
+saved embedding shape: (19, 640)
+Iteration[36/39]
+saved embedding shape: (19, 640)
+Iteration[37/39]
+saved embedding shape: (19, 640)
+Iteration[38/39]
+saved embedding shape: (19, 640)
+Iteration[39/39]
+saved embedding shape: (19, 640)
+2026-10-21 23:28:29,759 prediction.inference INFO: Finish Prediction
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:28:32,161 prediction INFO: Using CPU
+2026-10-21 23:28:32,161 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:28:32,161 prediction INFO: Model File:none
+2026-10-21 23:28:32,161 prediction INFO: Batch Size:1
+2026-10-21 23:28:32,161 prediction INFO: Threshold:0.5
+2026-10-21 23:28:32,162 prediction INFO: Prediction Dataset: ../../data/infer/RNA1/mRNA.fa
+Sequence Num: 39
+2026-10-21 23:28:32,836 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (57, 640)
+Iteration[2/39]
+saved embedding shape: (57, 640)
+Iteration[3/39]
+saved embedding shape: (57, 640)
+Iteration[4/39]
+saved embedding shape: (57, 640)
+Iteration[5/39]
+saved embedding shape: (57, 640)
+Iteration[6/39]
+saved embedding shape: (57, 640)
+Iteration[7/39]
+saved embedding shape: (57, 640)
+Iteration[8/39]
+saved embedding shape: (57, 640)
+Iteration[9/39]
+saved embedding shape: (57, 640)
+Iteration[10/39]
+saved embedding shape: (57, 640)
+Iteration[11/39]
+saved embedding shape: (57, 640)
+Iteration[12/39]
+saved embedding shape: (57, 640)
+Iteration[13/39]
+saved embedding shape: (57, 640)
+Iteration[14/39]
+saved embedding shape: (57, 640)
+Iteration[15/39]
+saved embedding shape: (57, 640)
+Iteration[16/39]
+saved embedding shape: (57, 640)
+Iteration[17/39]
+saved embedding shape: (57, 640)
+Iteration[18/39]
+saved embedding shape: (57, 640)
+Iteration[19/39]
+saved embedding shape: (57, 640)
+Iteration[20/39]
+saved embedding shape: (57, 640)
+Iteration[21/39]
+saved embedding shape: (57, 640)
+Iteration[22/39]
+saved embedding shape: (57, 640)
+Iteration[23/39]
+saved embedding shape: (57, 640)
+Iteration[24/39]
+saved embedding shape: (57, 640)
+Iteration[25/39]
+saved embedding shape: (57, 640)
+Iteration[26/39]
+saved embedding shape: (57, 640)
+Iteration[27/39]
+saved embedding shape: (57, 640)
+Iteration[28/39]
+saved embedding shape: (57, 640)
+Iteration[29/39]
+saved embedding shape: (57, 640)
+Iteration[30/39]
+saved embedding shape: (57, 640)
+Iteration[31/39]
+saved embedding shape: (57, 640)
+Iteration[32/39]
+saved embedding shape: (57, 640)
+Iteration[33/39]
+saved embedding shape: (57, 640)
+Iteration[34/39]
+saved embedding shape: (57, 640)
+Iteration[35/39]
+saved embedding shape: (57, 640)
+Iteration[36/39]
+saved embedding shape: (57, 640)
+Iteration[37/39]
+saved embedding shape: (57, 640)
+Iteration[38/39]
+saved embedding shape: (57, 640)
+Iteration[39/39]
+saved embedding shape: (57, 640)
+2026-10-21 23:28:37,904 prediction.inference INFO: Finish Prediction
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:28:39,921 prediction INFO: Using CPU
+2026-10-21 23:28:39,921 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:28:39,922 prediction INFO: Model File:none
+2026-10-21 23:28:39,922 prediction INFO: Batch Size:1
+2026-10-21 23:28:39,922 prediction INFO: Threshold:0.5
+2026-10-21 23:28:39,922 prediction INFO: Prediction Dataset: ../../data/infer/RNA1/siRNA.fa
+Sequence Num: 39
+2026-10-21 23:28:40,726 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (19, 640)
+Iteration[2/39]
+saved embedding shape: (19, 640)
+Iteration[3/39]
+saved embedding shape: (19, 640)
+Iteration[4/39]
+saved embedding shape: (19, 640)
+Iteration[5/39]
+saved embedding shape: (19, 640)
+Iteration[6/39]
+saved embedding shape: (19, 640)
+Iteration[7/39]
+saved embedding shape: (19, 640)
+Iteration[8/39]
+saved embedding shape: (19, 640)
+Iteration[9/39]
+saved embedding shape: (19, 640)
+Iteration[10/39]
+saved embedding shape: (19, 640)
+Iteration[11/39]
+saved embedding shape: (19, 640)
+Iteration[12/39]
+saved embedding shape: (19, 640)
+Iteration[13/39]
+saved embedding shape: (19, 640)
+Iteration[14/39]
+saved embedding shape: (19, 640)
+Iteration[15/39]
+saved embedding shape: (19, 640)
+Iteration[16/39]
+saved embedding shape: (19, 640)
+Iteration[17/39]
+saved embedding shape: (19, 640)
+Iteration[18/39]
+saved embedding shape: (19, 640)
+Iteration[19/39]
+saved embedding shape: (19, 640)
+Iteration[20/39]
+saved embedding shape: (19, 640)
+Iteration[21/39]
+saved embedding shape: (19, 640)
+Iteration[22/39]
+saved embedding shape: (19, 640)
+Iteration[23/39]
+saved embedding shape: (19, 640)
+Iteration[24/39]
+saved embedding shape: (19, 640)
+Iteration[25/39]
+saved embedding shape: (19, 640)
+Iteration[26/39]
+saved embedding shape: (19, 640)
+Iteration[27/39]
+saved embedding shape: (19, 640)
+Iteration[28/39]
+saved embedding shape: (19, 640)
+Iteration[29/39]
+saved embedding shape: (19, 640)
+Iteration[30/39]
+saved embedding shape: (19, 640)
+Iteration[31/39]
+saved embedding shape: (19, 640)
+Iteration[32/39]
+saved embedding shape: (19, 640)
+Iteration[33/39]
+saved embedding shape: (19, 640)
+Iteration[34/39]
+saved embedding shape: (19, 640)
+Iteration[35/39]
+saved embedding shape: (19, 640)
+Iteration[36/39]
+saved embedding shape: (19, 640)
+Iteration[37/39]
+saved embedding shape: (19, 640)
+Iteration[38/39]
+saved embedding shape: (19, 640)
+Iteration[39/39]
+saved embedding shape: (19, 640)
+2026-10-21 23:28:43,174 prediction.inference INFO: Finish Prediction
+-----------------Start inferring!-----------------
+RNA0
+           0
+0   1.028213
+1   1.002040
+2   0.851369
+3   0.726282
+4   0.979367
+5   0.719269
+6   0.888452
+7   0.573769
+8   0.554367
+9   0.719838
+10  0.856429
+11  0.944881
+12  0.614786
+13  0.486159
+14  0.661901
+15  0.970633
+16  0.731990
+17  0.672226
+18  0.679466
+19  0.567544
+20  0.592153
+21  0.739298
+22  0.534213
+23  0.608965
+24  0.545136
+25  0.592551
+26  0.675981
+27  0.500349
+28  0.647716
+29  0.518097
+30  0.580210
+31  0.552835
+32  0.590998
+33  0.557889
+34  0.550206
+35  0.588425
+36  0.554735
+37  0.673966
+38  0.734231
+RNA1
+           0
+0   0.883925
+1   0.765294
+2   0.690392
+3   0.671821
+4   0.524773
+5   0.722552
+6   1.030142
+7   0.959669
+8   0.910053
+9   0.755116
+10  0.976497
+11  0.685240
+12  0.922930
+13  0.563198
+14  0.444135
+15  0.695550
+16  0.813706
+17  0.928310
+18  0.787387
+19  0.739608
+20  0.705512
+21  0.954830
+22  0.781920
+23  0.657789
+24  0.642693
+25  0.580104
+26  0.570774
+27  0.783032
+28  0.641350
+29  0.620833
+30  0.578899
+31  0.622347
+32  0.717807
+33  0.591283
+34  0.714668
+35  0.596745
+36  0.609159
+37  0.618177
+38  0.649510
+25 seconds 0.4166666666666667 minutes

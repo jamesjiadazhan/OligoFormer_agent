@@ -1,0 +1,7 @@
+[
+  "predict_sirna_efficacy_from_mrna",
+  "predict_specific_sirna_efficacy",
+  "screen_sirna_offtarget",
+  "compare_sirna_mismatch_kon",
+  "scan_sirna_mismatch_variants"
+]

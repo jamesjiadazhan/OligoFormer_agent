@@ -1,0 +1,440 @@
+........................................................................ [ 68%]
+.................................                                        [100%]
+==================================== PASSES ====================================
+_ test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAACC-UCGCAAAUUAAAUUGAAC-mismatched_rna] _
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:32:27] Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+_ test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAAC-UCGCAAAUUAAAUUGAACC-base_rna] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+_ test_invalid_sequences_raise_mcp_errors[ucgcaaauuaaauugaacc-ucgcaaauuaaauugaacg-base_rna] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+_ test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAACC-TCGCAAATTAAATTGAACG-mismatched_rna] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+_ test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAAC--UCGCAAAUUAAAUUGAACG-base_rna] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+____ test_invalid_sequences_raise_mcp_errors[-UCGCAAAUUAAAUUGAACG-base_rna] ____
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+__________________ test_missing_required_argument_is_an_error __________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:32:27] WARNING  Invalid arguments for tool           server.py:1505
+                             'compare_sirna_mismatch_kon':                      
+                             [{'type': 'missing_argument', 'loc':               
+                             ('mismatched_rna',), 'msg': 'Missing               
+                             required argument', 'input':                       
+                             {'base_rna':                                       
+                             'UCGCAAAUUAAAUUGAACC'}}]                           
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'compare_sirna_mismatch_kon': [{'type': 'missing_argument', 'loc': ('mismatched_rna',), 'msg': 'Missing required argument', 'input': {'base_rna': 'UCGCAAAUUAAAUUGAACC'}}]
+___________________ test_wrong_runtime_directory_is_reported ___________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+__________________ test_missing_runtime_directory_is_reported __________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+________________ test_foreign_program_in_the_runtime_is_refused ________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+______________________ test_timeout_becomes_an_mcp_error _______________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:32:28] Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+______________________ test_nonzero_exit_is_not_swallowed ______________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:32:29] Error calling tool 'compare_sirna_mismatch_kon'             
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'compare_sirna_mismatch_kon'
+____ test_invalid_inputs_raise_mcp_errors[missing.fa-mRNA FASTA not found] _____
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:36:29] Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+__ test_invalid_inputs_raise_mcp_errors[bad_empty.fa-No FASTA records found] ___
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+_ test_invalid_inputs_raise_mcp_errors[bad_header_space.fa-Unsupported FASTA record name] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+_ test_invalid_inputs_raise_mcp_errors[bad_short_record.fa-requires at least 19 nt] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+_ test_invalid_inputs_raise_mcp_errors[bad_alphabet.fa-unsupported characters] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+_ test_invalid_inputs_raise_mcp_errors[bad_duplicate_header.fa-Duplicate FASTA record name] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+_ test_invalid_inputs_raise_mcp_errors[bad_header_parent.fa-single path component] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+__________ test_parent_directory_record_name_cannot_touch_the_runtime __________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+______________________ test_timeout_becomes_an_mcp_error _______________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:36:30] Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+____________________ test_missing_result_table_is_detected _____________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:36:41] Error calling tool 'predict_sirna_efficacy_from_mrna'       
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_sirna_efficacy_from_mrna'
+________________ test_no_matching_sirna_at_all_is_an_mcp_error _________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:37:10] Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[error_20nt_siRNA.fa-Invalid siRNA on line] _
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:37:55] Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[bad_sirna_with_T.fa-Invalid siRNA on line] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[bad_sirna_lowercase.fa-Invalid siRNA on line] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[bad_sirna_blank_line.fa-Invalid siRNA on line] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[missing_sirna.fa-siRNA FASTA not found] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_sirna_input_raises_mcp_error[bad_empty.fa-No siRNA sequences found] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+__ test_invalid_mrna_input_raises_mcp_error[missing.fa-mRNA FASTA not found] ___
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_mrna_input_raises_mcp_error[bad_header_space.fa-Unsupported FASTA record name] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+_ test_invalid_mrna_input_raises_mcp_error[bad_short_record.fa-requires at least 19 nt] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'predict_specific_sirna_efficacy'        
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'predict_specific_sirna_efficacy'
+__________________ test_missing_required_argument_is_an_error __________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:37:55] WARNING  Invalid arguments for tool           server.py:1505
+                             'predict_specific_sirna_efficacy':                 
+                             [{'type': 'missing_argument', 'loc':               
+                             ('sirna_fasta_path',), 'msg':                      
+                             'Missing required argument',                       
+                             'input': {'mrna_fasta_path':                       
+                             '/Users/james/Local/paper2agent/pape               
+                             r2agent_test/OligoFormer/mcp-work/te               
+                             sts/data/cli_wrapper/example.fa',                  
+                             'output_dir':                                      
+                             '/Users/james/Local/paper2agent/pape               
+                             r2agent_test/OligoFormer/mcp-work/tm               
+                             p/outputs/verify/test_missing_requir               
+                             ed_argument_is_an_error'}}]                        
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'predict_specific_sirna_efficacy': [{'type': 'missing_argument', 'loc': ('sirna_fasta_path',), 'msg': 'Missing required argument', 'input': {'mrna_fasta_path': '/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tests/data/cli_wrapper/example.fa', 'output_dir': '/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/tmp/outputs/verify/test_missing_required_argument_is_an_error'}}]
+____________________ test_unsupported_depth_is_rejected[1] _____________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:38:00] WARNING  Invalid arguments for tool           server.py:1505
+                             'scan_sirna_mismatch_variants':                    
+                             [{'type': 'literal_error', 'loc':                  
+                             ('max_mismatches',), 'msg': 'Input                 
+                             should be 2 or 3', 'input': 1,                     
+                             'ctx': {'expected': '2 or 3'}}]                    
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'scan_sirna_mismatch_variants': [{'type': 'literal_error', 'loc': ('max_mismatches',), 'msg': 'Input should be 2 or 3', 'input': 1, 'ctx': {'expected': '2 or 3'}}]
+____________________ test_unsupported_depth_is_rejected[4] _____________________
+----------------------------- Captured stderr call -----------------------------
+                    WARNING  Invalid arguments for tool           server.py:1505
+                             'scan_sirna_mismatch_variants':                    
+                             [{'type': 'literal_error', 'loc':                  
+                             ('max_mismatches',), 'msg': 'Input                 
+                             should be 2 or 3', 'input': 4,                     
+                             'ctx': {'expected': '2 or 3'}}]                    
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'scan_sirna_mismatch_variants': [{'type': 'literal_error', 'loc': ('max_mismatches',), 'msg': 'Input should be 2 or 3', 'input': 4, 'ctx': {'expected': '2 or 3'}}]
+____________________ test_unsupported_depth_is_rejected[0] _____________________
+----------------------------- Captured stderr call -----------------------------
+                    WARNING  Invalid arguments for tool           server.py:1505
+                             'scan_sirna_mismatch_variants':                    
+                             [{'type': 'literal_error', 'loc':                  
+                             ('max_mismatches',), 'msg': 'Input                 
+                             should be 2 or 3', 'input': 0,                     
+                             'ctx': {'expected': '2 or 3'}}]                    
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'scan_sirna_mismatch_variants': [{'type': 'literal_error', 'loc': ('max_mismatches',), 'msg': 'Input should be 2 or 3', 'input': 0, 'ctx': {'expected': '2 or 3'}}]
+____________________ test_unsupported_depth_is_rejected[-1] ____________________
+----------------------------- Captured stderr call -----------------------------
+                    WARNING  Invalid arguments for tool           server.py:1505
+                             'scan_sirna_mismatch_variants':                    
+                             [{'type': 'literal_error', 'loc':                  
+                             ('max_mismatches',), 'msg': 'Input                 
+                             should be 2 or 3', 'input': -1,                    
+                             'ctx': {'expected': '2 or 3'}}]                    
+------------------------------ Captured log call -------------------------------
+WARNING  fastmcp.server.server:server.py:1505 Invalid arguments for tool 'scan_sirna_mismatch_variants': [{'type': 'literal_error', 'loc': ('max_mismatches',), 'msg': 'Input should be 2 or 3', 'input': -1, 'ctx': {'expected': '2 or 3'}}]
+____________ test_invalid_base_raises_mcp_error[UCGCAAAUUAAAUUGAAC] ____________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:38:00] Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+___________ test_invalid_base_raises_mcp_error[TCGCAAATTAAATTGAACC] ____________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+___________ test_invalid_base_raises_mcp_error[ucgcaaauuaaauugaacc] ____________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+___________ test_invalid_base_raises_mcp_error[UCGCAAAUUAAAUUGAACCU] ___________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+_____________________ test_invalid_base_raises_mcp_error[] _____________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+______________________ test_timeout_becomes_an_mcp_error _______________________
+----------------------------- Captured stderr call -----------------------------
+[10/22/26 08:38:14] Error calling tool 'scan_sirna_mismatch_variants'           
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'scan_sirna_mismatch_variants'
+__________ test_empty_reference_file_is_rejected[utr_reference_path] ___________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+__________ test_empty_reference_file_is_rejected[orf_reference_path] ___________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_________ test_missing_reference_file_is_rejected[utr_reference_path] __________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_________ test_missing_reference_file_is_rejected[orf_reference_path] __________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_______ test_reference_path_with_spaces_is_rejected_with_an_explanation ________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+__ test_invalid_mrna_input_raises_mcp_error[missing.fa-mRNA FASTA not found] ___
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_ test_invalid_mrna_input_raises_mcp_error[bad_header_space.fa-Unsupported FASTA record name] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_ test_invalid_mrna_input_raises_mcp_error[bad_short_record.fa-requires at least 19 nt] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_ test_invalid_mrna_input_raises_mcp_error[bad_alphabet.fa-unsupported characters] _
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_________________ test_missing_offtarget_toolchain_is_reported _________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+___________________ test_wrong_runtime_directory_is_reported ___________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+___________________ test_header_only_pita_table_is_detected ____________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+___________________ test_empty_targetscan_table_is_detected ____________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+_______________________ test_all_nan_scores_are_detected _______________________
+----------------------------- Captured stderr call -----------------------------
+                    Error calling tool 'screen_sirna_offtarget'                 
+------------------------------ Captured log call -------------------------------
+ERROR    fastmcp.server.server:server.py:1508 Error calling tool 'screen_sirna_offtarget'
+============================= slowest 5 durations ==============================
+22.42s call     tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_repeated_calls_produce_distinct_artifact_directories
+22.13s call     tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_repeated_calls_produce_distinct_artifact_directories
+22.04s call     tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_reference_case_matches_direct_upstream
+21.43s call     tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_window_fastas_match_direct_upstream_exactly
+21.25s call     tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_ranked_and_filtered_tables_follow_upstream_contract
+=========================== short test summary info ============================
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_upstream_reference_is_reproducible
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_matches_direct_upstream_kon[reference]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_matches_direct_upstream_kon[a_identical]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_matches_direct_upstream_kon[b_2mm]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_matches_direct_upstream_kon[c_5mm]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_matches_direct_upstream_kon[d_other_base_1mm]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_reference_case_is_bit_identical_across_repeated_calls
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_identical_pair_is_not_hardcoded_to_one
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_arguments_are_not_swapped
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAACC-UCGCAAAUUAAAUUGAAC-mismatched_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAAC-UCGCAAAUUAAAUUGAACC-base_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[ucgcaaauuaaauugaacc-ucgcaaauuaaauugaacg-base_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAACC-TCGCAAATTAAATTGAACG-mismatched_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[UCGCAAAUUAAAUUGAAC--UCGCAAAUUAAAUUGAACG-base_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_invalid_sequences_raise_mcp_errors[-UCGCAAAUUAAAUUGAACG-base_rna]
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_missing_required_argument_is_an_error
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_wrong_runtime_directory_is_reported
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_missing_runtime_directory_is_reported
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_foreign_program_in_the_runtime_is_refused
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_timeout_becomes_an_mcp_error
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_nonzero_exit_is_not_swallowed
+PASSED tests/code/cli_wrapper/test_compare_sirna_mismatch_kon.py::test_concurrent_calls_are_serialized_and_both_succeed
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_upstream_reference_rows_are_stable_across_runs
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_reference_case_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_ranked_and_filtered_tables_follow_upstream_contract
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_window_fastas_match_direct_upstream_exactly
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_toxicity_filter_flag_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_toxicity_threshold_80_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_functionality_filter_off_with_toxicity_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_functionality_filter_off_alone_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_changed_input_record_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_single_record_fasta_matches_the_two_record_run
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_user_input_file_is_not_modified
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_repeated_calls_produce_distinct_artifact_directories
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_output_directory_with_spaces
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_input_path_with_spaces
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[missing.fa-mRNA FASTA not found]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_empty.fa-No FASTA records found]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_header_space.fa-Unsupported FASTA record name]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_short_record.fa-requires at least 19 nt]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_alphabet.fa-unsupported characters]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_duplicate_header.fa-Duplicate FASTA record name]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_invalid_inputs_raise_mcp_errors[bad_header_parent.fa-single path component]
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_parent_directory_record_name_cannot_touch_the_runtime
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_schema_documents_every_parameter
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_timeout_becomes_an_mcp_error
+PASSED tests/code/cli_wrapper/test_predict_sirna_efficacy_from_mrna.py::test_missing_result_table_is_detected
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_prescan_matching_rule_equals_infer_py
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_prescan_only_selects_records
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_prescan_agrees_with_upstream_row_order
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_upstream_reference_rows_are_stable_across_runs
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_reference_case_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_changed_sirna_set_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_record_prefiltering_reproduces_the_single_record_upstream_run
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_upstream_crashes_on_the_same_input_without_prefiltering
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_no_matching_sirna_at_all_is_an_mcp_error
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_user_input_files_are_not_modified
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_repeated_calls_produce_distinct_artifact_directories
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_paths_with_spaces
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_sirna_alphabet_restriction_is_source_backed
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[error_20nt_siRNA.fa-Invalid siRNA on line]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[bad_sirna_with_T.fa-Invalid siRNA on line]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[bad_sirna_lowercase.fa-Invalid siRNA on line]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[bad_sirna_blank_line.fa-Invalid siRNA on line]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[missing_sirna.fa-siRNA FASTA not found]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_sirna_input_raises_mcp_error[bad_empty.fa-No siRNA sequences found]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_mrna_input_raises_mcp_error[missing.fa-mRNA FASTA not found]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_mrna_input_raises_mcp_error[bad_header_space.fa-Unsupported FASTA record name]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_invalid_mrna_input_raises_mcp_error[bad_short_record.fa-requires at least 19 nt]
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_schema_documents_every_parameter
+PASSED tests/code/cli_wrapper/test_predict_specific_sirna_efficacy.py::test_missing_required_argument_is_an_error
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_upstream_reference_is_reproducible
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_reference_depth2_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_changed_base_matches_direct_upstream
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_default_depth_is_two
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_unsupported_depth_is_rejected[1]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_unsupported_depth_is_rejected[4]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_unsupported_depth_is_rejected[0]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_unsupported_depth_is_rejected[-1]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_invalid_base_raises_mcp_error[UCGCAAAUUAAAUUGAAC]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_invalid_base_raises_mcp_error[TCGCAAATTAAATTGAACC]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_invalid_base_raises_mcp_error[ucgcaaauuaaauugaacc]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_invalid_base_raises_mcp_error[UCGCAAAUUAAAUUGAACCU]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_invalid_base_raises_mcp_error[]
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_repeated_calls_use_distinct_output_directories
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_output_directory_with_spaces
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_concurrent_scans_are_serialized_with_distinct_outputs
+PASSED tests/code/cli_wrapper/test_scan_sirna_mismatch_variants.py::test_timeout_becomes_an_mcp_error
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_upstream_reference_is_reproducible
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_top_n_and_all_human_are_not_exposed
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_empty_reference_file_is_rejected[utr_reference_path]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_empty_reference_file_is_rejected[orf_reference_path]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_missing_reference_file_is_rejected[utr_reference_path]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_missing_reference_file_is_rejected[orf_reference_path]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_reference_path_with_spaces_is_rejected_with_an_explanation
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_invalid_mrna_input_raises_mcp_error[missing.fa-mRNA FASTA not found]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_invalid_mrna_input_raises_mcp_error[bad_header_space.fa-Unsupported FASTA record name]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_invalid_mrna_input_raises_mcp_error[bad_short_record.fa-requires at least 19 nt]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_invalid_mrna_input_raises_mcp_error[bad_alphabet.fa-unsupported characters]
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_missing_offtarget_toolchain_is_reported
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_wrong_runtime_directory_is_reported
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_header_only_pita_table_is_detected
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_empty_targetscan_table_is_detected
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_all_nan_scores_are_detected
+PASSED tests/code/cli_wrapper/test_screen_sirna_offtarget.py::test_schema_documents_every_parameter
+105 passed, 3 deselected in 369.04s (0:06:09)

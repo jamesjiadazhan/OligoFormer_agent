@@ -1,0 +1,732 @@
+{
+ "infer_offtarget_top_n": {
+  "source": {
+   "path": "repo/OligoFormer/README.md, section 3.2 'Inference with off-target', second command (-top 100)",
+   "repo": "https://github.com/lulab/OligoFormer",
+   "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "code_path": "scripts/infer.py lines 280-309 (top_n branch, -i1 path)"
+  },
+  "status": "success",
+  "status_note": "Documented command (with -top 10, no -a) runs to exit 0 in 3/3 runs + replay; -top 50 fails with IndexError as expected (exit 1). The top_n FASTA is confirmed mislabelled (upstream defect, recorded not fixed).",
+  "execution_mode": "native_command",
+  "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/run.sh",
+  "analysis_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analyze.py",
+  "analysis_output": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/analysis.json",
+  "commands": [
+   {
+    "label": "run1",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run1/",
+    "exit_status": 0,
+    "wall_seconds": 222.1,
+    "stdout": "logs/run1.stdout",
+    "stderr": "logs/run1.stderr",
+    "cmd_record": "logs/run1.cmd"
+   },
+   {
+    "label": "run2",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run2/",
+    "exit_status": 0,
+    "wall_seconds": 170.0,
+    "stdout": "logs/run2.stdout",
+    "stderr": "logs/run2.stderr",
+    "cmd_record": "logs/run2.cmd"
+   },
+   {
+    "label": "run3",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/run3/",
+    "exit_status": 0,
+    "wall_seconds": 166.8,
+    "stdout": "logs/run3.stdout",
+    "stderr": "logs/run3.stderr",
+    "cmd_record": "logs/run3.cmd"
+   },
+   {
+    "label": "top50",
+    "command": "python scripts/main.py --infer 1 -i1 ./data/example.fa -off -tox -top 50 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/top50/",
+    "exit_status": 1,
+    "wall_seconds": 12.2,
+    "stdout": "logs/top50.stdout",
+    "stderr": "logs/top50.stderr",
+    "cmd_record": "logs/top50.cmd"
+   },
+   {
+    "label": "replay",
+    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa -off -tox -top 10 --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/outputs/replay/",
+    "exit_status": 0,
+    "wall_seconds": 166.2,
+    "stdout": "logs/replay.stdout",
+    "stderr": "logs/replay.stderr",
+    "cmd_record": "logs/replay.cmd"
+   }
+  ],
+  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+  "runtime_copy": {
+   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer",
+   "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "git_status_short_lines_after_setup": 699,
+   "git_status_note": "698 ' M' (675 file-mode-only + 23 content changes from PITA make install/staged arm64 binaries) + '?? RNA-FM/'; after runs also '?? data/infer/' and '?? off-target/pita/RNA1_pita_results.tab' (704 lines)",
+   "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/setup.log"
+  },
+  "executables": {
+   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python_version": "3.11.12",
+   "torch": "2.2.1 CPU",
+   "perl": "v5.32.1 (deps/offtarget-env, osx-64 under Rosetta)",
+   "RNAplfold": "2.7.2"
+  },
+  "env_vars": {
+   "source_file": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer.env.sh",
+   "PATH_prefix": [
+    "OligoFormer-env/bin",
+    "deps/offtarget-env/bin"
+   ],
+   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/torch_home",
+   "PERL5LIB": "unset"
+  },
+  "inputs": {
+   "data/example.fa": {
+    "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851",
+    "origin": "runtime copy data/example.fa (identical sha256 to pinned repo)",
+    "records": [
+     "RNA0",
+     "RNA1"
+    ],
+    "windows_per_record": 39
+   },
+   "off-target/ref/100_human_UTR.txt": "e602627469c577bae8c5706fe2950df0b1884c630885ad85edf8eb0f8fba2e1e (default --utr, in runtime copy)",
+   "off-target/ref/100_human_ORF.txt": "31e4bc2978853a4670c42c1c02c8c9868e381a0d48ee94f4fb15872ff2531f39 (default --orf, in runtime copy)"
+  },
+  "outputs": {
+   "run1": {
+    "outputs/run1/RNA0.txt": "c771bf8c3bbcdf6c585af82f8f707cbef93127aacb626d110454265b81708711",
+    "outputs/run1/RNA0_ranked.txt": "d89c905ef0ca9cc1d9208192eae54f14f27a6bde0d3bd5b00c355325140e37ee",
+    "outputs/run1/RNA0_ranked_filtered.txt": "76c2cf5be5f0e5f26d9d58e2ec59daef4104b21829457027774e12e0e1c2c59b",
+    "outputs/run1/RNA1.txt": "bedf486db85d50860923802b6bd76921439c2a5ce526ba6db50c611c1f4ac6d9",
+    "outputs/run1/RNA1_ranked.txt": "79599dbd5705d7b9a0a440f78a85e5f8b605419680c26364060e8db153adf1b5",
+    "outputs/run1/RNA1_ranked_filtered.txt": "d6cf9de932062fefc241c0803ae02242673a15cae6eb1fd74f55950e8bda97f5",
+    "outputs/run1/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run1/data_infer/RNA0/pita.tab": "3986534633b20b6ebc87d962d1280383c23975f48fd42580a90e27dcd642f129",
+    "outputs/run1/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run1/data_infer/RNA0/targetscan.tab": "64ce7bd36715416b0c16defca18cba981602a50879027f2524328aeda682430b",
+    "outputs/run1/data_infer/RNA0/top_n_siRNA.fa": "882adda8a4dc57fa511da0e268c4c39bc955c1d112d889ca7e7ac869049270a1",
+    "outputs/run1/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run1/data_infer/RNA1/pita.tab": "29eb7fa6677421f158d3e147afe616757d80c42efd067137c153377c999da956",
+    "outputs/run1/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run1/data_infer/RNA1/targetscan.tab": "f8af11bbf22bf9f8cd843102799427e1ce030d3c7b755fdbe3fcfac82608492f",
+    "outputs/run1/data_infer/RNA1/top_n_siRNA.fa": "0680cc5f5f64d4a4354c1b48a63dfec611e59cc6a82218af21c886000951aa3b"
+   },
+   "run2": {
+    "outputs/run2/RNA0.txt": "55e30a8ba0d1248fca9f09fd8a12cb5aec79da6c72177cd1aaaf97ca9c2dc23b",
+    "outputs/run2/RNA0_ranked.txt": "90562a8504968ee0db414a91dfdf19bc698c9f2e83d30b8f136fd619cab9171f",
+    "outputs/run2/RNA0_ranked_filtered.txt": "eb170fcadb172769f36b3ef4a2c7d84714c48a48701d9938fc223d73a6277548",
+    "outputs/run2/RNA1.txt": "917c1b7b31c1ea92aaaa61e96807f2b783ecf817a3e68f9a969fde0540e64366",
+    "outputs/run2/RNA1_ranked.txt": "5c935f808ac1e547b22c62ff6669d9bc663b1ead4ace7ea707ccd46cc26e4c60",
+    "outputs/run2/RNA1_ranked_filtered.txt": "4a8e578b2798489e0355b72b1faa27f7fc252f5b1139fd1e2e00af41729af2c5",
+    "outputs/run2/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run2/data_infer/RNA0/pita.tab": "50c750afd4233a20dc071768760954234e43c89c9e32c4dd52e7ed474d859812",
+    "outputs/run2/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run2/data_infer/RNA0/targetscan.tab": "e1c61047e7801e77beb9281b0af5c558c6c99c0d783c2c0479917163e7bea95d",
+    "outputs/run2/data_infer/RNA0/top_n_siRNA.fa": "c4169736f08a77e698086c1f862125a93492b73ee2028f948e560944459e636b",
+    "outputs/run2/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run2/data_infer/RNA1/pita.tab": "6944a513c37cd0c87766c444ea50d7995a19bc50205103c37a6665d62b2e732e",
+    "outputs/run2/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run2/data_infer/RNA1/targetscan.tab": "f0a869849bed732c82b4fdd5dcf7d5f0f33baa6beab4f32a4de6f04f6355cab1",
+    "outputs/run2/data_infer/RNA1/top_n_siRNA.fa": "87ba63b0caf181b360a29cc36ebc7cd67146cbef1305f8987890f9b053f09614"
+   },
+   "run3": {
+    "outputs/run3/RNA0.txt": "b8dbf1e3b2a7058f7f0dc015fbe81910912c67e0b42d1559e8d55b181917880b",
+    "outputs/run3/RNA0_ranked.txt": "8a7895722c9382f323aa871045fcec60ec7a7514b61e90888ff1e413936162c6",
+    "outputs/run3/RNA0_ranked_filtered.txt": "b16b62020918fe410bed118df164b93697a88d477a7181cc210bcc97ba7e23ba",
+    "outputs/run3/RNA1.txt": "4bc335a9243e1439054025c692202ff7223a56c8cfea5f50801c7aa1310ce428",
+    "outputs/run3/RNA1_ranked.txt": "ffd783e610b951d17777a1ed8866cede1406b062efc2ecd6b0780e4315704e8b",
+    "outputs/run3/RNA1_ranked_filtered.txt": "73485d254061c4a90c75e5b313aa3de1d95faa64fec367b85f009533d6cedd4f",
+    "outputs/run3/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run3/data_infer/RNA0/pita.tab": "7761e1b7c706babca1b2c980cfbcace7578808089fa6b21a7a5274d0e223c1c3",
+    "outputs/run3/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run3/data_infer/RNA0/targetscan.tab": "dc119491bf5e0e06df61a811f1819ff47a7577713f0aa04f785b42c0ec1508e4",
+    "outputs/run3/data_infer/RNA0/top_n_siRNA.fa": "6356c6a8c4c45018b6472185eac95bd78ef481de4d34000cdffcf36d437ebdac",
+    "outputs/run3/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run3/data_infer/RNA1/pita.tab": "c87d4c0af356979887d5f7281b95aeee26bd1399515b074eec2e9661c47bc131",
+    "outputs/run3/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run3/data_infer/RNA1/targetscan.tab": "e177854ee79366378ed9f5828b31286afb639721cfde1ec48faf26418520c61f",
+    "outputs/run3/data_infer/RNA1/top_n_siRNA.fa": "c46c773643b5471704f839af447c844d144fe9d12ecf4de4284278f7abf1aba4"
+   },
+   "replay": {
+    "outputs/replay/RNA0.txt": "800d25de85ed73ae2e17aaecf05310266f72616175ac835466b069fee3d93d36",
+    "outputs/replay/RNA0_ranked.txt": "46b3b73da2c625d82324e9b1ad75bfb57c9f18a9daef332e407ac6b4bcbb85e7",
+    "outputs/replay/RNA0_ranked_filtered.txt": "ab90458f7e83aaa68e7a8b37ba30fbb5ac8c5ed8570718935698fafe543ec82b",
+    "outputs/replay/RNA1.txt": "d74b7f3612603879e67d74f19516a2ea8c576d008749a8647a91e29fd88d2c41",
+    "outputs/replay/RNA1_ranked.txt": "88d349a906fa6512cf152afcef8193cac5d627859d8a7da6cdce1eed31cdd5f9",
+    "outputs/replay/RNA1_ranked_filtered.txt": "cfe255164eb86dc8a67c703205b3e9646068801768f94c2470956031dd345751",
+    "outputs/replay/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/replay/data_infer/RNA0/pita.tab": "e05309630182658e4d08e55c9bb19d53f31c86805aec5a070a8092d270f0e473",
+    "outputs/replay/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/replay/data_infer/RNA0/targetscan.tab": "6535566c749dc2054b260bec50b9de45fab9e070143fa603db124a92654a845a",
+    "outputs/replay/data_infer/RNA0/top_n_siRNA.fa": "efe8ba3e20b20ee3fd0c4dd5e387270545c1f7a166d6030bf1097f8e4ca6247e",
+    "outputs/replay/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/replay/data_infer/RNA1/pita.tab": "5e75f49800a14bbdffac9927712dd1db8090f23c01efc0cecb0bbabbad7ff98b",
+    "outputs/replay/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/replay/data_infer/RNA1/targetscan.tab": "e177854ee79366378ed9f5828b31286afb639721cfde1ec48faf26418520c61f",
+    "outputs/replay/data_infer/RNA1/top_n_siRNA.fa": "e5026945f47d873e56ed4cba73270c84c1f37a4b854b7cd9eaef489b76d5cfd6"
+   },
+   "top50": {
+    "outputs/top50/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/top50/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/top50/data_infer/RNA0/top_n_siRNA.fa": "cc3b0aa5f3360c60dfe193a13d527caf777c90521028252ba8bea899a9604af7",
+    "outputs/top50/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/top50/data_infer/RNA1/pita.tab": "c87d4c0af356979887d5f7281b95aeee26bd1399515b074eec2e9661c47bc131",
+    "outputs/top50/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/top50/data_infer/RNA1/targetscan.tab": "e177854ee79366378ed9f5828b31286afb639721cfde1ec48faf26418520c61f",
+    "outputs/top50/data_infer/RNA1/top_n_siRNA.fa": "c46c773643b5471704f839af447c844d144fe9d12ecf4de4284278f7abf1aba4"
+   }
+  },
+  "output_shapes": "per record: <name>.txt and <name>_ranked.txt 39 rows x 12 cols [pos,sense,siRNA,efficacy,func_filter,pita_score,targetscan_score,off_target_filter,Seed,cell_viability,toxicity_filter,filter]; _ranked_filtered.txt = rows with filter==0 (RNA0: 1 row each run; RNA1: 2-4 rows, varies with stochastic top-10); data/infer/<name>/top_n_siRNA.fa 10 entries; result/ dir stays empty (mismatch not requested)",
+  "randomness": {
+   "seed_supported": false,
+   "note": "model.eval() never called, Dropout active, no torch seed; efficacy stochastic"
+  },
+  "top_n_fasta_check": {
+   "finding": "MISLABELLED. In every run and both records, headers (>RNA<idx>) equal the true top-10 indices by efficacy (in ranked order), but the sequences written are always siRNA rows 0..9 in positional order (RESULT_ranked['siRNA'][i] is label-based on a RangeIndex). 8-10 of 10 entries per file have header != sequence row (matches only where a top-k row happens to have index k).",
+   "consequence": "PITA/TargetScan scores are computed for windows pos 1-10 but merged onto the top-10-by-efficacy rows via the header name. Scores are deterministic per scored sequence (identical across runs for each actual sequence), but which rows receive them changes with the stochastic ranking, so pita_score/targetscan_score/off_target_filter/filter columns are NOT reproducible across runs (RNA0 run1 vs run2/run3 differ; RNA1 all pairs differ).",
+   "per_run": {
+    "run1": {
+     "RNA0": {
+      "true_top10_idx": [
+       1,
+       0,
+       15,
+       4,
+       11,
+       6,
+       2,
+       10,
+       21,
+       5
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 10
+     },
+     "RNA1": {
+      "true_top10_idx": [
+       6,
+       7,
+       10,
+       21,
+       17,
+       0,
+       8,
+       12,
+       16,
+       1
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 10
+     }
+    },
+    "run2": {
+     "RNA0": {
+      "true_top10_idx": [
+       1,
+       0,
+       11,
+       15,
+       4,
+       6,
+       2,
+       10,
+       16,
+       21
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 9
+     },
+     "RNA1": {
+      "true_top10_idx": [
+       6,
+       21,
+       10,
+       7,
+       17,
+       12,
+       0,
+       8,
+       16,
+       18
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 10
+     }
+    },
+    "run3": {
+     "RNA0": {
+      "true_top10_idx": [
+       0,
+       1,
+       4,
+       15,
+       11,
+       6,
+       2,
+       10,
+       21,
+       16
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 8
+     },
+     "RNA1": {
+      "true_top10_idx": [
+       6,
+       21,
+       7,
+       10,
+       17,
+       8,
+       12,
+       0,
+       16,
+       1
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 10
+     }
+    },
+    "replay": {
+     "RNA0": {
+      "true_top10_idx": [
+       0,
+       1,
+       15,
+       4,
+       11,
+       6,
+       2,
+       10,
+       16,
+       21
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 8
+     },
+     "RNA1": {
+      "true_top10_idx": [
+       6,
+       21,
+       7,
+       10,
+       17,
+       8,
+       12,
+       0,
+       16,
+       27
+      ],
+      "sequence_rows_written": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ],
+      "headers_equal_true_top10": true,
+      "sequences_equal_first10_positional": true,
+      "n_header_seq_mismatch": 10
+     }
+    }
+   }
+  },
+  "off_target_filter_counts": {
+   "run1": {
+    "RNA0": {
+     "-5": 29,
+     "0": 8,
+     "1": 2
+    },
+    "RNA1": {
+     "-5": 29,
+     "0": 6,
+     "1": 4
+    }
+   },
+   "run2": {
+    "RNA0": {
+     "-5": 29,
+     "0": 8,
+     "1": 2
+    },
+    "RNA1": {
+     "-5": 29,
+     "0": 6,
+     "1": 4
+    }
+   },
+   "run3": {
+    "RNA0": {
+     "-5": 29,
+     "0": 8,
+     "1": 2
+    },
+    "RNA1": {
+     "-5": 29,
+     "0": 6,
+     "1": 4
+    }
+   },
+   "replay": {
+    "RNA0": {
+     "-5": 29,
+     "0": 8,
+     "1": 2
+    },
+    "RNA1": {
+     "-5": 29,
+     "0": 6,
+     "1": 4
+    }
+   }
+  },
+  "off_target_filter_note": "Every run, both records: -5 (not scored, 29 rows), RNA0 {0:8,1:2}, RNA1 {0:6,1:4}. Counts stable, but the rows carrying them vary between runs.",
+  "accumulation_check": {
+   "finding": "NO accumulation across successful runs in the same runtime copy: each run starts with leftover top_n_siRNA.fa of 20 lines (10 entries) from the previous run, but infer.py line 228 'rm -rf ./data/infer/<name>' runs per record before the append-mode write, so every successful run's file has exactly 10 entries. Scanner hazard #7 (accumulation) is NOT reproduced for the -i1 path.",
+   "pre_run_line_counts": {
+    "run2": {
+     "RNA0": 20,
+     "RNA1": 20
+    },
+    "run3": {
+     "RNA0": 20,
+     "RNA1": 20
+    },
+    "top50": {
+     "RNA0": 20,
+     "RNA1": 20
+    },
+    "replay": {
+     "RNA0": 78,
+     "RNA1": 20
+    }
+   },
+   "caveat": "A failed run leaves stale/partial state: after the -top 50 crash, data/infer/RNA0/top_n_siRNA.fa had 39 entries (78 lines) and data/infer/RNA1/ still held run3's files (outputs/top50/data_infer/RNA1 is byte-identical stale run3 data, not top50 output). Wrappers must treat data/infer as scratch."
+  },
+  "top_n_exceeds_rows": {
+   "command": "-top 50 on example.fa (39 windows/record)",
+   "exit_status": 1,
+   "error": "IndexError: index 39 is out of bounds for axis 0 with size 39 (scripts/infer.py line 284, RESULT_ranked.index[i])",
+   "partial_outputs": "no result tables written (crash on first record RNA0 before to_csv); RNA1 not processed; data/infer/RNA0/top_n_siRNA.fa left with 39 entries",
+   "wrapper_contract": "require 1 <= top_n <= number of candidate windows per record (len(mRNA)-18 for -i1 without -a) or -1"
+  },
+  "run_to_run": {
+   "comparisons": {
+    "RNA0": {
+     "run1_vs_run2": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.058132484793663064,
+      "efficacy_max_rel_diff": 0.07185909480035332,
+      "efficacy_spearman": 0.9856275303643726,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "run1_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.05558260336518284,
+      "efficacy_max_rel_diff": 0.09862714749314283,
+      "efficacy_spearman": 0.9720647773279354,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "run2_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.056546996712684594,
+      "efficacy_max_rel_diff": 0.10033839092484294,
+      "efficacy_spearman": 0.9653846153846155,
+      "top10_overlap": 10,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": true,
+      "filter_identical": true
+     },
+     "replay_vs_run1": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.06957447972893716,
+      "efficacy_max_rel_diff": 0.12946291625148762,
+      "efficacy_spearman": 0.9593117408906883,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "replay_vs_run2": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.06281145706772806,
+      "efficacy_max_rel_diff": 0.11542583033060617,
+      "efficacy_spearman": 0.9657894736842105,
+      "top10_overlap": 10,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": true,
+      "filter_identical": true
+     },
+     "replay_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.08069088050723072,
+      "efficacy_max_rel_diff": 0.15331955587634605,
+      "efficacy_spearman": 0.9441295546558706,
+      "top10_overlap": 10,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": true,
+      "filter_identical": true
+     },
+     "top10_intersection_all3": 9,
+     "top10_union_all3": 11
+    },
+    "RNA1": {
+     "run1_vs_run2": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.042538774698972714,
+      "efficacy_max_rel_diff": 0.07939484995787274,
+      "efficacy_spearman": 0.9831983805668016,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "run1_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.049775021910667405,
+      "efficacy_max_rel_diff": 0.07077612518745782,
+      "efficacy_spearman": 0.982591093117409,
+      "top10_overlap": 10,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "run2_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.06302906602621072,
+      "efficacy_max_rel_diff": 0.09886535125009148,
+      "efficacy_spearman": 0.9870445344129555,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "replay_vs_run1": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.10661935758590702,
+      "efficacy_max_rel_diff": 0.18331503268692434,
+      "efficacy_spearman": 0.9542510121457489,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "replay_vs_run2": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.09835840997099876,
+      "efficacy_max_rel_diff": 0.16674332694779953,
+      "efficacy_spearman": 0.9706477732793523,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": false,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "replay_vs_run3": {
+      "deterministic_cols_identical": true,
+      "efficacy_max_abs_diff": 0.11777396482229241,
+      "efficacy_max_rel_diff": 0.2064530818383775,
+      "efficacy_spearman": 0.9595141700404859,
+      "top10_overlap": 9,
+      "top10_order_identical": false,
+      "top_n_fa_identical": false,
+      "pita_tab_identical": false,
+      "targetscan_tab_identical": true,
+      "pita_score_identical": false,
+      "targetscan_score_identical": false,
+      "off_target_filter_identical": false,
+      "filter_identical": false
+     },
+     "top10_intersection_all3": 9,
+     "top10_union_all3": 11
+    }
+   },
+   "summary": "Deterministic columns (pos,sense,siRNA,func_filter,Seed,cell_viability,toxicity_filter) identical in all pairs incl. replay. Efficacy: max abs diff 0.043-0.118, max rel diff 7-21%, Spearman 0.944-0.987 (much larger than the ~1% stated in the brief). Ranked order never identical. Top-10 overlap pairwise 9-10/10; across run1-3 intersection 9, union 11 for both records. top_n_siRNA.fa never byte-identical (headers differ); off-target-dependent columns not reproducible because of the mislabel defect.",
+   "suggested_tolerance": "exact for deterministic columns; efficacy abs <= ~0.15 (or Spearman >= 0.9); set-level checks for top-N (>=8/10 overlap); for off-target columns compare the scores keyed by actually-scored sequence (rows 0..N-1) rather than by row"
+  },
+  "replay": {
+   "input": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/data/example.fa",
+   "result": "exit 0; deterministic columns identical to run1-3; efficacy within the same spread (max abs 0.07-0.12); top-10 overlap 9-10; same mislabel pattern; off_target_filter counts identical"
+  },
+  "hazards": [
+   "top_n FASTA mislabel (header from positional rank, sequence from row label i) -> off-target scores attached to wrong rows",
+   "no bounds check: top_n > windows -> IndexError, exit 1, partial state",
+   "stochastic efficacy (dropout active) -> top-N selection varies between runs",
+   "fixed in-repo scratch dir data/infer/<record> wiped per record; stale state persists after crashes",
+   "off-target/pita writes <record>_pita_results.tab inside the runtime copy (RNA1_pita_results.tab left behind)"
+  ],
+  "limitations": [
+   "-a flag not used (broken per scanner)",
+   "README value -top 100 not runnable on example.fa (39 windows); 10 used",
+   "wall times ~3 min/run on CPU"
+  ],
+  "attempts": [
+   {
+    "n": 1,
+    "action": "setup runtime copy + run1..3, top50, replay",
+    "result": "as above"
+   }
+  ]
+ }
+}

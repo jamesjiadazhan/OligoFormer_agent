@@ -1,0 +1,10 @@
+Sources,siRNA^a,mRNA^a,Cell line^b,Datasets
+Huesken,2431,34,H1299,Huesken
+Takayuki,702,1,HeLa,Takayuki
+Amarzguioui,46,4,HaCaT,Mixset
+Harborth,44,1,HeLa,Mixset
+Hsieh,108,22,HEK293T,Mixset
+Khvorova,14,1,HEK293,Mixset
+Reynolds,240,7,HEK293,Mixset
+Vickers,76,2,T24,Mixset
+Ui-Tei,53,3,HeLa,Mixset

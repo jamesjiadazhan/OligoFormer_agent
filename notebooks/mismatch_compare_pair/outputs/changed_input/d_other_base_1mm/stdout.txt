@@ -1,0 +1,3 @@
+please input base RNA: 
+please input mismatched RNA: 
+0.7939964532852173

@@ -1,0 +1,611 @@
+{
+ "infer_toxicity_filter": {
+  "source": {
+   "path": "repo/OligoFormer/README.md",
+   "section": "## User-friendly Docker image / 4. Access the OligoFormer Tool (oligoformer -tox)",
+   "flag_definition": "scripts/main.py -tox/--toxicity, --toxicity_threshold (default 50.0); logic scripts/infer.py lines 308-340",
+   "repo": "https://github.com/lulab/OligoFormer",
+   "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3"
+  },
+  "status": "success",
+  "execution_mode": "native_command",
+  "execution_path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/run.sh",
+  "comparison_script": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/compare.py",
+  "runtime_copy": {
+   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer",
+   "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "git_status_short_count": 699,
+   "git_status_short_count_fileMode_false": 24,
+   "note": "changes are the setup script's PITA make install (EXE_BASE_DIR substitution + mode bits) and staged arm64 binaries, as documented in environment-manager_results.md attempt 2; nothing else modified",
+   "setup_log": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/setup.log",
+   "setup_command": "OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh notebooks/infer_toxicity_filter/runtime/OligoFormer (exit 0)"
+  },
+  "executable": {
+   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python_version": "3.11.12",
+   "torch": "2.2.1 (CPU)",
+   "perl_RNAplfold": "not used (no -off)"
+  },
+  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer",
+  "env_vars": {
+   "source": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer.env.sh",
+   "PATH_prepend": [
+    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
+    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+   ],
+   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/RNA-FM/torch_home",
+   "PERL5LIB": "unset"
+  },
+  "commands": [
+   {
+    "label": "run1",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run1/",
+    "exit_status": 0,
+    "wall_s": 41.7,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run1.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run1/"
+   },
+   {
+    "label": "run2",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run2/",
+    "exit_status": 0,
+    "wall_s": 47.3,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run2.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run2/"
+   },
+   {
+    "label": "run3",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run3/",
+    "exit_status": 0,
+    "wall_s": 44.3,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/run3.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/run3/"
+   },
+   {
+    "label": "replay",
+    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/replay/",
+    "exit_status": 0,
+    "wall_s": 30.4,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/replay.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/replay/"
+   },
+   {
+    "label": "changed_params/thr80",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/thr80/ --toxicity_threshold 80",
+    "exit_status": 0,
+    "wall_s": 27.0,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/thr80.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/thr80/"
+   },
+   {
+    "label": "changed_params/nf",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa -tox --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/nf/ -nf",
+    "exit_status": 0,
+    "wall_s": 27.9,
+    "stdout": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.out",
+    "stderr": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.err",
+    "meta": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/logs/changed_params/nf.meta",
+    "outputs": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/changed_params/nf/"
+   }
+  ],
+  "inputs": {
+   "example.fa": {
+    "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/example.fa",
+    "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851",
+    "identical_to": "repo/OligoFormer/data/example.fa",
+    "records": [
+     "RNA0",
+     "RNA1"
+    ]
+   },
+   "cell_viability.txt": {
+    "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/data/cell_viability.txt",
+    "sha256": "7139bca70a15925dab1199fd6cee259223fa1ac78b54a32a58791dddbc8a6ab0",
+    "identical_to": "repo/OligoFormer/toxicity/cell_viability.txt",
+    "rows": 4096,
+    "note": "read by infer.py from ./toxicity/cell_viability.txt relative to cwd (not configurable)"
+   },
+   "best_model.pth": {
+    "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/runtime/OligoFormer/model/best_model.pth",
+    "sha256": "8c2fb4bc847e20c63dfe69381c5dc5c341be71e65c011f4e9a4cd6fdb0e34eca"
+   }
+  },
+  "outputs": {
+   "per_run_files": [
+    "RNA0.txt",
+    "RNA0_ranked.txt",
+    "RNA0_ranked_filtered.txt",
+    "RNA1.txt",
+    "RNA1_ranked.txt",
+    "RNA1_ranked_filtered.txt",
+    "data_infer/<rec>/{siRNA.fa,mRNA.fa}"
+   ],
+   "sha256": {
+    "outputs/changed_params/nf/RNA0.txt": "e9b8f20450d9feee9c637af131852a66a2526f82e7df89c94ef32b33246717a5",
+    "outputs/changed_params/nf/RNA0_ranked.txt": "0161f081381fa4d5a9d16d638f1b25e8ef3f2e802d39b43c53178ac3a9290386",
+    "outputs/changed_params/nf/RNA0_ranked_filtered.txt": "d1154810ed9b0796c034fb836ea007aae0eb646e0d15f2ce841be6b455225001",
+    "outputs/changed_params/nf/RNA1.txt": "6b6f5a35ad9a05c6cab88508c8da99404108ef059214e9dbb43e7735f9ea66ba",
+    "outputs/changed_params/nf/RNA1_ranked.txt": "e16f1395c9e9542ca5fa501f3f226920085ab6a68a22dc6370ed25bc1acc222b",
+    "outputs/changed_params/nf/RNA1_ranked_filtered.txt": "141255d4ee7dad480b4ef0bcec936929d3d5d6c6aff189b95798eb48eb8ddda0",
+    "outputs/changed_params/nf/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/changed_params/nf/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/changed_params/nf/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/changed_params/nf/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/changed_params/thr80/RNA0.txt": "63377c1b43847af6343caae97ce7e62b8bbf748c4ef96e1dd378bc12c01f1083",
+    "outputs/changed_params/thr80/RNA0_ranked.txt": "3d1144041c6128076a27d43f4d816a30e9a38347bad38567fec9b6d559921ebc",
+    "outputs/changed_params/thr80/RNA0_ranked_filtered.txt": "78bf7dc66c80bf107f532a911dc01d94e85c98ae4d059b7f3cd164083f948db4",
+    "outputs/changed_params/thr80/RNA1.txt": "e47670888425c8ebb1f3662b5d21d751c3c755e7910301f5e6238eb7a0845f2c",
+    "outputs/changed_params/thr80/RNA1_ranked.txt": "ecd610bdd4581059b5f040d58f95d3d8de709fa953fae93eb27bf33cf0d4f09a",
+    "outputs/changed_params/thr80/RNA1_ranked_filtered.txt": "40afb3f7cbcc4220bd05ecd2251b7a8061ac74d666a616e64817d440be834711",
+    "outputs/changed_params/thr80/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/changed_params/thr80/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/changed_params/thr80/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/changed_params/thr80/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/replay/RNA0.txt": "82493db04a719c7592a3b66828ea2a3e0c2ed82931fec28cb5c4d7a12a14cb12",
+    "outputs/replay/RNA0_ranked.txt": "0f3a0759f56c3fe4c913d20542d707099b30ebbf80a7e2111ee2ad3307f54f3e",
+    "outputs/replay/RNA0_ranked_filtered.txt": "62b96d41c3d24b3bcca7b7f352eb2a46260f8ae9263c0d13a48d1049b11ced39",
+    "outputs/replay/RNA1.txt": "71eb79b5fae726dd26f5bf9de6c8d828321cf1caee2ba4a9d553e6b08fe7a03f",
+    "outputs/replay/RNA1_ranked.txt": "6fab2ec1e2eac8d5fb6e17d6299409cadcf524e8c44950a34fb64503b314fc29",
+    "outputs/replay/RNA1_ranked_filtered.txt": "7880207c87b9295a86d9467e01538f2339f35c15b5306f4e20a7505a9ff365f0",
+    "outputs/replay/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/replay/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/replay/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/replay/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run1/RNA0.txt": "c6cc4500855e99a566d52be0d172f15f0092f4e45945b1874285d14cc0408618",
+    "outputs/run1/RNA0_ranked.txt": "d4f0ee5d3eea5e337164d3b4f8ff53915cb1b1a2eb4525ca60eb53a0abcb3c70",
+    "outputs/run1/RNA0_ranked_filtered.txt": "b9c862ec87599fc8f8a4f78cbc64f7f28e7e84e1102408140271aee0c487272f",
+    "outputs/run1/RNA1.txt": "6ab938419ea0c976ba32a1d40ce7f177c6a8187e6c21a7dad43f28da80242c9e",
+    "outputs/run1/RNA1_ranked.txt": "663b851f22905a677d81dfe44d7e1c018a24fafd7430f5f145169d42a4336988",
+    "outputs/run1/RNA1_ranked_filtered.txt": "6cad0b0bec86f1f9acf52da7a3c51568b0b2a57af5539625c9fecd7c01835de5",
+    "outputs/run1/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run1/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run1/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run1/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run2/RNA0.txt": "f6f3ed18d00f8e11ad60921e6ca7019411f98bfa7e70c49ab4a459151899505c",
+    "outputs/run2/RNA0_ranked.txt": "29286bf908a5ebeade97fdbb4a6fe089d5269d5070eeffb2416153c71e224981",
+    "outputs/run2/RNA0_ranked_filtered.txt": "e140a27b2b72f8afe739cdd9770af8d245e26f7015e8a72912732fa758811fb1",
+    "outputs/run2/RNA1.txt": "afe9acf814524b3ae568acb66201359ebe70088723ce4b630cbc2f8f391e76b7",
+    "outputs/run2/RNA1_ranked.txt": "7e07106142753f7aed48eec59300e5e98235234f7799af852bec0360cff6a886",
+    "outputs/run2/RNA1_ranked_filtered.txt": "429aa52b5a20feb1c6195a865883b1817d84719e48517f1bbb6559267e427e63",
+    "outputs/run2/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run2/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run2/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run2/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "outputs/run3/RNA0.txt": "8ef08eaf5d3ae5ae2ac9c9558097d951fbd4353b28fa19673d175ffd9e8428cc",
+    "outputs/run3/RNA0_ranked.txt": "b2dcd97dadffd61fcf16bee3acb920cacafa52f53b88fa0c752d2f45b3e63996",
+    "outputs/run3/RNA0_ranked_filtered.txt": "cecdbc647ce8428ae575e52fd8ed5794cbbd566d1f1f0cb52aaec46b1f9486ac",
+    "outputs/run3/RNA1.txt": "d5708734ae06d752a8bf578665958c9cf9e713ea9627289f2e0cdab2e0c601b4",
+    "outputs/run3/RNA1_ranked.txt": "320f7f985c6692f49adca83eca6f7760896fc8167bfd062e6b714549628f325f",
+    "outputs/run3/RNA1_ranked_filtered.txt": "5a9077167b1e9d2771101f7d63b30d3a58a26c129e2e11adceb47ed1c1ca6046",
+    "outputs/run3/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "outputs/run3/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "outputs/run3/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "outputs/run3/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b"
+   },
+   "comparison_json": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_toxicity_filter/outputs/comparison.json",
+   "columns_default": "pos sense siRNA efficacy func_filter Seed cell_viability toxicity_filter filter",
+   "columns_nf": "pos sense siRNA efficacy Seed cell_viability toxicity_filter filter (no func_filter)",
+   "rows_per_record": 39
+  },
+  "toxicity_results": {
+   "RNA0": {
+    "rows": 39,
+    "toxicity_flagged": 17,
+    "func_flagged": 23,
+    "filter_pass": 10,
+    "ranked_filtered_rows": 10,
+    "filter_eq_func_plus_tox": true,
+    "seed_is_siRNA_2_7": true,
+    "cell_viability_matches_table": true,
+    "cell_viability_nan": 0,
+    "tox_flagged_rows": [
+     {
+      "pos": 9,
+      "siRNA": "GGUCUCUUUCGCAAAUUAA",
+      "Seed": "GUCUCU",
+      "cell_viability": 17.7,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 11,
+      "siRNA": "AAGGUCUCUUUCGCAAAUU",
+      "Seed": "AGGUCU",
+      "cell_viability": 21.2,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 12,
+      "siRNA": "UAAGGUCUCUUUCGCAAAU",
+      "Seed": "AAGGUC",
+      "cell_viability": 48.0,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 13,
+      "siRNA": "GUAAGGUCUCUUUCGCAAA",
+      "Seed": "UAAGGU",
+      "cell_viability": 44.5,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 14,
+      "siRNA": "CGUAAGGUCUCUUUCGCAA",
+      "Seed": "GUAAGG",
+      "cell_viability": 49.8,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 20,
+      "siRNA": "CACGUCCGUAAGGUCUCUU",
+      "Seed": "ACGUCC",
+      "cell_viability": 27.6,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 24,
+      "siRNA": "CGCCCACGUCCGUAAGGUC",
+      "Seed": "GCCCAC",
+      "cell_viability": 44.2,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 26,
+      "siRNA": "GGCGCCCACGUCCGUAAGG",
+      "Seed": "GCGCCC",
+      "cell_viability": 38.1,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 27,
+      "siRNA": "UGGCGCCCACGUCCGUAAG",
+      "Seed": "GGCGCC",
+      "cell_viability": 19.8,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 30,
+      "siRNA": "CACUGGCGCCCACGUCCGU",
+      "Seed": "ACUGGC",
+      "cell_viability": 18.5,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 31,
+      "siRNA": "CCACUGGCGCCCACGUCCG",
+      "Seed": "CACUGG",
+      "cell_viability": 41.0,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 34,
+      "siRNA": "GGUCCACUGGCGCCCACGU",
+      "Seed": "GUCCAC",
+      "cell_viability": 33.0,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 35,
+      "siRNA": "AGGUCCACUGGCGCCCACG",
+      "Seed": "GGUCCA",
+      "cell_viability": 38.4,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 36,
+      "siRNA": "GAGGUCCACUGGCGCCCAC",
+      "Seed": "AGGUCC",
+      "cell_viability": 22.7,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 37,
+      "siRNA": "GGAGGUCCACUGGCGCCCA",
+      "Seed": "GAGGUC",
+      "cell_viability": 25.6,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 38,
+      "siRNA": "AGGAGGUCCACUGGCGCCC",
+      "Seed": "GGAGGU",
+      "cell_viability": 7.3,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 39,
+      "siRNA": "GAGGAGGUCCACUGGCGCC",
+      "Seed": "AGGAGG",
+      "cell_viability": 21.8,
+      "func_filter": 1,
+      "filter": 2
+     }
+    ]
+   },
+   "RNA1": {
+    "rows": 39,
+    "toxicity_flagged": 11,
+    "func_flagged": 15,
+    "filter_pass": 18,
+    "ranked_filtered_rows": 18,
+    "filter_eq_func_plus_tox": true,
+    "seed_is_siRNA_2_7": true,
+    "cell_viability_matches_table": true,
+    "cell_viability_nan": 0,
+    "tox_flagged_rows": [
+     {
+      "pos": 15,
+      "siRNA": "GGUCUCUUUCGCACAUUAA",
+      "Seed": "GUCUCU",
+      "cell_viability": 17.7,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 17,
+      "siRNA": "AAGGUCUCUUUCGCACAUU",
+      "Seed": "AGGUCU",
+      "cell_viability": 21.2,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 18,
+      "siRNA": "UAAGGUCUCUUUCGCACAU",
+      "Seed": "AAGGUC",
+      "cell_viability": 48.0,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 19,
+      "siRNA": "GUAAGGUCUCUUUCGCACA",
+      "Seed": "UAAGGU",
+      "cell_viability": 44.5,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 20,
+      "siRNA": "CGUAAGGUCUCUUUCGCAC",
+      "Seed": "GUAAGG",
+      "cell_viability": 49.8,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 26,
+      "siRNA": "CACGUCCGUAAGGUCUCUU",
+      "Seed": "ACGUCC",
+      "cell_viability": 27.6,
+      "func_filter": 0,
+      "filter": 1
+     },
+     {
+      "pos": 30,
+      "siRNA": "CGCCCACGUCCGUAAGGUC",
+      "Seed": "GCCCAC",
+      "cell_viability": 44.2,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 32,
+      "siRNA": "GGCGCCCACGUCCGUAAGG",
+      "Seed": "GCGCCC",
+      "cell_viability": 38.1,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 33,
+      "siRNA": "UGGCGCCCACGUCCGUAAG",
+      "Seed": "GGCGCC",
+      "cell_viability": 19.8,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 36,
+      "siRNA": "CACUGGCGCCCACGUCCGU",
+      "Seed": "ACUGGC",
+      "cell_viability": 18.5,
+      "func_filter": 1,
+      "filter": 2
+     },
+     {
+      "pos": 37,
+      "siRNA": "CCACUGGCGCCCACGUCCG",
+      "Seed": "CACUGG",
+      "cell_viability": 41.0,
+      "func_filter": 1,
+      "filter": 2
+     }
+    ]
+   }
+  },
+  "changed_params": {
+   "RNA0": {
+    "thr80 (-tox --toxicity_threshold 80)": {
+     "columns": [
+      "pos",
+      "sense",
+      "siRNA",
+      "efficacy",
+      "func_filter",
+      "Seed",
+      "cell_viability",
+      "toxicity_filter",
+      "filter"
+     ],
+     "toxicity_flagged": 34,
+     "toxicity_filter_eq_cv_lt_80": true,
+     "filter_eq_func_plus_tox": true,
+     "filter_pass": 2,
+     "cols_other_than_tox_filter_efficacy_identical": true
+    },
+    "nf (-tox -nf)": {
+     "columns": [
+      "pos",
+      "sense",
+      "siRNA",
+      "efficacy",
+      "Seed",
+      "cell_viability",
+      "toxicity_filter",
+      "filter"
+     ],
+     "has_func_filter": false,
+     "toxicity_flagged": 17,
+     "filter_eq_tox": true,
+     "filter_pass": 22,
+     "tox_cols_identical_to_run1": true,
+     "ranked_filtered_rows": 22
+    }
+   },
+   "RNA1": {
+    "thr80 (-tox --toxicity_threshold 80)": {
+     "columns": [
+      "pos",
+      "sense",
+      "siRNA",
+      "efficacy",
+      "func_filter",
+      "Seed",
+      "cell_viability",
+      "toxicity_filter",
+      "filter"
+     ],
+     "toxicity_flagged": 31,
+     "toxicity_filter_eq_cv_lt_80": true,
+     "filter_eq_func_plus_tox": true,
+     "filter_pass": 4,
+     "cols_other_than_tox_filter_efficacy_identical": true
+    },
+    "nf (-tox -nf)": {
+     "columns": [
+      "pos",
+      "sense",
+      "siRNA",
+      "efficacy",
+      "Seed",
+      "cell_viability",
+      "toxicity_filter",
+      "filter"
+     ],
+     "has_func_filter": false,
+     "toxicity_flagged": 11,
+     "filter_eq_tox": true,
+     "filter_pass": 28,
+     "tox_cols_identical_to_run1": true,
+     "ranked_filtered_rows": 28
+    }
+   }
+  },
+  "run_to_run_comparison": {
+   "RNA0": {
+    "run2_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.08694223237037657,
+     "efficacy_max_rel_diff": 0.14663419249158496,
+     "spearman": 0.9607287449392714,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    },
+    "run3_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.1833522728383541,
+     "efficacy_max_rel_diff": 0.31548694294612806,
+     "spearman": 0.9334008097165992,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    },
+    "replay_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.04254137241840361,
+     "efficacy_max_rel_diff": 0.0703993299660565,
+     "spearman": 0.9787449392712552,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    }
+   },
+   "RNA1": {
+    "run2_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.07937531545758247,
+     "efficacy_max_rel_diff": 0.11572942415474183,
+     "spearman": 0.9761133603238867,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    },
+    "run3_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.0649792739152909,
+     "efficacy_max_rel_diff": 0.09473995673413717,
+     "spearman": 0.9874493927125506,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    },
+    "replay_vs_run1": {
+     "deterministic_cols_identical": true,
+     "efficacy_max_abs_diff": 0.05839513421058662,
+     "efficacy_max_rel_diff": 0.08514026327544479,
+     "spearman": 0.982591093117409,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false
+    }
+   }
+  },
+  "run_to_run_summary": "Deterministic columns (pos, sense, siRNA, func_filter, Seed, cell_viability, toxicity_filter, filter) identical across run1-3, replay. Efficacy stochastic (dropout active, no model.eval()): max abs diff 0.183 (RNA0 run3 vs run1), max rel diff 31.5%, Spearman 0.933-0.987; ranked and ranked_filtered row ORDER differs between runs, but the SET of rows in *_ranked_filtered.txt is identical (it depends only on filter). This spread is far larger than the ~1% stated in the brief.",
+  "suggested_verifier_tolerance": "exact match for deterministic columns and for the set of pos in *_ranked_filtered.txt; efficacy: abs tol ~0.25 or Spearman >= 0.9 vs reference; do not compare row order of ranked files",
+  "replay_check": {
+   "command": "run.sh replay <notebooks/.../data/example.fa abs path>",
+   "result": "deterministic columns identical to run1 for both records; efficacy within run-to-run spread (max abs 0.058)"
+  },
+  "hazards": [
+   "scripts/infer.py never calls model.eval(): dropout active, efficacy and ranking order nondeterministic (larger than ~1%: up to 0.18 abs / 31% rel on CPU)",
+   "--output_dir is string-concatenated; must end with /",
+   "toxicity table path ./toxicity/cell_viability.txt hard-coded relative to cwd; cwd must be the OligoFormer checkout",
+   "filter is an integer sum (func_filter counts up to 4 + toxicity_filter), not a boolean; ranked_filtered keeps filter==0",
+   "with -nf, func_filter column is absent and filter == toxicity_filter",
+   "toxicity_filter = cell_viability < threshold (strict); a seed missing from the table would give NaN -> toxicity_filter 0 (not observed: all 6-mers present, 4096 rows)",
+   "infer writes ./data/infer/<record>/ inside cwd and rm -rf it per run (concurrency hazard; private runtime copy used)"
+  ],
+  "limitations": [
+   "efficacy not reproducible bit-for-bit",
+   "no figures produced (not applicable)",
+   "large RNA-FM .npy embeddings not retained"
+  ],
+  "attempts": [
+   {
+    "n": 1,
+    "result": "success; all 6 invocations exit 0"
+   }
+  ]
+ }
+}

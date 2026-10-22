@@ -1,0 +1,372 @@
+{
+  "success": true,
+  "mode": "calls",
+  "require_all_tools": true,
+  "server": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/src/OligoFormer_mcp.py",
+  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work",
+  "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+  "python_version": "3.11.12",
+  "fastmcp": "4.0.3",
+  "expected": [
+    "compare_sirna_mismatch_kon",
+    "predict_sirna_efficacy_from_mrna",
+    "predict_specific_sirna_efficacy",
+    "scan_sirna_mismatch_variants",
+    "screen_sirna_offtarget"
+  ],
+  "actual": [
+    "compare_sirna_mismatch_kon",
+    "predict_sirna_efficacy_from_mrna",
+    "predict_specific_sirna_efficacy",
+    "scan_sirna_mismatch_variants",
+    "screen_sirna_offtarget"
+  ],
+  "missing": [],
+  "unexpected": [],
+  "schemas": {
+    "predict_sirna_efficacy_from_mrna": {
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mrna_fasta_path": {
+            "description": "FASTA of target mRNA records (each >= 19 nt, header matching ^[A-Za-z0-9_.-]+$)",
+            "type": "string"
+          },
+          "apply_functionality_filter": {
+            "default": true,
+            "description": "Apply the known functionality criteria filter (off adds -nf)",
+            "type": "boolean"
+          },
+          "include_toxicity": {
+            "default": false,
+            "description": "Add the seed-based cell-viability toxicity filter (-tox)",
+            "type": "boolean"
+          },
+          "toxicity_threshold": {
+            "default": 50.0,
+            "description": "Cell viability percent below which a seed is flagged toxic",
+            "type": "number"
+          },
+          "output_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Base output directory; a fresh subdirectory is created per call"
+          }
+        },
+        "required": [
+          "mrna_fasta_path"
+        ]
+      },
+      "output": {
+        "additionalProperties": true,
+        "type": "object"
+      }
+    },
+    "predict_specific_sirna_efficacy": {
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mrna_fasta_path": {
+            "description": "FASTA of target mRNA records (each >= 19 nt, header matching ^[A-Za-z0-9_.-]+$)",
+            "type": "string"
+          },
+          "sirna_fasta_path": {
+            "description": "FASTA of candidate siRNAs, each exactly 19 nt of A/C/G/U",
+            "type": "string"
+          },
+          "apply_functionality_filter": {
+            "default": true,
+            "description": "Apply the known functionality criteria filter (off adds -nf)",
+            "type": "boolean"
+          },
+          "include_toxicity": {
+            "default": false,
+            "description": "Add the seed-based cell-viability toxicity filter (-tox)",
+            "type": "boolean"
+          },
+          "toxicity_threshold": {
+            "default": 50.0,
+            "description": "Cell viability percent below which a seed is flagged toxic",
+            "type": "number"
+          },
+          "output_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Base output directory; a fresh subdirectory is created per call"
+          }
+        },
+        "required": [
+          "mrna_fasta_path",
+          "sirna_fasta_path"
+        ]
+      },
+      "output": {
+        "additionalProperties": true,
+        "type": "object"
+      }
+    },
+    "screen_sirna_offtarget": {
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mrna_fasta_path": {
+            "description": "FASTA of target mRNA records (each >= 19 nt, header matching ^[A-Za-z0-9_.-]+$)",
+            "type": "string"
+          },
+          "apply_functionality_filter": {
+            "default": true,
+            "description": "Apply the known functionality criteria filter (off adds -nf)",
+            "type": "boolean"
+          },
+          "include_toxicity": {
+            "default": false,
+            "description": "Add the seed-based cell-viability toxicity filter (-tox)",
+            "type": "boolean"
+          },
+          "toxicity_threshold": {
+            "default": 50.0,
+            "description": "Cell viability percent below which a seed is flagged toxic",
+            "type": "number"
+          },
+          "pita_threshold": {
+            "default": -10.0,
+            "description": "PITA ddG below which a siRNA is flagged as off-target",
+            "type": "number"
+          },
+          "targetscan_threshold": {
+            "default": 1.0,
+            "description": "TargetScan context score above which a siRNA is flagged",
+            "type": "number"
+          },
+          "utr_reference_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Reference UTR table; defaults to the bundled 100_human_UTR.txt"
+          },
+          "orf_reference_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Reference ORF table; defaults to the bundled 100_human_ORF.txt"
+          },
+          "output_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Base output directory; a fresh subdirectory is created per call"
+          }
+        },
+        "required": [
+          "mrna_fasta_path"
+        ]
+      },
+      "output": {
+        "additionalProperties": true,
+        "type": "object"
+      }
+    },
+    "compare_sirna_mismatch_kon": {
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "base_rna": {
+            "description": "Base 19-nt RNA sequence (A/C/G/U only)",
+            "type": "string"
+          },
+          "mismatched_rna": {
+            "description": "Mismatched 19-nt RNA sequence to compare (A/C/G/U only)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_rna",
+          "mismatched_rna"
+        ]
+      },
+      "output": {
+        "additionalProperties": true,
+        "type": "object"
+      }
+    },
+    "scan_sirna_mismatch_variants": {
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "base_rna": {
+            "description": "Base 19-nt RNA sequence (A/C/G/U only)",
+            "type": "string"
+          },
+          "max_mismatches": {
+            "default": 2,
+            "description": "Enumerate variants up to 2 mismatches (1596 rows) or 3 (27759 rows)",
+            "enum": [
+              2,
+              3
+            ],
+            "type": "integer"
+          },
+          "output_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Base output directory; a fresh subdirectory is created per call"
+          }
+        },
+        "required": [
+          "base_rna"
+        ]
+      },
+      "output": {
+        "additionalProperties": true,
+        "type": "object"
+      }
+    }
+  },
+  "cases": [
+    {
+      "name": "traverse-reference-example-fasta",
+      "tool": "predict_sirna_efficacy_from_mrna",
+      "success": true,
+      "artifacts_checked": 6
+    },
+    {
+      "name": "traverse-repeated-call-distinct-artifacts",
+      "tool": "predict_sirna_efficacy_from_mrna",
+      "success": true,
+      "artifacts_checked": 3
+    },
+    {
+      "name": "traverse-toxicity-threshold-80",
+      "tool": "predict_sirna_efficacy_from_mrna",
+      "success": true,
+      "artifacts_checked": 3
+    },
+    {
+      "name": "traverse-missing-input-file",
+      "tool": "predict_sirna_efficacy_from_mrna",
+      "success": true
+    },
+    {
+      "name": "traverse-record-shorter-than-19nt",
+      "tool": "predict_sirna_efficacy_from_mrna",
+      "success": true
+    },
+    {
+      "name": "specific-sirnas-reference",
+      "tool": "predict_specific_sirna_efficacy",
+      "success": true,
+      "artifacts_checked": 6
+    },
+    {
+      "name": "specific-sirnas-record-prefiltering",
+      "tool": "predict_specific_sirna_efficacy",
+      "success": true,
+      "artifacts_checked": 4
+    },
+    {
+      "name": "specific-sirnas-non-19nt-sequence",
+      "tool": "predict_specific_sirna_efficacy",
+      "success": true
+    },
+    {
+      "name": "specific-sirnas-no-match-at-all",
+      "tool": "predict_specific_sirna_efficacy",
+      "success": true
+    },
+    {
+      "name": "offtarget-reference-slow",
+      "tool": "screen_sirna_offtarget",
+      "success": true,
+      "artifacts_checked": 10
+    },
+    {
+      "name": "offtarget-empty-utr-reference",
+      "tool": "screen_sirna_offtarget",
+      "success": true
+    },
+    {
+      "name": "mismatch-kon-reference-pair",
+      "tool": "compare_sirna_mismatch_kon",
+      "success": true,
+      "artifacts_checked": 0
+    },
+    {
+      "name": "mismatch-kon-five-mismatches",
+      "tool": "compare_sirna_mismatch_kon",
+      "success": true,
+      "artifacts_checked": 0
+    },
+    {
+      "name": "mismatch-kon-dna-sequence-rejected",
+      "tool": "compare_sirna_mismatch_kon",
+      "success": true
+    },
+    {
+      "name": "mismatch-scan-depth2-reference",
+      "tool": "scan_sirna_mismatch_variants",
+      "success": true,
+      "artifacts_checked": 1
+    },
+    {
+      "name": "mismatch-scan-repeated-call-distinct-artifacts",
+      "tool": "scan_sirna_mismatch_variants",
+      "success": true,
+      "artifacts_checked": 1
+    },
+    {
+      "name": "mismatch-scan-changed-base",
+      "tool": "scan_sirna_mismatch_variants",
+      "success": true,
+      "artifacts_checked": 1
+    },
+    {
+      "name": "mismatch-scan-18nt-base-rejected",
+      "tool": "scan_sirna_mismatch_variants",
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+ "mismatch_compare_pair": {
+  "source": {
+   "path": "repo/OligoFormer/scripts/mismatch.py (mismatch(), Args.mismatch==1 branch) via scripts/main.py -m 1",
+   "repository": "https://github.com/lulab/OligoFormer",
+   "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "sha256": {
+    "scripts/mismatch.py": "c317c6b53c59f5a5492ef11722f569ca7d6c07c72ac21444baca1fefe1f59669",
+    "scripts/main.py": "6fbfd10b214c69776906100d0a6cfc7d1c1a196656f0c587ac6bbcfdc6f27cbb",
+    "model/mismatch_model.pth": "fb32c9a31d436113ff5271edd138cc86fe4065b7b1082e7c1cadb3563d627043"
+   }
+  },
+  "status": "success",
+  "execution_mode": "native_command",
+  "execution_path": "notebooks/mismatch_compare_pair/run.sh",
+  "commands": [
+   {
+    "cmd": "printf 'UCGCAAAUUAAAUUGAACC\\nUCGCAAAUUAAAUUGAACG\\n' | python scripts/main.py -m 1",
+    "as_run": "python scripts/main.py -m 1 < data/<case>.stdin.txt",
+    "note": "run.sh feeds the saved stdin file (same bytes as the printf form)"
+   },
+   {
+    "cmd": "bash notebooks/mismatch_compare_pair/run.sh",
+    "exit_status": 0,
+    "wall_s_total": 32.0,
+    "log": "notebooks/mismatch_compare_pair/logs/run_main.log"
+   },
+   {
+    "cmd": "bash notebooks/mismatch_compare_pair/run.sh notebooks/mismatch_compare_pair/outputs/replay",
+    "exit_status": 0,
+    "log": "notebooks/mismatch_compare_pair/logs/run_replay.log"
+   }
+  ],
+  "runtime_setup": {
+   "cmd": "SKIP_OFFTARGET=1 OLIGOFORMER_SRC=repo/OligoFormer RNAFM_SRC=deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh notebooks/mismatch_compare_pair/runtime/OligoFormer",
+   "exit_status": 0,
+   "wall_s": 10.1,
+   "log": "notebooks/mismatch_compare_pair/logs/setup.log",
+   "note": "SKIP_OFFTARGET=1 because -m 1 never touches off-target/pita; RNA-FM is unused by -m 1 but the script stages it anyway.",
+   "runtime_copy": "notebooks/mismatch_compare_pair/runtime/OligoFormer",
+   "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "git_status_short_lines": 1,
+   "git_status_short": "?? RNA-FM/ (unchanged after all runs; ./result/ is created but empty so git does not show it; __pycache__ is gitignored)"
+  },
+  "executable": {
+   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python_version": "3.11.12",
+   "torch": "2.2.1 (CPU)",
+   "numpy": "1.24.4",
+   "pandas": "2.0.3",
+   "perl": null,
+   "RNAplfold": null
+  },
+  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_compare_pair/runtime/OligoFormer",
+  "env_vars_set": "source runtime/OligoFormer.env.sh: OLIGOFORMER_RUNTIME, PATH (OligoFormer-env/bin, deps/offtarget-env/bin first), TORCH_HOME=<runtime>/RNA-FM/torch_home, unset PERL5LIB. -m 1 needs only the python on PATH.",
+  "inputs": {
+   "stdin_files": "notebooks/mismatch_compare_pair/data/*.stdin.txt (sha256 in data/SHA256SUMS)",
+   "model": "<runtime>/model/mismatch_model.pth (loaded at import time from the relative path 'model/mismatch_model.pth', so cwd MUST be the OligoFormer root)",
+   "provenance": "reference pair is the scanner-bound command; changed/error cases were constructed by hand as assigned"
+  },
+  "stdout_contract": {
+   "exact_reference_stdout": "please input base RNA: \nplease input mismatched RNA: \n0.9940418601036072\n",
+   "description": "input() prompts go to stdout even with piped stdin (the input itself is not echoed). Line 1 'please input base RNA: ' (trailing space), line 2 'please input mismatched RNA: ' (trailing space), line 3 = repr(float) of the sigmoid output, then a newline. Nothing else on stdout; stderr is empty on success.",
+   "parse_rule": "require exit 0; take the last non-empty stdout line, strip it, call float(). Optionally assert the first two lines are the prompts. kon is in (0,1) (sigmoid).",
+   "files_written": "no result files. Side effects: main.py creates an empty ./result in cwd if it is absent; Python writes scripts/__pycache__/*.pyc on the first run. mismatch.txt is written only by -m 2/3."
+  },
+  "results": {
+   "outputs/changed_input/a_identical": {
+    "stdin_file": "data/a_identical.stdin.txt",
+    "stdin_sha256": "c9e80e37b099d1669e1f493624f3cb15f3fdee04377932c5aaa90b233f3739eb",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUAAAUUGAACC\n",
+    "exit_status": 0,
+    "wall_s": 2.234,
+    "stdout_path": "outputs/changed_input/a_identical/stdout.txt",
+    "stdout_sha256": "87a0ee0aba2162cf8033d618fc87b7e195b41333403a4ab3531bbd40d8512f3a",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.991731584072113\n",
+    "kon": 0.991731584072113,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   },
+   "outputs/changed_input/b_2mm": {
+    "stdin_file": "data/b_2mm.stdin.txt",
+    "stdin_sha256": "02ef37eddb54ba83411236f34f059449f2caa2789b5611da3648023fb050b753",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUCAAUUGAACG\n",
+    "exit_status": 0,
+    "wall_s": 2.006,
+    "stdout_path": "outputs/changed_input/b_2mm/stdout.txt",
+    "stdout_sha256": "1cf59ee642e6ead5d2e96fffa1720123382a3bec32f34d0727a91b941ef2af87",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.9802688956260681\n",
+    "kon": 0.9802688956260681,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   },
+   "outputs/changed_input/c_5mm": {
+    "stdin_file": "data/c_5mm.stdin.txt",
+    "stdin_sha256": "e6c73feb1aa7d4592c3c826d2ccbde77cbcc194df2c1d23654d968be84a0ee4c",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nACGCGAAUCAAAGUGACCC\n",
+    "exit_status": 0,
+    "wall_s": 1.833,
+    "stdout_path": "outputs/changed_input/c_5mm/stdout.txt",
+    "stdout_sha256": "3c82146c4d09ed650c2f3d7e8e7d141a6a270a8755c682a8e05101114826388a",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.8994343876838684\n",
+    "kon": 0.8994343876838684,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   },
+   "outputs/changed_input/d_other_base_1mm": {
+    "stdin_file": "data/d_other_base_1mm.stdin.txt",
+    "stdin_sha256": "852d544735db276debb9bc66b87babb44f88ad219c8442e50f381e73cd353d48",
+    "stdin_text": "GACUUAGCAUGCAAUGCUA\nGACUUAGCAUGCAAUGCUU\n",
+    "exit_status": 0,
+    "wall_s": 2.129,
+    "stdout_path": "outputs/changed_input/d_other_base_1mm/stdout.txt",
+    "stdout_sha256": "55b7a93b153a1384c375b66e0f3a357a4ad7ab9857c67ec92f79b8336188b9e7",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.7939964532852173\n",
+    "kon": 0.7939964532852173,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   },
+   "outputs/error_cases/e_len_19_vs_18": {
+    "stdin_file": "data/e_len_19_vs_18.stdin.txt",
+    "stdin_sha256": "e9ad97b240c35ad38dcdbded1404262ae96048cc89f58e6da7700a2548c078ae",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUAAAUUGAAC\n",
+    "exit_status": 1,
+    "wall_s": 1.904,
+    "stdout_path": "outputs/error_cases/e_len_19_vs_18/stdout.txt",
+    "stdout_sha256": "baf65c3d4c166197cb3138eff27a3e1a3fa59ada637a917d2557deb6d12e793e",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n",
+    "kon": null,
+    "stderr_last_line": "Exception: The length of mismatched RNA is not 19 nt!",
+    "files_changed_in_runtime": []
+   },
+   "outputs/error_cases/f1_lowercase": {
+    "stdin_file": "data/f1_lowercase.stdin.txt",
+    "stdin_sha256": "f5facada6826cb3de41abe36753376a059b4067b49d4ff97f3ddc40cfc2ea044",
+    "stdin_text": "ucgcaaauuaaauugaacc\nucgcaaauuaaauugaacg\n",
+    "exit_status": 1,
+    "wall_s": 2.228,
+    "stdout_path": "outputs/error_cases/f1_lowercase/stdout.txt",
+    "stdout_sha256": "baf65c3d4c166197cb3138eff27a3e1a3fa59ada637a917d2557deb6d12e793e",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n",
+    "kon": null,
+    "stderr_last_line": "KeyError: 'u'",
+    "files_changed_in_runtime": []
+   },
+   "outputs/error_cases/f2_T_containing": {
+    "stdin_file": "data/f2_T_containing.stdin.txt",
+    "stdin_sha256": "89f942bfec44302b02c898c97e86b6031fb5069f0a85ffdc6b30acb511a12e0c",
+    "stdin_text": "TCGCAAATTAAATTGAACC\nTCGCAAATTAAATTGAACG\n",
+    "exit_status": 1,
+    "wall_s": 1.901,
+    "stdout_path": "outputs/error_cases/f2_T_containing/stdout.txt",
+    "stdout_sha256": "baf65c3d4c166197cb3138eff27a3e1a3fa59ada637a917d2557deb6d12e793e",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n",
+    "kon": null,
+    "stderr_last_line": "KeyError: 'T'",
+    "files_changed_in_runtime": []
+   },
+   "outputs/run1": {
+    "stdin_file": "data/reference.stdin.txt",
+    "stdin_sha256": "02e1f5d3b86c21a7d2867d569e3d3b3d6c5259435553ee64f2e6aad51660e2a7",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUAAAUUGAACG\n",
+    "exit_status": 0,
+    "wall_s": 2.279,
+    "stdout_path": "outputs/run1/stdout.txt",
+    "stdout_sha256": "12b450991f8326f39245b1a06c98d39f5c705c6a08330d211a82077f7863fed2",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.9940418601036072\n",
+    "kon": 0.9940418601036072,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": [
+     "./result",
+     "./scripts",
+     "./scripts/__pycache__",
+     "./scripts/__pycache__/loader.cpython-311.pyc",
+     "./scripts/__pycache__/logger.cpython-311.pyc",
+     "./scripts/__pycache__/test.cpython-311.pyc",
+     "./scripts/__pycache__/model.cpython-311.pyc",
+     "./scripts/__pycache__/infer.cpython-311.pyc",
+     "./scripts/__pycache__/mismatch.cpython-311.pyc",
+     "./scripts/__pycache__/train.cpython-311.pyc",
+     "./scripts/__pycache__/train_single.cpython-311.pyc",
+     "./scripts/__pycache__/test_single.cpython-311.pyc",
+     "./scripts/__pycache__/metrics.cpython-311.pyc"
+    ]
+   },
+   "outputs/run2": {
+    "stdin_file": "data/reference.stdin.txt",
+    "stdin_sha256": "02e1f5d3b86c21a7d2867d569e3d3b3d6c5259435553ee64f2e6aad51660e2a7",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUAAAUUGAACG\n",
+    "exit_status": 0,
+    "wall_s": 2.116,
+    "stdout_path": "outputs/run2/stdout.txt",
+    "stdout_sha256": "12b450991f8326f39245b1a06c98d39f5c705c6a08330d211a82077f7863fed2",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.9940418601036072\n",
+    "kon": 0.9940418601036072,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   },
+   "outputs/run3": {
+    "stdin_file": "data/reference.stdin.txt",
+    "stdin_sha256": "02e1f5d3b86c21a7d2867d569e3d3b3d6c5259435553ee64f2e6aad51660e2a7",
+    "stdin_text": "UCGCAAAUUAAAUUGAACC\nUCGCAAAUUAAAUUGAACG\n",
+    "exit_status": 0,
+    "wall_s": 1.877,
+    "stdout_path": "outputs/run3/stdout.txt",
+    "stdout_sha256": "12b450991f8326f39245b1a06c98d39f5c705c6a08330d211a82077f7863fed2",
+    "stdout_text": "please input base RNA: \nplease input mismatched RNA: \n0.9940418601036072\n",
+    "kon": 0.9940418601036072,
+    "stderr_last_line": "",
+    "files_changed_in_runtime": []
+   }
+  },
+  "run_to_run": {
+   "runs": [
+    "outputs/run1",
+    "outputs/run2",
+    "outputs/run3"
+   ],
+   "kon_values": [
+    0.9940418601036072,
+    0.9940418601036072,
+    0.9940418601036072
+   ],
+   "max_abs_diff": 0.0,
+   "stdout_byte_identical": true,
+   "conclusion": "Deterministic: model.eval() is called and calculate_kon has no randomness, so the 3 runs are byte-identical. Suggested tolerance: exact string match, or abs 1e-7 on the float to absorb platform/BLAS differences."
+  },
+  "replay_check": {
+   "description": "run.sh re-executed from the saved inputs in data/ into outputs/replay; every stdout compared by sha256, and every exit status compared",
+   "all_identical": true,
+   "per_case": {
+    "outputs/changed_input/a_identical": {
+     "replay": "outputs/replay/changed_input/a_identical",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/changed_input/b_2mm": {
+     "replay": "outputs/replay/changed_input/b_2mm",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/changed_input/c_5mm": {
+     "replay": "outputs/replay/changed_input/c_5mm",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/changed_input/d_other_base_1mm": {
+     "replay": "outputs/replay/changed_input/d_other_base_1mm",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/error_cases/e_len_19_vs_18": {
+     "replay": "outputs/replay/error_cases/e_len_19_vs_18",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/error_cases/f1_lowercase": {
+     "replay": "outputs/replay/error_cases/f1_lowercase",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/error_cases/f2_T_containing": {
+     "replay": "outputs/replay/error_cases/f2_T_containing",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/run1": {
+     "replay": "outputs/replay/run1",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/run2": {
+     "replay": "outputs/replay/run2",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    },
+    "outputs/run3": {
+     "replay": "outputs/replay/run3",
+     "stdout_byte_identical": true,
+     "exit_equal": true
+    }
+   }
+  },
+  "changed_input_summary": {
+   "a_identical": 0.991731584072113,
+   "b_2mm": 0.9802688956260681,
+   "c_5mm": 0.8994343876838684,
+   "d_other_base_1mm": 0.7939964532852173
+  },
+  "error_cases_summary": {
+   "e_len_19_vs_18": "exit 1; both prompts on stdout; stderr traceback ends 'Exception: The length of mismatched RNA is not 19 nt!' (raised after the 2nd input). From reading the source (not run): a wrong-length base raises 'The length of base RNA is not 19 nt!' after the 1st input.",
+   "f1_lowercase": "exit 1; lowercase passes the length check, then one_hot_encode fails with \"KeyError: 'u'\" in the stderr traceback (no case normalisation)",
+   "f2_T_containing": "exit 1; DNA T is not accepted; one_hot_encode fails with \"KeyError: 'T'\""
+  },
+  "figures": "not applicable (stdout-only command)",
+  "observed_hazards": [
+   "Interactive input(): sequences can only be passed on stdin, and the prompts also go to stdout, so a wrapper must parse the last line.",
+   "The model path is relative ('model/mismatch_model.pth') and is loaded when scripts/mismatch.py is imported, which main.py does unconditionally, so cwd must be the OligoFormer root in every mode.",
+   "main.py creates ./result in cwd as a side effect.",
+   "The only input check is length 19: lowercase, T, N or other characters crash with a bare KeyError traceback. A wrapper should validate or uppercase the input before calling (and decide whether to convert T->U), or report the KeyError as a tool error.",
+   "Upstream behaviour, recorded and not fixed: the identical pair scores 0.991731584072113, LOWER than the 1-mismatch reference pair (0.9940418601036072). The score is a learned value and is not guaranteed to peak at 0 mismatches."
+  ],
+  "limitations": [
+   "Tested only on CPU, macOS arm64.",
+   "kon is whatever the upstream model defines; upstream publishes no reference values for these pairs."
+  ],
+  "attempts": [
+   {
+    "n": 1,
+    "result": "success on the first try (setup + 10 cases + replay); the first report-building script had a glob bug that was fixed, with no re-execution"
+   }
+  ],
+  "logs": "notebooks/mismatch_compare_pair/logs/ (setup.log, run_main.log, run_replay.log); per-case stdout/stderr/meta.tsv under outputs/"
+ }
+}

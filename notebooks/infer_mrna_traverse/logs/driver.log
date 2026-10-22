@@ -1,0 +1,8 @@
+HuMRNA3 len 57
+[readme] exit=0 wall=46s
+[run1] exit=0 wall=48s
+[run2] exit=0 wall=35s
+[run3] exit=0 wall=27s
+[replay] exit=0 wall=27s
+[changed_input] exit=0 wall=12s
+driver done

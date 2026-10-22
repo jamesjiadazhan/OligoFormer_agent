@@ -1,0 +1,142 @@
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+Calculating predictions...
+cat: human_UTR.txt: No such file or directory
+cat: human_UTR.txt: No such file or directory
+Reading relations from file tmp_upstream_stab_7425 done.
+Joining on file - done.
+Reading relations from file tmp_utr_stab_7425 done.
+Joining on file tmp_prefix_7425 done.
+Finding potential targets...
+allowed lengths = 6 7 8
+allowed_gu_wobbles{6} = 0
+allowed_gu_wobbles{7} = 1
+allowed_gu_wobbles{8} = 1
+allowed_mismatches{6} = 0
+allowed_mismatches{7} = 0
+allowed_mismatches{8} = 1
+allowed_loops = 
+MicroRNA Names: RNA0 RNA1 RNA2 RNA3 RNA4 RNA5 RNA6 RNA7 RNA8 RNA9 RNA10 RNA11 RNA12 RNA13 RNA14 RNA15 RNA16 RNA17 RNA18 RNA19 RNA20 RNA21 RNA22 RNA23 RNA24 RNA25 RNA26 RNA27 RNA28 RNA29 RNA30 RNA31 RNA32 RNA33 RNA34 RNA35 RNA36 RNA37 RNA38
+MicroRNA Sequences: TCGCAAATTAAATTGAACC TTCGCAAATTAAATTGAAC TTTCGCAAATTAAATTGAA CTTTCGCAAATTAAATTGA TCTTTCGCAAATTAAATTG CTCTTTCGCAAATTAAATT TCTCTTTCGCAAATTAAAT GTCTCTTTCGCAAATTAAA GGTCTCTTTCGCAAATTAA AGGTCTCTTTCGCAAATTA AAGGTCTCTTTCGCAAATT TAAGGTCTCTTTCGCAAAT GTAAGGTCTCTTTCGCAAA CGTAAGGTCTCTTTCGCAA CCGTAAGGTCTCTTTCGCA TCCGTAAGGTCTCTTTCGC GTCCGTAAGGTCTCTTTCG CGTCCGTAAGGTCTCTTTC ACGTCCGTAAGGTCTCTTT CACGTCCGTAAGGTCTCTT CCACGTCCGTAAGGTCTCT CCCACGTCCGTAAGGTCTC GCCCACGTCCGTAAGGTCT CGCCCACGTCCGTAAGGTC GCGCCCACGTCCGTAAGGT GGCGCCCACGTCCGTAAGG TGGCGCCCACGTCCGTAAG CTGGCGCCCACGTCCGTAA ACTGGCGCCCACGTCCGTA CACTGGCGCCCACGTCCGT CCACTGGCGCCCACGTCCG TCCACTGGCGCCCACGTCC GTCCACTGGCGCCCACGTC GGTCCACTGGCGCCCACGT AGGTCCACTGGCGCCCACG GAGGTCCACTGGCGCCCAC GGAGGTCCACTGGCGCCCA AGGAGGTCCACTGGCGCCC GAGGAGGTCCACTGGCGCC
+Computing site scores...
+Reading relations from file RNA0_ext_utr.stab done.
+Joining on file - done.
+
+Computing 0 results: Calling RNAduplex with 0 targets... Calling RNAddG with 0 targets... 
+usage:
+RNAfold [-p[0]] [-C] [-T temp] [-4] [-d[2|3]] [-noGU] [-noCloseGU]
+        [-noLP] [-e e_set] [-P paramfile] [-nsp pairs] [-S scale]
+        [-noconv] 
+
+ RNAddG special switches:
+		-f <from_contraint>
+		-t <to_constraint>
+
+ Done.
+Done.
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+Use of uninitialized value $alignmentLength in numeric lt (<) at targetscan_70_BL_bins.pl line 141.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $medianBLthisUTR in concatenation (.) or string at targetscan_70_BL_bins.pl line 128.
+Sorting targetscan_70_output.txt by group number and creating targetscan_70_output.sort.txt
+Sorting [ sort -k8,8n targetscan_70_output.txt > targetscan_70_output.sort.txt ] is done
+
+All done -- Also see ORF.lengths.txt for sequence lengths.
+
+Using 9606 as the reference species (as set by $REF_SPECIES).
+Reading miRNA file (sirnas_for_context_scores.txt)...
+Reading UTRs file (UTR.txt)... done
+Reading affected isoform ratios (AIRs) file (All_cell_lines.AIRs.txt)...
+Creating directory RNAplfold_in_out
+Running RNAplfold on UTRs (if we didn't do so before)....
+Reading ORF lengths file (ORF.length.txt)...
+Reading ORF 8mer counts file (ORF_8mer_counts.txt)...
+Reading and processing targets file (targetscan_70_output.BL_PCT.txt).... done
+Deleted temporary file (Targets.BL_PCT.context_scores.txt.tmp)
+
+All done!  -  See Targets.BL_PCT.context_scores.txt for output.
+
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+Calculating predictions...
+cat: human_UTR.txt: No such file or directory
+cat: human_UTR.txt: No such file or directory
+Reading relations from file tmp_upstream_stab_91532 done.
+Joining on file - done.
+Reading relations from file tmp_utr_stab_91532 done.
+Joining on file tmp_prefix_91532 done.
+Finding potential targets...
+allowed lengths = 6 7 8
+allowed_gu_wobbles{6} = 0
+allowed_gu_wobbles{7} = 1
+allowed_gu_wobbles{8} = 1
+allowed_mismatches{6} = 0
+allowed_mismatches{7} = 0
+allowed_mismatches{8} = 1
+allowed_loops = 
+MicroRNA Names: RNA0 RNA1 RNA2 RNA3 RNA4 RNA5 RNA6 RNA7 RNA8 RNA9 RNA10 RNA11 RNA12 RNA13 RNA14 RNA15 RNA16 RNA17 RNA18 RNA19 RNA20 RNA21 RNA22 RNA23 RNA24 RNA25 RNA26 RNA27 RNA28 RNA29 RNA30 RNA31 RNA32 RNA33 RNA34 RNA35 RNA36 RNA37 RNA38
+MicroRNA Sequences: ATTAAATTGAACCTATAGT CATTAAATTGAACCTATAG ACATTAAATTGAACCTATA CACATTAAATTGAACCTAT GCACATTAAATTGAACCTA CGCACATTAAATTGAACCT TCGCACATTAAATTGAACC TTCGCACATTAAATTGAAC TTTCGCACATTAAATTGAA CTTTCGCACATTAAATTGA TCTTTCGCACATTAAATTG CTCTTTCGCACATTAAATT TCTCTTTCGCACATTAAAT GTCTCTTTCGCACATTAAA GGTCTCTTTCGCACATTAA AGGTCTCTTTCGCACATTA AAGGTCTCTTTCGCACATT TAAGGTCTCTTTCGCACAT GTAAGGTCTCTTTCGCACA CGTAAGGTCTCTTTCGCAC CCGTAAGGTCTCTTTCGCA TCCGTAAGGTCTCTTTCGC GTCCGTAAGGTCTCTTTCG CGTCCGTAAGGTCTCTTTC ACGTCCGTAAGGTCTCTTT CACGTCCGTAAGGTCTCTT CCACGTCCGTAAGGTCTCT CCCACGTCCGTAAGGTCTC GCCCACGTCCGTAAGGTCT CGCCCACGTCCGTAAGGTC GCGCCCACGTCCGTAAGGT GGCGCCCACGTCCGTAAGG TGGCGCCCACGTCCGTAAG CTGGCGCCCACGTCCGTAA ACTGGCGCCCACGTCCGTA CACTGGCGCCCACGTCCGT CCACTGGCGCCCACGTCCG TCCACTGGCGCCCACGTCC GTCCACTGGCGCCCACGTC
+Computing site scores...
+Reading relations from file RNA1_ext_utr.stab done.
+Joining on file - done.
+
+Computing 0 results: Calling RNAduplex with 0 targets... Calling RNAddG with 0 targets... 
+usage:
+RNAfold [-p[0]] [-C] [-T temp] [-4] [-d[2|3]] [-noGU] [-noCloseGU]
+        [-noLP] [-e e_set] [-P paramfile] [-nsp pairs] [-S scale]
+        [-noconv] 
+
+ RNAddG special switches:
+		-f <from_contraint>
+		-t <to_constraint>
+
+ Done.
+Done.
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+cp: ./off-target/ref/human_UTR.txt: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+awk: cmd. line:1: fatal: cannot open file `human_UTR.txt' for reading: No such file or directory
+Use of uninitialized value $alignmentLength in numeric lt (<) at targetscan_70_BL_bins.pl line 141.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $BL in numeric gt (>) at targetscan_70_BL_bins.pl line 371.
+Use of uninitialized value $medianBLthisUTR in concatenation (.) or string at targetscan_70_BL_bins.pl line 128.
+Sorting targetscan_70_output.txt by group number and creating targetscan_70_output.sort.txt
+Sorting [ sort -k8,8n targetscan_70_output.txt > targetscan_70_output.sort.txt ] is done
+
+All done -- Also see ORF.lengths.txt for sequence lengths.
+
+Using 9606 as the reference species (as set by $REF_SPECIES).
+Reading miRNA file (sirnas_for_context_scores.txt)...
+Reading UTRs file (UTR.txt)... done
+Reading affected isoform ratios (AIRs) file (All_cell_lines.AIRs.txt)...
+Creating directory RNAplfold_in_out
+Running RNAplfold on UTRs (if we didn't do so before)....
+Reading ORF lengths file (ORF.length.txt)...
+Reading ORF 8mer counts file (ORF_8mer_counts.txt)...
+Reading and processing targets file (targetscan_70_output.BL_PCT.txt).... done
+Deleted temporary file (Targets.BL_PCT.context_scores.txt.tmp)
+
+All done!  -  See Targets.BL_PCT.context_scores.txt for output.
+

@@ -1,0 +1,289 @@
+{
+ "infer_mrna_traverse": {
+  "source": {
+   "path": "repo/OligoFormer/README.md",
+   "section": "Usage / 3.Model inference / 3.1 Inference without off-target / Option 1",
+   "readme_command": "python scripts/main.py --infer 1 -i1 data/example.fa",
+   "repo": "https://github.com/lulab/OligoFormer",
+   "commit": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "readme_sha256": "fce74ce24f4c5275cdea80d09aa441e4425451f7a35894393b453357ed1841a1"
+  },
+  "status": "success",
+  "attempt": 2,
+  "attempts": [
+   {
+    "attempt": 1,
+    "status": "failed",
+    "reason": "interrupted (API rate limit / response stopped) after runtime copy was built, before any inference; runtime copy and logs/setup_runtime.log retained"
+   },
+   {
+    "attempt": 2,
+    "status": "success",
+    "reason": "reused existing runtime copy (not rebuilt); driver run.sh executed all 6 commands with exit 0"
+   }
+  ],
+  "execution_mode": "native_command",
+  "execution_path": "notebooks/infer_mrna_traverse/run.sh",
+  "analysis_script": "notebooks/infer_mrna_traverse/compare_runs.py (reads saved outputs only; writes logs/comparison.json)",
+  "cwd": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+  "runtime_copy": {
+   "path": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer",
+   "git_head": "e2f53ad63387bbe166bf123949151e2bc9bf6ec3",
+   "git_status_short_lines": 699,
+   "git_status_note": "698 lines are mode/content changes under off-target/pita from setup script (PITA make install, staged binaries) + 1 untracked RNA-FM/; scripts/, model/, data/ have no diff",
+   "setup_command": "OLIGOFORMER_SRC=$PROJECT_ROOT/repo/OligoFormer RNAFM_SRC=$PROJECT_ROOT/deps/downloads/rnafm_git/RNA-FM RNAFM_WEIGHTS=$PROJECT_ROOT/deps/downloads/rnafm_weights_hf/RNA-FM_pretrained.pth bash deps/setup_oligoformer_runtime.sh notebooks/infer_mrna_traverse/runtime/OligoFormer (exit 0)",
+   "setup_log": "notebooks/infer_mrna_traverse/logs/setup_runtime.log"
+  },
+  "env_vars": {
+   "source": "notebooks/infer_mrna_traverse/runtime/OligoFormer.env.sh",
+   "PATH_prefix": [
+    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin",
+    "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/deps/offtarget-env/bin"
+   ],
+   "TORCH_HOME": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/runtime/OligoFormer/RNA-FM/torch_home",
+   "PERL5LIB": "unset"
+  },
+  "executables": {
+   "python": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/OligoFormer-env/bin/python",
+   "python_version": "3.11.12",
+   "torch": "2.2.1 (CPU)",
+   "pandas": "2.0.3",
+   "numpy": "1.24.4",
+   "perl/RNAplfold": "not used (no -off)"
+  },
+  "commands": [
+   {
+    "label": "readme",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa",
+    "exit_status": 0,
+    "wall_seconds": 46
+   },
+   {
+    "label": "run1",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run1/",
+    "exit_status": 0,
+    "wall_seconds": 48
+   },
+   {
+    "label": "run2",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run2/",
+    "exit_status": 0,
+    "wall_seconds": 35
+   },
+   {
+    "label": "run3",
+    "command": "python scripts/main.py --infer 1 -i1 data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/run3/",
+    "exit_status": 0,
+    "wall_seconds": 27
+   },
+   {
+    "label": "replay",
+    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/example.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/replay/",
+    "exit_status": 0,
+    "wall_seconds": 27
+   },
+   {
+    "label": "changed_input",
+    "command": "python scripts/main.py --infer 1 -i1 /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa --output_dir /Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_mrna_traverse/outputs/changed_input/",
+    "exit_status": 0,
+    "wall_seconds": 12
+   }
+  ],
+  "logs": "notebooks/infer_mrna_traverse/logs/{label}.stdout.log|.stderr.log (all stderr empty), commands.tsv, driver.log, sha256.txt",
+  "inputs": {
+   "notebooks/infer_mrna_traverse/data/example.fa": {
+    "sha256": "1dabfa48d7d40d3dec46614e45b66658fc207b75b292c5f1f6d46c31f0c1a851",
+    "copied_from": "runtime data/example.fa (== repo/OligoFormer/data/example.fa)",
+    "records": {
+     "RNA0": 57,
+     "RNA1": 57
+    }
+   },
+   "notebooks/infer_mrna_traverse/data/changed_input_Hu_mRNA_RNA3.fa": {
+    "sha256": "765d0f8432981d609c08ec016d5a4eb643323ce83283274547407ad9f7cf7cab",
+    "provenance": "repo data/fasta/Hu_mRNA.fa (sha256 0afa7aed7ea7de2f45853a651107a9011c3ff8c6ba4c0ff385a4df4fe7650e11), record >RNA3, slice [0:120] -> full 57-nt sequence UUGGUCUGCUUAUUUUUAGAUAAAAUUGAAAGGAAUUGUAUAAAUCAAUUAACAUAU (no X padding); header renamed to >HuMRNA3 to avoid clashing with RNA0/RNA1 output names"
+   },
+   "model/best_model.pth": {
+    "sha256": "8c2fb4bc847e20c63dfe69381c5dc5c341be71e65c011f4e9a4cd6fdb0e34eca"
+   }
+  },
+  "outputs": {
+   "layout": "outputs/{readme_literal,run1,run2,run3,replay}/{RNA0,RNA1}{.txt,_ranked.txt,_ranked_filtered.txt} + data_infer/<rec>/{siRNA.fa,mRNA.fa}; outputs/changed_input/HuMRNA3*.txt + data_infer/HuMRNA3/. readme_literal = copy of runtime ./result/ from the literal README command. RNA-FM .npy embeddings (7.3 MB/record) not retained.",
+   "sha256": {
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA0.txt": "af9c72ee042ebc44b8a6ee6879cc967e82f56e93c523372c32fc08315a478aef",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA0_ranked.txt": "694b94eccfe4aae4997b3ff3cef626e0d505198f36dd786a03c7bca5ea73b33c",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA0_ranked_filtered.txt": "6355dab3a1a213c2e4642b950f5b505805f6ad9b48044f6a580efbe16b51ef20",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA1.txt": "a71ad4002df3c256ca7e7e0e70b226da9a0bc1ae47438003f101a6ccee60a1c5",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA1_ranked.txt": "45c7ca94cafc301df3f3e7a19437e995c4b34bfcdede3006cbfffe2e821e517f",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/RNA1_ranked_filtered.txt": "2b7d68c63ef7ce7c937c9621305972623e142d03b9f24a9441a24de442a0db8c",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "notebooks/infer_mrna_traverse/outputs/readme_literal/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA0.txt": "8e12ad589b0ad37be3a47f0ab77569aa6c03319368988534ab3c627d2c1d44d1",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA0_ranked.txt": "86f4497f102b3ed937fe2df5c7a7535dee6f315aea8d3969d727f8fc51119121",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA0_ranked_filtered.txt": "493060de96c4be1ac33523ea1f5829cd446e2523730cb9bd1eee7d451d1ef70d",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA1.txt": "35879e9e2cafe90abf7ee119267d26b6920228a6bf3865e1cc478f9876aa8170",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA1_ranked.txt": "97ead0ea49ad2fdb2be23c5a929e95aef005a6069e805921110b7cfe16e85179",
+    "notebooks/infer_mrna_traverse/outputs/run2/RNA1_ranked_filtered.txt": "ff4c5ff4b772ea112348352426d3b7603fa248bfbad109212101866df8d457c9",
+    "notebooks/infer_mrna_traverse/outputs/run2/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "notebooks/infer_mrna_traverse/outputs/run2/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "notebooks/infer_mrna_traverse/outputs/run2/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "notebooks/infer_mrna_traverse/outputs/run2/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA0.txt": "0b7873bca7800c7fea775478dbb2998360fa1c476a46313cb0b10a69a0902b84",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA0_ranked.txt": "60cfaf1dc15e28a9d928b9f1df6142b6385a2d1ac8aabe73b725e5d78caffd9f",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA0_ranked_filtered.txt": "e6aee13d287fd1831317694a9fe9a26525ef68948355613dcd5659e11a1729e7",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA1.txt": "12cee15ecf69f47eec7585eb86c301b446cd1fa9da70e72ea74c2a915851dbed",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA1_ranked.txt": "0d33022753e721ada8b9daac2925d8d43da3962e21cf7016167387f1ed47c306",
+    "notebooks/infer_mrna_traverse/outputs/run3/RNA1_ranked_filtered.txt": "a298ae08ce948ac0e7a91b7a4634da13d5eb155bec2f1ee0bbd97acdcb84edef",
+    "notebooks/infer_mrna_traverse/outputs/run3/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "notebooks/infer_mrna_traverse/outputs/run3/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "notebooks/infer_mrna_traverse/outputs/run3/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "notebooks/infer_mrna_traverse/outputs/run3/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "notebooks/infer_mrna_traverse/outputs/changed_input/HuMRNA3.txt": "d00ba5218798842761e7355e421f8a4fcfd162a20bbd46e29fd4fdd551e49c3a",
+    "notebooks/infer_mrna_traverse/outputs/changed_input/HuMRNA3_ranked.txt": "1547ac134cf6785c544c282fde103918a4d853d853fa66f69f7160276118cec5",
+    "notebooks/infer_mrna_traverse/outputs/changed_input/HuMRNA3_ranked_filtered.txt": "59737c9d194068a7eec81c125ed722a998d05cf0e69d505bd42f422a350c03cf",
+    "notebooks/infer_mrna_traverse/outputs/changed_input/data_infer/HuMRNA3/mRNA.fa": "7814429e1baea2d2112e30a9ab6462e83a766fdd094fc5e32683f73c9997a66c",
+    "notebooks/infer_mrna_traverse/outputs/changed_input/data_infer/HuMRNA3/siRNA.fa": "9a750215fcb26d79311c412b1ccd3816c1e572df2870bd0ddf059e90b41a9864",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA0.txt": "99900de765fb5eab4e8329e8a6681d8aa43322bae19cd0498e7711c4c933f7fc",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA0_ranked.txt": "43035476c3b60c6ed5f981dd3173bc452d074596666979ff9c436ebb0a049677",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA0_ranked_filtered.txt": "58dfb80561be61589cf8023235fd54d5570153d7d273130af3f2feedc4190547",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA1.txt": "c52e7939cbc5a91543fe333369e599e3ea14d74bf722b1d4f8ca15f420a6fe77",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA1_ranked.txt": "74b2ab2475485f557c3b6b5ea139b11042faf3429c7bd7d7a4521b097c77ccae",
+    "notebooks/infer_mrna_traverse/outputs/replay/RNA1_ranked_filtered.txt": "543b36fa4f28caeda1082cb2f27fddea1b61ae39725f95299a85c0ff0176d8ff",
+    "notebooks/infer_mrna_traverse/outputs/replay/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "notebooks/infer_mrna_traverse/outputs/replay/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "notebooks/infer_mrna_traverse/outputs/replay/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "notebooks/infer_mrna_traverse/outputs/replay/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA0.txt": "3d8bc878b98289df8b3648cbd8369cc43e128ffebf72eae220a92ab368fc67b0",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA0_ranked.txt": "ef567c63852533fb21903133bcc144e782e23545a1542fb65f0054d60fdc12e8",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA0_ranked_filtered.txt": "7c1a9379729020a46ae84affcda87f42d2c0b05c424ccd17f87d4bfb2b8ab508",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA1.txt": "26b444195da371f5e763f3d4a8a06159dd64d4acef1874343ce3fe91fe5033f5",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA1_ranked.txt": "e2bcf5d9bf4bee643852125fc938d843213695553814cfdb973baf2a99fe4e63",
+    "notebooks/infer_mrna_traverse/outputs/run1/RNA1_ranked_filtered.txt": "7c7ef60fafb05837230f809113cbc9ee2fca0fab93ef2228e325f313eb8cf72f",
+    "notebooks/infer_mrna_traverse/outputs/run1/data_infer/RNA1/mRNA.fa": "321028ba62aa85fe33905eae6d0660ca268d0a2cd47c2a426f29c52e5c863315",
+    "notebooks/infer_mrna_traverse/outputs/run1/data_infer/RNA1/siRNA.fa": "78e96b7b5a2b488ac45d30a957d6eb630abfdf00c688c4749b077a064d69200b",
+    "notebooks/infer_mrna_traverse/outputs/run1/data_infer/RNA0/mRNA.fa": "3330a955457acb7f259264af474e51c61cef9abd979bfdf2fb2f1d3d442d7ad6",
+    "notebooks/infer_mrna_traverse/outputs/run1/data_infer/RNA0/siRNA.fa": "fad552d348075ab7728548b28c5ac2261a28ae1aed6a0fdc14efa979dd5e487c"
+   }
+  },
+  "output_shapes": {
+   "columns": [
+    "pos",
+    "sense",
+    "siRNA",
+    "efficacy",
+    "func_filter",
+    "filter"
+   ],
+   "RNA0": {
+    "rows": 39,
+    "ranked_rows": 39,
+    "ranked_filtered_rows": 16,
+    "func_filter_counts": {
+     "0": 16,
+     "1": 22,
+     "4": 1
+    },
+    "efficacy_range_run1": [
+     0.4963040487170219,
+     0.9939728992581368
+    ]
+   },
+   "RNA1": {
+    "rows": 39,
+    "ranked_rows": 39,
+    "ranked_filtered_rows": 24,
+    "func_filter_counts": {
+     "0": 24,
+     "1": 15
+    },
+    "efficacy_range_run1": [
+     0.4279934993684292,
+     1.0203694853782654
+    ]
+   },
+   "windows": "len-19+1 = 39 per 57-nt record; siRNA.fa/mRNA.fa have 39 entries each; mRNA.fa entries are 57-nt context with X padding",
+   "func_filter_codes": "0 pass, 1 GC<30 or >65 percent, 2 five identical bases in a row, 3 six G/C in a row, 4 palindrome; filter == func_filter without -off/-tox; ranked_filtered keeps filter==0"
+  },
+  "run_to_run_comparison": {
+   "runs_compared": [
+    "run1",
+    "run2",
+    "run3",
+    "replay",
+    "readme_literal"
+   ],
+   "RNA0": {
+    "max_abs_diff_efficacy": 0.061189840704202636,
+    "max_rel_diff_efficacy": 0.11214236700611127,
+    "min_spearman_efficacy": 0.9607287449392714,
+    "any_pair_ranked_order_identical": false,
+    "deterministic_columns_identical_all_runs": true,
+    "filtered_pos_set_identical_all_runs": true,
+    "window_fastas_identical_all_runs": true
+   },
+   "RNA1": {
+    "max_abs_diff_efficacy": 0.1621192335784435,
+    "max_rel_diff_efficacy": 0.27362730818138453,
+    "min_spearman_efficacy": 0.9425101214574899,
+    "any_pair_ranked_order_identical": false,
+    "deterministic_columns_identical_all_runs": true,
+    "filtered_pos_set_identical_all_runs": true,
+    "window_fastas_identical_all_runs": true
+   },
+   "detail": "notebooks/infer_mrna_traverse/logs/comparison.json",
+   "conclusion": "pos/sense/siRNA/func_filter/filter and window FASTAs identical across all 5 runs; ranked_filtered row SET identical. efficacy is stochastic (dropout active at inference): max abs diff 0.061 (RNA0) / 0.162 (RNA1), max rel diff 11% / 27%, min Spearman 0.96 / 0.94; ranked order differs between every pair. Spread is much larger than the ~1% anticipated in the brief.",
+   "suggested_verifier_tolerance": "exact: row count, pos, sense, siRNA, func_filter, filter, set of pos in ranked_filtered; efficacy: abs tol ~0.2 (or rel 0.3) per row, Spearman >= 0.9 vs reference; do NOT require identical ranked order"
+  },
+  "replay_check": {
+   "command": "replay run: -i1 notebooks/infer_mrna_traverse/data/example.fa",
+   "result": "deterministic columns identical to run1; efficacy within run-to-run spread (RNA0 max abs 0.041 vs run1)"
+  },
+  "changed_input": {
+   "output_dir": "notebooks/infer_mrna_traverse/outputs/changed_input/",
+   "rows": 39,
+   "ranked_filtered_rows": 0,
+   "func_filter_counts": {
+    "1": 36,
+    "2": 3
+   },
+   "efficacy_range": [
+    0.3854104835093021,
+    0.9651545991897584
+   ],
+   "top3_ranked": [
+    {
+     "pos": 6,
+     "siRNA": "UUUAUCUAAAAAUAAGCAG",
+     "efficacy": 0.9651545991897584
+    },
+    {
+     "pos": 33,
+     "siRNA": "UAAUUGAUUUAUACAAUUC",
+     "efficacy": 0.9434514926075936
+    },
+    {
+     "pos": 4,
+     "siRNA": "UAUCUAAAAAUAAGCAGAC",
+     "efficacy": 0.9430672699213029
+    }
+   ],
+   "note": "AU-rich sequence: all 39 windows fail functionality filter (36 GC<30, 3 five-in-a-row), so HuMRNA3_ranked_filtered.txt has header only; single run (efficacy stochastic, compare with tolerance)"
+  },
+  "observed_hazards": [
+   "Stochastic efficacy: infer.py never calls model.eval() and never seeds torch; model.py has many nn.Dropout(0.02) layers active at inference.",
+   "--output_dir string-concatenated; passed with trailing slash.",
+   "main.py creates ./result in the runtime copy on every call; README form writes result tables there.",
+   "data/infer/<record>/ in the runtime copy is rm -rf + rewritten each call (later runs overwrite earlier intermediates; copies saved per run).",
+   "RNA-FM embedding step runs via os.system with unchecked exit status; success inferred from completed tables and empty stderr.",
+   "Record names flow unquoted into shell commands (header choice HuMRNA3 is alphanumeric)."
+  ],
+  "limitations": [
+   "RNA-FM .npy embeddings not retained or compared across runs (whether RNA-FM itself is deterministic not independently checked).",
+   "Changed-input run executed once; its filtered table is empty.",
+   "No figures produced by this tutorial (not applicable)."
+  ],
+  "figures": null
+ }
+}

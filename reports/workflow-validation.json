@@ -1,0 +1,134 @@
+{
+  "validator": "paper2agent-workflow",
+  "schema_version": 1,
+  "success": true,
+  "through": "complete",
+  "errors": [],
+  "passed_assignments": [
+    {
+      "role": "environment",
+      "task": "project",
+      "run_id": "environment-attempt-2"
+    },
+    {
+      "role": "executor",
+      "task": "infer_mrna_traverse",
+      "run_id": "exec-infer_mrna_traverse-attempt-2"
+    },
+    {
+      "role": "executor",
+      "task": "infer_offtarget_top_n",
+      "run_id": "exec-infer_offtarget_top_n-attempt-1"
+    },
+    {
+      "role": "executor",
+      "task": "infer_offtarget_toxicity",
+      "run_id": "exec-infer_offtarget_toxicity-attempt-1"
+    },
+    {
+      "role": "executor",
+      "task": "infer_specific_sirnas",
+      "run_id": "exec-infer_specific_sirnas-attempt-1"
+    },
+    {
+      "role": "executor",
+      "task": "infer_toxicity_filter",
+      "run_id": "exec-infer_toxicity_filter-attempt-1"
+    },
+    {
+      "role": "executor",
+      "task": "mismatch_compare_pair",
+      "run_id": "exec-mismatch_compare_pair-attempt-1"
+    },
+    {
+      "role": "executor",
+      "task": "mismatch_scan_variants",
+      "run_id": "exec-mismatch_scan_variants-attempt-1"
+    },
+    {
+      "role": "implementer",
+      "task": "cli_wrapper",
+      "run_id": "impl-cli_wrapper-attempt-1"
+    },
+    {
+      "role": "scanner",
+      "task": "project",
+      "run_id": "scanner-attempt-1"
+    },
+    {
+      "role": "verifier",
+      "task": "cli_wrapper",
+      "run_id": "verify-cli_wrapper-attempt-1"
+    }
+  ],
+  "exclusions": [],
+  "scope": "Validates recorded state and artifact consistency; does not authenticate host identities or establish numerical/scientific correctness.",
+  "expected_assignments": [
+    {
+      "role": "environment",
+      "task": "project"
+    },
+    {
+      "role": "executor",
+      "task": "infer_mrna_traverse"
+    },
+    {
+      "role": "executor",
+      "task": "infer_offtarget_top_n"
+    },
+    {
+      "role": "executor",
+      "task": "infer_offtarget_toxicity"
+    },
+    {
+      "role": "executor",
+      "task": "infer_specific_sirnas"
+    },
+    {
+      "role": "executor",
+      "task": "infer_toxicity_filter"
+    },
+    {
+      "role": "executor",
+      "task": "mismatch_compare_pair"
+    },
+    {
+      "role": "executor",
+      "task": "mismatch_scan_variants"
+    },
+    {
+      "role": "implementer",
+      "task": "cli_wrapper"
+    },
+    {
+      "role": "scanner",
+      "task": "project"
+    },
+    {
+      "role": "verifier",
+      "task": "cli_wrapper"
+    }
+  ],
+  "active_tutorials": [
+    "infer_mrna_traverse",
+    "infer_offtarget_top_n",
+    "infer_offtarget_toxicity",
+    "infer_specific_sirnas",
+    "infer_toxicity_filter",
+    "mismatch_compare_pair",
+    "mismatch_scan_variants"
+  ],
+  "active_modules": [
+    "cli_wrapper"
+  ],
+  "exposed_tools": [
+    "compare_sirna_mismatch_kon",
+    "predict_sirna_efficacy_from_mrna",
+    "predict_specific_sirna_efficacy",
+    "scan_sirna_mismatch_variants",
+    "screen_sirna_offtarget"
+  ],
+  "completion_files_checked": 18,
+  "project_root": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work",
+  "state": "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/reports/agent-runs.json"
+}

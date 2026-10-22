@@ -1,0 +1,638 @@
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:25:35,340 prediction INFO: Using CPU
+2026-10-21 23:25:35,340 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:25:35,340 prediction INFO: Model File:none
+2026-10-21 23:25:35,340 prediction INFO: Batch Size:1
+2026-10-21 23:25:35,341 prediction INFO: Threshold:0.5
+2026-10-21 23:25:35,341 prediction INFO: Prediction Dataset: ../../data/infer/RNA0/mRNA.fa
+Sequence Num: 39
+2026-10-21 23:25:36,294 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (57, 640)
+Iteration[2/39]
+saved embedding shape: (57, 640)
+Iteration[3/39]
+saved embedding shape: (57, 640)
+Iteration[4/39]
+saved embedding shape: (57, 640)
+Iteration[5/39]
+saved embedding shape: (57, 640)
+Iteration[6/39]
+saved embedding shape: (57, 640)
+Iteration[7/39]
+saved embedding shape: (57, 640)
+Iteration[8/39]
+saved embedding shape: (57, 640)
+Iteration[9/39]
+saved embedding shape: (57, 640)
+Iteration[10/39]
+saved embedding shape: (57, 640)
+Iteration[11/39]
+saved embedding shape: (57, 640)
+Iteration[12/39]
+saved embedding shape: (57, 640)
+Iteration[13/39]
+saved embedding shape: (57, 640)
+Iteration[14/39]
+saved embedding shape: (57, 640)
+Iteration[15/39]
+saved embedding shape: (57, 640)
+Iteration[16/39]
+saved embedding shape: (57, 640)
+Iteration[17/39]
+saved embedding shape: (57, 640)
+Iteration[18/39]
+saved embedding shape: (57, 640)
+Iteration[19/39]
+saved embedding shape: (57, 640)
+Iteration[20/39]
+saved embedding shape: (57, 640)
+Iteration[21/39]
+saved embedding shape: (57, 640)
+Iteration[22/39]
+saved embedding shape: (57, 640)
+Iteration[23/39]
+saved embedding shape: (57, 640)
+Iteration[24/39]
+saved embedding shape: (57, 640)
+Iteration[25/39]
+saved embedding shape: (57, 640)
+Iteration[26/39]
+saved embedding shape: (57, 640)
+Iteration[27/39]
+saved embedding shape: (57, 640)
+Iteration[28/39]
+saved embedding shape: (57, 640)
+Iteration[29/39]
+saved embedding shape: (57, 640)
+Iteration[30/39]
+saved embedding shape: (57, 640)
+Iteration[31/39]
+saved embedding shape: (57, 640)
+Iteration[32/39]
+saved embedding shape: (57, 640)
+Iteration[33/39]
+saved embedding shape: (57, 640)
+Iteration[34/39]
+saved embedding shape: (57, 640)
+Iteration[35/39]
+saved embedding shape: (57, 640)
+Iteration[36/39]
+saved embedding shape: (57, 640)
+Iteration[37/39]
+saved embedding shape: (57, 640)
+Iteration[38/39]
+saved embedding shape: (57, 640)
+Iteration[39/39]
+saved embedding shape: (57, 640)
+2026-10-21 23:25:41,948 prediction.inference INFO: Finish Prediction
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:25:44,210 prediction INFO: Using CPU
+2026-10-21 23:25:44,210 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:25:44,210 prediction INFO: Model File:none
+2026-10-21 23:25:44,210 prediction INFO: Batch Size:1
+2026-10-21 23:25:44,210 prediction INFO: Threshold:0.5
+2026-10-21 23:25:44,210 prediction INFO: Prediction Dataset: ../../data/infer/RNA0/siRNA.fa
+Sequence Num: 39
+2026-10-21 23:25:45,110 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (19, 640)
+Iteration[2/39]
+saved embedding shape: (19, 640)
+Iteration[3/39]
+saved embedding shape: (19, 640)
+Iteration[4/39]
+saved embedding shape: (19, 640)
+Iteration[5/39]
+saved embedding shape: (19, 640)
+Iteration[6/39]
+saved embedding shape: (19, 640)
+Iteration[7/39]
+saved embedding shape: (19, 640)
+Iteration[8/39]
+saved embedding shape: (19, 640)
+Iteration[9/39]
+saved embedding shape: (19, 640)
+Iteration[10/39]
+saved embedding shape: (19, 640)
+Iteration[11/39]
+saved embedding shape: (19, 640)
+Iteration[12/39]
+saved embedding shape: (19, 640)
+Iteration[13/39]
+saved embedding shape: (19, 640)
+Iteration[14/39]
+saved embedding shape: (19, 640)
+Iteration[15/39]
+saved embedding shape: (19, 640)
+Iteration[16/39]
+saved embedding shape: (19, 640)
+Iteration[17/39]
+saved embedding shape: (19, 640)
+Iteration[18/39]
+saved embedding shape: (19, 640)
+Iteration[19/39]
+saved embedding shape: (19, 640)
+Iteration[20/39]
+saved embedding shape: (19, 640)
+Iteration[21/39]
+saved embedding shape: (19, 640)
+Iteration[22/39]
+saved embedding shape: (19, 640)
+Iteration[23/39]
+saved embedding shape: (19, 640)
+Iteration[24/39]
+saved embedding shape: (19, 640)
+Iteration[25/39]
+saved embedding shape: (19, 640)
+Iteration[26/39]
+saved embedding shape: (19, 640)
+Iteration[27/39]
+saved embedding shape: (19, 640)
+Iteration[28/39]
+saved embedding shape: (19, 640)
+Iteration[29/39]
+saved embedding shape: (19, 640)
+Iteration[30/39]
+saved embedding shape: (19, 640)
+Iteration[31/39]
+saved embedding shape: (19, 640)
+Iteration[32/39]
+saved embedding shape: (19, 640)
+Iteration[33/39]
+saved embedding shape: (19, 640)
+Iteration[34/39]
+saved embedding shape: (19, 640)
+Iteration[35/39]
+saved embedding shape: (19, 640)
+Iteration[36/39]
+saved embedding shape: (19, 640)
+Iteration[37/39]
+saved embedding shape: (19, 640)
+Iteration[38/39]
+saved embedding shape: (19, 640)
+Iteration[39/39]
+saved embedding shape: (19, 640)
+2026-10-21 23:25:51,613 prediction.inference INFO: Finish Prediction
+Processing ENST00000469500.1
+Processing ENST00000416454.1
+Processing ENST00000362094.5
+Processing ENST00000557912.1
+Processing ENST00000399246.2
+Processing ENST00000606474.1
+Processing ENST00000582452.1
+Processing ENST00000554788.1
+Processing ENST00000542781.1
+Processing ENST00000592864.1
+Processing ENST00000533030.1
+Processing ENST00000449985.2
+Processing ENST00000515855.1
+Processing ENST00000510217.1
+Processing ENST00000598951.1
+Processing ENST00000585422.1
+Processing ENST00000466375.2
+Processing ENST00000566102.1
+Processing ENST00000438485.1
+Processing ENST00000420031.2
+Processing ENST00000601804.1
+Processing ENST00000468043.1
+Processing ENST00000474928.1
+Processing ENST00000575394.1
+Processing ENST00000558569.1
+Processing ENST00000596281.1
+Processing ENST00000559170.1
+Processing ENST00000320838.5
+Processing ENST00000553909.1
+Processing ENST00000415643.1
+Processing ENST00000401851.1
+Processing ENST00000481323.1
+Processing ENST00000595531.1
+Processing ENST00000531293.1
+Processing ENST00000528657.1
+Processing ENST00000566205.1
+Processing ENST00000307468.4
+Processing ENST00000589781.1
+Processing ENST00000586792.1
+Processing ENST00000472967.2
+Processing ENST00000409634.1
+Processing ENST00000597864.1
+Processing ENST00000509528.1
+Processing ENST00000521500.2
+Processing ENST00000542074.1
+Processing ENST00000461263.2
+Processing ENST00000533666.1
+Processing ENST00000582266.1
+Processing ENST00000399974.3
+Processing ENST00000576027.1
+Processing ENST00000450908.1
+Processing ENST00000522268.1
+Processing ENST00000491350.1
+Processing ENST00000520039.1
+Processing ENST00000528884.1
+Processing ENST00000546591.1
+Processing ENST00000583708.1
+Processing ENST00000588354.1
+Processing ENST00000502271.1
+Processing ENST00000544932.1
+Processing ENST00000453404.1
+Processing ENST00000557011.1
+Processing ENST00000512524.2
+Processing ENST00000540040.1
+Processing ENST00000604952.1
+Processing ENST00000604093.1
+Processing ENST00000536684.1
+Processing ENST00000545075.1
+Processing ENST00000544824.1
+Processing ENST00000604646.1
+Processing ENST00000399442.1
+Processing ENST00000543500.1
+Processing ENST00000600213.2
+Processing ENST00000538287.1
+Processing ENST00000599802.1
+Processing ENST00000588253.1
+Processing ENST00000437291.2
+Processing ENST00000594570.1
+Processing ENST00000587853.1
+Processing ENST00000536651.1
+Processing ENST00000497577.2
+Processing ENST00000416136.1
+Processing ENST00000592490.1
+Processing ENST00000428556.2
+Processing ENST00000403463.1
+Processing ENST00000491674.1
+Processing ENST00000573939.1
+Processing ENST00000607004.1
+Processing ENST00000563839.1
+Processing ENST00000541124.1
+Processing ENST00000557054.1
+Processing ENST00000376096.1
+Processing ENST00000594943.1
+Processing ENST00000540528.1
+Processing ENST00000546386.1
+Processing ENST00000437626.1
+Processing ENST00000396613.3
+Processing ENST00000519520.1
+Processing ENST00000361446.5
+Processing ENST00000593717.1
+RNAplfold 2.7.2
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:27:22,155 prediction INFO: Using CPU
+2026-10-21 23:27:22,155 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:27:22,155 prediction INFO: Model File:none
+2026-10-21 23:27:22,155 prediction INFO: Batch Size:1
+2026-10-21 23:27:22,155 prediction INFO: Threshold:0.5
+2026-10-21 23:27:22,155 prediction INFO: Prediction Dataset: ../../data/infer/RNA1/mRNA.fa
+Sequence Num: 39
+2026-10-21 23:27:22,936 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (57, 640)
+Iteration[2/39]
+saved embedding shape: (57, 640)
+Iteration[3/39]
+saved embedding shape: (57, 640)
+Iteration[4/39]
+saved embedding shape: (57, 640)
+Iteration[5/39]
+saved embedding shape: (57, 640)
+Iteration[6/39]
+saved embedding shape: (57, 640)
+Iteration[7/39]
+saved embedding shape: (57, 640)
+Iteration[8/39]
+saved embedding shape: (57, 640)
+Iteration[9/39]
+saved embedding shape: (57, 640)
+Iteration[10/39]
+saved embedding shape: (57, 640)
+Iteration[11/39]
+saved embedding shape: (57, 640)
+Iteration[12/39]
+saved embedding shape: (57, 640)
+Iteration[13/39]
+saved embedding shape: (57, 640)
+Iteration[14/39]
+saved embedding shape: (57, 640)
+Iteration[15/39]
+saved embedding shape: (57, 640)
+Iteration[16/39]
+saved embedding shape: (57, 640)
+Iteration[17/39]
+saved embedding shape: (57, 640)
+Iteration[18/39]
+saved embedding shape: (57, 640)
+Iteration[19/39]
+saved embedding shape: (57, 640)
+Iteration[20/39]
+saved embedding shape: (57, 640)
+Iteration[21/39]
+saved embedding shape: (57, 640)
+Iteration[22/39]
+saved embedding shape: (57, 640)
+Iteration[23/39]
+saved embedding shape: (57, 640)
+Iteration[24/39]
+saved embedding shape: (57, 640)
+Iteration[25/39]
+saved embedding shape: (57, 640)
+Iteration[26/39]
+saved embedding shape: (57, 640)
+Iteration[27/39]
+saved embedding shape: (57, 640)
+Iteration[28/39]
+saved embedding shape: (57, 640)
+Iteration[29/39]
+saved embedding shape: (57, 640)
+Iteration[30/39]
+saved embedding shape: (57, 640)
+Iteration[31/39]
+saved embedding shape: (57, 640)
+Iteration[32/39]
+saved embedding shape: (57, 640)
+Iteration[33/39]
+saved embedding shape: (57, 640)
+Iteration[34/39]
+saved embedding shape: (57, 640)
+Iteration[35/39]
+saved embedding shape: (57, 640)
+Iteration[36/39]
+saved embedding shape: (57, 640)
+Iteration[37/39]
+saved embedding shape: (57, 640)
+Iteration[38/39]
+saved embedding shape: (57, 640)
+Iteration[39/39]
+saved embedding shape: (57, 640)
+2026-10-21 23:27:34,494 prediction.inference INFO: Finish Prediction
+work_dir:/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_offtarget_top_n/runtime/OligoFormer/RNA-FM/redevelop
+2026-10-21 23:27:36,513 prediction INFO: Using CPU
+2026-10-21 23:27:36,514 prediction INFO: Loaded configuration file pretrained/extract_embedding.yml
+2026-10-21 23:27:36,514 prediction INFO: Model File:none
+2026-10-21 23:27:36,514 prediction INFO: Batch Size:1
+2026-10-21 23:27:36,514 prediction INFO: Threshold:0.5
+2026-10-21 23:27:36,514 prediction INFO: Prediction Dataset: ../../data/infer/RNA1/siRNA.fa
+Sequence Num: 39
+2026-10-21 23:27:37,182 prediction.inference INFO: Enter inferencing for Custom set
+Iteration[1/39]
+saved embedding shape: (19, 640)
+Iteration[2/39]
+saved embedding shape: (19, 640)
+Iteration[3/39]
+saved embedding shape: (19, 640)
+Iteration[4/39]
+saved embedding shape: (19, 640)
+Iteration[5/39]
+saved embedding shape: (19, 640)
+Iteration[6/39]
+saved embedding shape: (19, 640)
+Iteration[7/39]
+saved embedding shape: (19, 640)
+Iteration[8/39]
+saved embedding shape: (19, 640)
+Iteration[9/39]
+saved embedding shape: (19, 640)
+Iteration[10/39]
+saved embedding shape: (19, 640)
+Iteration[11/39]
+saved embedding shape: (19, 640)
+Iteration[12/39]
+saved embedding shape: (19, 640)
+Iteration[13/39]
+saved embedding shape: (19, 640)
+Iteration[14/39]
+saved embedding shape: (19, 640)
+Iteration[15/39]
+saved embedding shape: (19, 640)
+Iteration[16/39]
+saved embedding shape: (19, 640)
+Iteration[17/39]
+saved embedding shape: (19, 640)
+Iteration[18/39]
+saved embedding shape: (19, 640)
+Iteration[19/39]
+saved embedding shape: (19, 640)
+Iteration[20/39]
+saved embedding shape: (19, 640)
+Iteration[21/39]
+saved embedding shape: (19, 640)
+Iteration[22/39]
+saved embedding shape: (19, 640)
+Iteration[23/39]
+saved embedding shape: (19, 640)
+Iteration[24/39]
+saved embedding shape: (19, 640)
+Iteration[25/39]
+saved embedding shape: (19, 640)
+Iteration[26/39]
+saved embedding shape: (19, 640)
+Iteration[27/39]
+saved embedding shape: (19, 640)
+Iteration[28/39]
+saved embedding shape: (19, 640)
+Iteration[29/39]
+saved embedding shape: (19, 640)
+Iteration[30/39]
+saved embedding shape: (19, 640)
+Iteration[31/39]
+saved embedding shape: (19, 640)
+Iteration[32/39]
+saved embedding shape: (19, 640)
+Iteration[33/39]
+saved embedding shape: (19, 640)
+Iteration[34/39]
+saved embedding shape: (19, 640)
+Iteration[35/39]
+saved embedding shape: (19, 640)
+Iteration[36/39]
+saved embedding shape: (19, 640)
+Iteration[37/39]
+saved embedding shape: (19, 640)
+Iteration[38/39]
+saved embedding shape: (19, 640)
+Iteration[39/39]
+saved embedding shape: (19, 640)
+2026-10-21 23:27:43,127 prediction.inference INFO: Finish Prediction
+Processing ENST00000469500.1
+Processing ENST00000416454.1
+Processing ENST00000362094.5
+Processing ENST00000557912.1
+Processing ENST00000399246.2
+Processing ENST00000606474.1
+Processing ENST00000582452.1
+Processing ENST00000554788.1
+Processing ENST00000542781.1
+Processing ENST00000592864.1
+Processing ENST00000533030.1
+Processing ENST00000449985.2
+Processing ENST00000515855.1
+Processing ENST00000510217.1
+Processing ENST00000598951.1
+Processing ENST00000585422.1
+Processing ENST00000466375.2
+Processing ENST00000566102.1
+Processing ENST00000438485.1
+Processing ENST00000420031.2
+Processing ENST00000601804.1
+Processing ENST00000468043.1
+Processing ENST00000474928.1
+Processing ENST00000575394.1
+Processing ENST00000558569.1
+Processing ENST00000596281.1
+Processing ENST00000559170.1
+Processing ENST00000320838.5
+Processing ENST00000553909.1
+Processing ENST00000415643.1
+Processing ENST00000401851.1
+Processing ENST00000481323.1
+Processing ENST00000595531.1
+Processing ENST00000531293.1
+Processing ENST00000528657.1
+Processing ENST00000566205.1
+Processing ENST00000307468.4
+Processing ENST00000589781.1
+Processing ENST00000586792.1
+Processing ENST00000472967.2
+Processing ENST00000409634.1
+Processing ENST00000597864.1
+Processing ENST00000509528.1
+Processing ENST00000521500.2
+Processing ENST00000542074.1
+Processing ENST00000461263.2
+Processing ENST00000533666.1
+Processing ENST00000582266.1
+Processing ENST00000399974.3
+Processing ENST00000576027.1
+Processing ENST00000450908.1
+Processing ENST00000522268.1
+Processing ENST00000491350.1
+Processing ENST00000520039.1
+Processing ENST00000528884.1
+Processing ENST00000546591.1
+Processing ENST00000583708.1
+Processing ENST00000588354.1
+Processing ENST00000502271.1
+Processing ENST00000544932.1
+Processing ENST00000453404.1
+Processing ENST00000557011.1
+Processing ENST00000512524.2
+Processing ENST00000540040.1
+Processing ENST00000604952.1
+Processing ENST00000604093.1
+Processing ENST00000536684.1
+Processing ENST00000545075.1
+Processing ENST00000544824.1
+Processing ENST00000604646.1
+Processing ENST00000399442.1
+Processing ENST00000543500.1
+Processing ENST00000600213.2
+Processing ENST00000538287.1
+Processing ENST00000599802.1
+Processing ENST00000588253.1
+Processing ENST00000437291.2
+Processing ENST00000594570.1
+Processing ENST00000587853.1
+Processing ENST00000536651.1
+Processing ENST00000497577.2
+Processing ENST00000416136.1
+Processing ENST00000592490.1
+Processing ENST00000428556.2
+Processing ENST00000403463.1
+Processing ENST00000491674.1
+Processing ENST00000573939.1
+Processing ENST00000607004.1
+Processing ENST00000563839.1
+Processing ENST00000541124.1
+Processing ENST00000557054.1
+Processing ENST00000376096.1
+Processing ENST00000594943.1
+Processing ENST00000540528.1
+Processing ENST00000546386.1
+Processing ENST00000437626.1
+Processing ENST00000396613.3
+Processing ENST00000519520.1
+Processing ENST00000361446.5
+Processing ENST00000593717.1
+RNAplfold 2.7.2
+-----------------Start inferring!-----------------
+RNA0
+           0
+0   1.002792
+1   1.009472
+2   0.883545
+3   0.730469
+4   0.975612
+5   0.734078
+6   0.899761
+7   0.570353
+8   0.517711
+9   0.719644
+10  0.853501
+11  0.936065
+12  0.601266
+13  0.507980
+14  0.694188
+15  1.000634
+16  0.724261
+17  0.659458
+18  0.719536
+19  0.557501
+20  0.539566
+21  0.786452
+22  0.540463
+23  0.582166
+24  0.571292
+25  0.593577
+26  0.675162
+27  0.497412
+28  0.636341
+29  0.512583
+30  0.539259
+31  0.578247
+32  0.624299
+33  0.523391
+34  0.552403
+35  0.593036
+36  0.551931
+37  0.537409
+38  0.632584
+RNA1
+           0
+0   0.894911
+1   0.791876
+2   0.685997
+3   0.681090
+4   0.524255
+5   0.715427
+6   1.021376
+7   0.974907
+8   0.891327
+9   0.739032
+10  0.969462
+11  0.681402
+12  0.888809
+13  0.545713
+14  0.443140
+15  0.711131
+16  0.798525
+17  0.905081
+18  0.776584
+19  0.764493
+20  0.753049
+21  0.965517
+22  0.770281
+23  0.669348
+24  0.644930
+25  0.621774
+26  0.559133
+27  0.781061
+28  0.611875
+29  0.638620
+30  0.590802
+31  0.620431
+32  0.674265
+33  0.587203
+34  0.705717
+35  0.583144
+36  0.581618
+37  0.601647
+38  0.642209
+219 seconds 3.65 minutes

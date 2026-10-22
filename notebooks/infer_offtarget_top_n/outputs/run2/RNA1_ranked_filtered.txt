@@ -1,0 +1,3 @@
+pos	sense	siRNA	efficacy	func_filter	pita_score	targetscan_score	off_target_filter	Seed	cell_viability	toxicity_filter	filter
+7	GGUUCAAUUUAAUGUGCGA	UCGCACAUUAAAUUGAACC	1.0288905646204949	0	-9.21	0.446	0	CGCACA	69.2	0	0
+22	GCGAAAGAGACCUUACGGA	UCCGUAAGGUCUCUUUCGC	0.9772785953879356	0	-7.89	0.335	0	CCGUAA	77.0	0	0

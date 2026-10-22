@@ -1,0 +1,12 @@
+# Built at install time by deps/setup_oligoformer_runtime.sh (multi-GB: OligoFormer + RNA-FM + weights)
+/runtime/
+# Created by deps/create_offtarget_env.sh (conda prefix, ~1 GB)
+/deps/offtarget-env/
+# Python environments and caches
+/.venv/
+__pycache__/
+*.py[cod]
+# Per-call tool outputs and scratch
+/tmp/
+tests/logs/*.stdout.tmp
+.DS_Store

@@ -1,0 +1,13 @@
+diff --git a/redevelop/launch/predict.py b/redevelop/launch/predict.py
+index 099190b..c18efff 100644
+--- a/redevelop/launch/predict.py
++++ b/redevelop/launch/predict.py
+@@ -128,7 +128,7 @@ def main():
+         "--allow_vis", action='store_true'
+     )
+     parser.add_argument(
+-        "--device", default="gpu", choices=["cpu", "gpu"]
++        "--device", default=("gpu" if torch.cuda.is_available() else "cpu"), choices=["cpu", "gpu"]
+     )
+     parser.add_argument(
+         "--gpu_id", default=0, type=int,

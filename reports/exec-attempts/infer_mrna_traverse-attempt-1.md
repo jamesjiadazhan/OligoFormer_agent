@@ -1,0 +1,2 @@
+# infer_mrna_traverse — executor attempt 1 (failed)
+Agent stopped after building the private runtime copy (deps/setup_oligoformer_runtime.sh exit 0; HEAD e2f53ad…; 698 modified off-target/pita paths from make install + untracked RNA-FM/). Its response was interrupted by a host safety classifier while writing the driver script; no OligoFormer inference was executed and no executed_notebook report was written. Retried as attempt 2 with a fresh agent reusing the runtime copy.

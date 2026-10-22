@@ -1,0 +1,590 @@
+{
+ "per_record": {
+  "RNA0": {
+   "rows": 39,
+   "columns": [
+    "pos",
+    "sense",
+    "siRNA",
+    "efficacy",
+    "func_filter",
+    "filter"
+   ],
+   "ranked_filtered_rows": {
+    "run1": 16,
+    "run2": 16,
+    "run3": 16,
+    "replay": 16,
+    "readme_literal": 16
+   },
+   "func_filter_counts": {
+    "0": 16,
+    "1": 22,
+    "4": 1
+   },
+   "deterministic_columns_identical": {
+    "run1": true,
+    "run2": true,
+    "run3": true,
+    "replay": true,
+    "readme_literal": true
+   },
+   "filtered_pos_set_identical": {
+    "run1": true,
+    "run2": true,
+    "run3": true,
+    "replay": true,
+    "readme_literal": true
+   },
+   "efficacy_range_run1": [
+    0.4963040487170219,
+    0.9939728992581368
+   ],
+   "pairwise": {
+    "run1~run2": {
+     "max_abs_diff_efficacy": 0.04560136601328846,
+     "max_rel_diff_efficacy": 0.08061584661104833,
+     "spearman_efficacy": 0.9817813765182186,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ],
+      [
+       2,
+       1,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run1~run3": {
+     "max_abs_diff_efficacy": 0.05795663917064664,
+     "max_rel_diff_efficacy": 0.07990903233008882,
+     "spearman_efficacy": 0.9854251012145749,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       12,
+       16
+      ]
+     ]
+    },
+    "run1~replay": {
+     "max_abs_diff_efficacy": 0.04125721979141217,
+     "max_rel_diff_efficacy": 0.058639055434729255,
+     "spearman_efficacy": 0.9874493927125506,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run1~readme_literal": {
+     "max_abs_diff_efficacy": 0.061189840704202636,
+     "max_rel_diff_efficacy": 0.08879370298440846,
+     "spearman_efficacy": 0.9706477732793523,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run2~run3": {
+     "max_abs_diff_efficacy": 0.05929474443197247,
+     "max_rel_diff_efficacy": 0.09050596577914159,
+     "spearman_efficacy": 0.9748987854251013,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       2,
+       1,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       12,
+       16
+      ]
+     ]
+    },
+    "run2~replay": {
+     "max_abs_diff_efficacy": 0.04792144918441765,
+     "max_rel_diff_efficacy": 0.09255871006556506,
+     "spearman_efficacy": 0.9801619433198382,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       2,
+       1,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run2~readme_literal": {
+     "max_abs_diff_efficacy": 0.05714998733997345,
+     "max_rel_diff_efficacy": 0.11214236700611127,
+     "spearman_efficacy": 0.9607287449392714,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       2,
+       1,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run3~replay": {
+     "max_abs_diff_efficacy": 0.049987875044345875,
+     "max_rel_diff_efficacy": 0.07402377862546632,
+     "spearman_efficacy": 0.9910931174089069,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       12,
+       16
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "run3~readme_literal": {
+     "max_abs_diff_efficacy": 0.04887429267168042,
+     "max_rel_diff_efficacy": 0.07225559549108725,
+     "spearman_efficacy": 0.9771255060728745,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       12,
+       16
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    },
+    "replay~readme_literal": {
+     "max_abs_diff_efficacy": 0.04698882794380188,
+     "max_rel_diff_efficacy": 0.07877583407343366,
+     "spearman_efficacy": 0.9809716599190283,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ],
+      [
+       1,
+       2,
+       5,
+       16,
+       12
+      ]
+     ]
+    }
+   },
+   "window_fastas_identical": true,
+   "n_windows_in_siRNA_fa": 39
+  },
+  "RNA1": {
+   "rows": 39,
+   "columns": [
+    "pos",
+    "sense",
+    "siRNA",
+    "efficacy",
+    "func_filter",
+    "filter"
+   ],
+   "ranked_filtered_rows": {
+    "run1": 24,
+    "run2": 24,
+    "run3": 24,
+    "replay": 24,
+    "readme_literal": 24
+   },
+   "func_filter_counts": {
+    "0": 24,
+    "1": 15
+   },
+   "deterministic_columns_identical": {
+    "run1": true,
+    "run2": true,
+    "run3": true,
+    "replay": true,
+    "readme_literal": true
+   },
+   "filtered_pos_set_identical": {
+    "run1": true,
+    "run2": true,
+    "run3": true,
+    "replay": true,
+    "readme_literal": true
+   },
+   "efficacy_range_run1": [
+    0.4279934993684292,
+    1.0203694853782654
+   ],
+   "pairwise": {
+    "run1~run2": {
+     "max_abs_diff_efficacy": 0.1621192335784435,
+     "max_rel_diff_efficacy": 0.2159352335735098,
+     "spearman_efficacy": 0.948582995951417,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       11,
+       22,
+       8,
+       9
+      ],
+      [
+       7,
+       22,
+       8,
+       11,
+       9
+      ]
+     ]
+    },
+    "run1~run3": {
+     "max_abs_diff_efficacy": 0.07742430827021596,
+     "max_rel_diff_efficacy": 0.12170129159449973,
+     "spearman_efficacy": 0.9724696356275304,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       11,
+       22,
+       8,
+       9
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       9
+      ]
+     ]
+    },
+    "run1~replay": {
+     "max_abs_diff_efficacy": 0.08301667866110801,
+     "max_rel_diff_efficacy": 0.16245601796273718,
+     "spearman_efficacy": 0.9668016194331984,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       11,
+       22,
+       8,
+       9
+      ],
+      [
+       7,
+       11,
+       8,
+       22,
+       18
+      ]
+     ]
+    },
+    "run1~readme_literal": {
+     "max_abs_diff_efficacy": 0.07713100576400761,
+     "max_rel_diff_efficacy": 0.1526970182208541,
+     "spearman_efficacy": 0.9775303643724695,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       11,
+       22,
+       8,
+       9
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       18
+      ]
+     ]
+    },
+    "run2~run3": {
+     "max_abs_diff_efficacy": 0.11621793088316912,
+     "max_rel_diff_efficacy": 0.1831475017456645,
+     "spearman_efficacy": 0.9578947368421052,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       22,
+       8,
+       11,
+       9
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       9
+      ]
+     ]
+    },
+    "run2~replay": {
+     "max_abs_diff_efficacy": 0.16129767483472823,
+     "max_rel_diff_efficacy": 0.27362730818138453,
+     "spearman_efficacy": 0.9425101214574899,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       22,
+       8,
+       11,
+       9
+      ],
+      [
+       7,
+       11,
+       8,
+       22,
+       18
+      ]
+     ]
+    },
+    "run2~readme_literal": {
+     "max_abs_diff_efficacy": 0.12751073679327962,
+     "max_rel_diff_efficacy": 0.20458465186297004,
+     "spearman_efficacy": 0.9601214574898785,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       22,
+       8,
+       11,
+       9
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       18
+      ]
+     ]
+    },
+    "run3~replay": {
+     "max_abs_diff_efficacy": 0.0789510479271412,
+     "max_rel_diff_efficacy": 0.15449995190228422,
+     "spearman_efficacy": 0.9748987854251013,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       22,
+       11,
+       8,
+       9
+      ],
+      [
+       7,
+       11,
+       8,
+       22,
+       18
+      ]
+     ]
+    },
+    "run3~readme_literal": {
+     "max_abs_diff_efficacy": 0.07306537503004079,
+     "max_rel_diff_efficacy": 0.14464824867461942,
+     "spearman_efficacy": 0.9827935222672065,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       22,
+       11,
+       8,
+       9
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       18
+      ]
+     ]
+    },
+    "replay~readme_literal": {
+     "max_abs_diff_efficacy": 0.06331513488292695,
+     "max_rel_diff_efficacy": 0.09399760678908656,
+     "spearman_efficacy": 0.9728744939271255,
+     "ranked_order_identical": false,
+     "ranked_filtered_order_identical": false,
+     "top5_ranked_pos": [
+      [
+       7,
+       11,
+       8,
+       22,
+       18
+      ],
+      [
+       7,
+       22,
+       11,
+       8,
+       18
+      ]
+     ]
+    }
+   },
+   "window_fastas_identical": true,
+   "n_windows_in_siRNA_fa": 39
+  }
+ },
+ "changed_input": {
+  "rows": 39,
+  "columns": [
+   "pos",
+   "sense",
+   "siRNA",
+   "efficacy",
+   "func_filter",
+   "filter"
+  ],
+  "ranked_filtered_rows": 0,
+  "func_filter_counts": {
+   "1": 36,
+   "2": 3
+  },
+  "efficacy_range": [
+   0.3854104835093021,
+   0.9651545991897584
+  ],
+  "top3_ranked": [
+   {
+    "pos": 6,
+    "siRNA": "UUUAUCUAAAAAUAAGCAG",
+    "efficacy": 0.9651545991897584
+   },
+   {
+    "pos": 33,
+    "siRNA": "UAAUUGAUUUAUACAAUUC",
+    "efficacy": 0.9434514926075936
+   },
+   {
+    "pos": 4,
+    "siRNA": "UAUCUAAAAAUAAGCAGAC",
+    "efficacy": 0.9430672699213029
+   }
+  ]
+ }
+}

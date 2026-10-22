@@ -1,0 +1,2 @@
+./mRNA/log_prediction.txt
+./siRNA/log_prediction.txt

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/main.py", line 84, in <module>
+    main()
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/main.py", line 77, in main
+    infer(Args)
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/infer.py", line 225, in infer
+    _infer_df = calculate_td(_infer_df)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/infer.py", line 91, in calculate_td
+    df['ends'] = [Calculate_end_diff(i) for i in df['siRNA']]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/infer.py", line 91, in <listcomp>
+    df['ends'] = [Calculate_end_diff(i) for i in df['siRNA']]
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/infer_specific_sirnas/runtime/OligoFormer/scripts/infer.py", line 63, in Calculate_end_diff
+    return float('{:.2f}'.format(DeltaG[_5] - DeltaG[_3] + count * 0.45))
+                                 ~~~~~~^^^^
+KeyError: 'uc'

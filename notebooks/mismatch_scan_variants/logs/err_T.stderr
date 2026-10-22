@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 84, in <module>
+    main()
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/main.py", line 75, in main
+    mismatch(Args)
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 115, in mismatch
+    data.iloc[i,1] = calculate_kon(R1,data.iloc[i,0])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 53, in calculate_kon
+    encoded_test_base_sequences = np.array([one_hot_encode(seq) for seq in test_base_sequences])
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 53, in <listcomp>
+    encoded_test_base_sequences = np.array([one_hot_encode(seq) for seq in test_base_sequences])
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/james/Local/paper2agent/paper2agent_test/OligoFormer/mcp-work/notebooks/mismatch_scan_variants/runtime/OligoFormer/scripts/mismatch.py", line 13, in one_hot_encode
+    encoded_seq[i, mapping[nucleotide]] = 1
+                   ~~~~~~~^^^^^^^^^^^^
+KeyError: 'T'
